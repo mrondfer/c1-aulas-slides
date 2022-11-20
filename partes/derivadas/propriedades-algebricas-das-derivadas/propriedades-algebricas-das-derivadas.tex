@@ -28,6 +28,8 @@
           \item $f(x) = 3x^{4} - 2x^{3} + 7x - 5$
           \item $g(x) = 3\cdot 4^{x} - 5x^2$
           \item $h(x) = x(2x-1)^{2}$
+          % \item $i(x) = 6\sqrt{x} + 2\sqrt[3]{x} - 5\sqrt[4]{x^3}$
+          % \item $j(x) = \frac{3}{x^5}-2\cdot 3^x + \frac{2}{\sqrt{x}}$
         \end{enumerate}
       \end{example}
     \end{column}
@@ -120,4 +122,21 @@
     \begin{column}{0.43\textwidth}\vspace{-0.6cm}
     \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}{}
+    \begin{table}[H]
+    \renewcommand{\arraystretch}{1.5}
+    \footnotesize
+    \begin{tabular}{ll}
+    \multicolumn{1}{c}{\textbf{Função}}            & \multicolumn{1}{c}{\textbf{Derivada}}                                         \\ \hline
+    \multicolumn{1}{|l|}{$f(x)=k$}                 & \multicolumn{1}{l|}{$f'(x)=0$}                                                \\ \hline
+    \multicolumn{1}{|l|}{$f(x)=x^n$}               & \multicolumn{1}{l|}{$f'(x)=n \cdot x^{n-1}$}                                  \\ \hline
+    \multicolumn{1}{|l|}{$f(x)=a^x$}               & \multicolumn{1}{l|}{$f'(x)=\ln a \cdot a^x$}                                  \\ \hline
+    \multicolumn{1}{|l|}{$f(x)=a\cdot u(x)$}       & \multicolumn{1}{l|}{$f'(x)=a\cdot u'(x)$}                                     \\ \hline
+    \multicolumn{1}{|l|}{$f(x)=u(x)\pm v(x)$}      & \multicolumn{1}{l|}{$f'(x)=u'(x)\pm v'(x)$}                                   \\ \hline
+    \multicolumn{1}{|l|}{$f(x)=u(x)\cdot v(x)$}     & \multicolumn{1}{l|}{$f'(x)=u'(x)\cdot v(x)+u(x)\cdot v'(x)$}                  \\ \hline
+    \multicolumn{1}{|l|}{$f(x)=\dfrac{u(x)}{v(x)}$} & \multicolumn{1}{l|}{$f'(x)=\dfrac{u'(x)\cdot v(x)-u(x)\cdot v'(x)}{[v(x)]^2}$} \\ \hline
+    \end{tabular}
+\end{table}
 \end{frame}
