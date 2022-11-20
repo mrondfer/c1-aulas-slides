@@ -1,0 +1,16 @@
+\documentclass[crop,tikz]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[axis x line=center,axis y line=center,xlabel={$x$},ylabel={$y$},xlabel style={right},ylabel style={below right},xmin=-2.5,xmax=2.5,ymin=-2,ymax=4,ticks=none,axis line style={-latex},width=0.4\textwidth]
+      \addplot[mark=none,domain=-2:2,color=blue,thick] {-2*x+2};
+      \node[circle,inner sep=0pt,minimum size=3pt,fill=black] (X) at (1,0) {};
+      \node[xshift=13pt,yshift=5pt] at (X) {\small $-b/a$};
+      \node[circle,inner sep=0pt,minimum size=3pt,fill=black] (Y) at (0,2) {};
+      \node[xshift=-5pt,yshift=-5pt] at (Y) {\small $b$};
+    \end{axis}
+    \node[draw] at (1.6,3) {$a < 0$};
+  \end{tikzpicture}%
+\end{document}

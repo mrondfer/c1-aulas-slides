@@ -1,0 +1,41 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[%
+      trig format plots=rad,
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 2},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below},
+      ylabel style={right},
+      xmin=-2*pi-1.2,xmax=2*pi+1.2,
+      xtick={-2*pi,-pi,pi,2*pi},
+      xticklabels={$-2\pi$,$-\pi$,$\pi$,$2\pi$},
+      ymin=-1.2,ymax=1.6,
+      ytick={-1,1},
+      ytick style={draw=none},
+      yticklabel style={left},
+      axis line style={-latex},
+      legend entries={$\mbox{sen}{x}$,,$\cos{x}$},
+      legend columns=2,
+      legend style={at={(axis cs:-1,1.65)}}
+    ]%
+      \node at (pi/4,1.3) {$\frac{\pi}{2}$};
+      \draw[stealth-stealth] (0,1.1) -- (pi/2,1.1);
+
+      \draw[densely dotted] (-2*pi-1,1) -- (2*pi+1,1);
+      \draw[densely dotted] (-2*pi-1,-1) -- (2*pi+1,-1);
+
+      \addplot[mark=none,domain=-2*pi:2*pi,color=orange,thick,samples=1000] {sin(x)};
+      \addplot[mark=none,dashed,domain=-2*pi-1:2*pi+1,color=orange,thick,samples=1000] {sin(x)};
+
+      \addplot[mark=none,domain=-2*pi:2*pi,color=red,thick,samples=1000] {cos(x)};
+      \addplot[mark=none,dashed,domain=-2*pi-1:2*pi+1,color=red,thick,samples=1000] {cos(x)};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

@@ -1,0 +1,30 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below,font=\scriptsize},
+      ylabel style={left,font=\scriptsize},
+      xmin=-1.5,xmax=8.5,
+      xtick=\empty,
+      xticklabel style={font=\tiny},
+      ymin=-6.5,ymax=6.5,
+      ytick=\empty,
+      yticklabel style={font=\tiny,xshift=0.3em},
+      axis line style={-latex},
+      restrict y to domain=-15:15,
+      declare function={
+        f(\x) = 0.4/(\x-3)^1+2;
+      }
+    ]%
+      \addplot[mark=none,color=orange,thick,samples=1000,domain=-5:8.1] {f(x)};
+      \draw[densely dotted,red] (3,-15) -- (3,15) node[pos=0.5,xshift=0.6em,yshift=-0.5em] {\small $x_{0}$};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

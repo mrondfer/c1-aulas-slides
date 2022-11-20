@@ -1,0 +1,42 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      % axis on top,
+      % unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below},ylabel style={left},
+      xmin=-5,xmax=5,xtick=\empty,
+      ymin=-6.25,ymax=6.25,ytick=\empty,
+      restrict y to domain=-6.25:6.25,
+      axis line style={-latex},
+      legend entries={$f(x)$,$g(x)$},
+      legend columns=1,
+      legend style={at={(axis cs:4.8,6)}},
+      declare function={
+        f(\x) = \x^2 + 1;
+        g(\x) = -f(\x);
+      }
+    ]%
+      \addplot[mark=none,domain=-5:5,color=orange,thick,samples=1000]{f(x)};
+      \addplot[mark=none,domain=-5:5,color=red,thick,samples=1000]{g(x)};
+
+      \def\x{1};
+
+      \draw[fill=black] (\x,{f(\x)}) circle (1pt);
+      \node[yshift=0.3em,xshift=-0.3em] at (\x,{f(\x)}) {$P$};
+
+      \draw[fill=black] (\x,{g(\x)}) circle (1pt);
+      \node[yshift=-0.4em,xshift=-0.4em] at (\x,{g(\x)}) {$Q$};
+
+      \draw[stealth-stealth,densely dotted] (\x,{f(\x)-0.1}) -- (\x,{0.1});
+      \draw[stealth-stealth,densely dotted] (\x,{-0.1}) -- (\x,{g(\x)+0.1});
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

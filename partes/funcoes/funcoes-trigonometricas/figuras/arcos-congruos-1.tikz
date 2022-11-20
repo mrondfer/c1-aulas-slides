@@ -1,0 +1,23 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \draw (0,0) circle (1);
+    \draw[red] (0.2,0) arc (0:45:0.2);
+    \draw[red] (1,0) arc (0:45:1);
+    \draw[-latex,line width=0.25pt] (-1.7,0) -- +(3.4,0);
+    \draw[-latex,line width=0.25pt] (0,-1.7) -- +(0,3.4);
+    \node at (1.8,0) {$x$};
+    \node at (0,1.8) {$y$};
+    \draw[line width=0.25pt] (0,0) -- ({0.5*sqrt(2)},{0.5*sqrt(2)});
+    \node at (1,1.5) {$\phantom{45\mbox{°}+360\mbox{°}}$};
+    \fill[red] ({0.5*sqrt(2)},{0.5*sqrt(2)}) circle (0.04);
+    \node[red] at (0.4,0.12) {$45\mbox{°}$};
+    \node[red] at (0.85,-0.15) {$A$};
+    \node[red] at (0.65,0.5) {$B$};
+    \fill[red] (1,0) circle (0.04);
+  \end{tikzpicture}%
+\end{document}

@@ -1,0 +1,298 @@
+\section{Funções Injetoras, Sobrejetoras, Bijetoras e Inversas}
+
+\subsection{Função Injetora}
+\begin{frame}
+  \begin{definition}[Função Injetora]
+    Seja $f:A\rightarrow B$ uma função. Dizemos que $f$ é uma \textbf{função injetora} se esta \emph{nunca repete os seus valores}. Em outras palavras, as \emph{imagens de elementos distintos do domínio são distintas}:
+    \begin{equation*}
+      \forall x_{1},x_{2}\in A, \,x_{1}\not=x_{2} \,\Rightarrow\, f(x_{1})\not=f(x_{2}).
+    \end{equation*}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.45\textwidth}\vspace*{-0.45cm}
+      \begin{figure}
+        \includefigure[width=0.9\textwidth]{diagrama-venn-injetora-1.pdf}
+      \end{figure}
+      \begin{center}
+        \textbf{É uma função injetora}
+      \end{center}
+    \end{column}
+    \begin{column}{0.45\textwidth}\vspace*{-0.45cm}
+      \begin{figure}
+        \includefigure[width=0.9\textwidth]{diagrama-venn-injetora-2.pdf}
+      \end{figure}
+      \begin{center}
+        \textbf{NÃO é uma função injetora}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.55cm}
+      \begin{theorem}[Teste da Reta Horizontal]
+        Seja $f:A\rightarrow B$ uma função real. Então, $f$ é uma \textbf{função injetora} se, e somente se, qualquer reta horizontal interceptar o seu gráfico \emph{no máximo} uma vez.
+      \end{theorem}
+      \begin{itemize}
+        \item Não podemos analisar analiticamente todos os valores do domínio da função para verificar se ela é ou não injetora;
+        \item Uma reta horizontal interceptar duas vezes o gráfico da função significaria a existência de $x_{1}$ e $x_{2}$ em $A$, distintos, para os quais $f(x_{1})=f(x_{2})$;
+        \item Dessa forma, $f$ não poderá ser injetora se interceptada mais de uma vez por uma reta horizontal.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.65cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{reta-horizontal-1.pdf}
+        \vspace*{-0.8cm}
+      \end{figure}
+      \begin{center}
+        \textbf{É uma função injetora}
+      \end{center}
+      \vspace*{-0.25cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{reta-horizontal-2.pdf}
+        \vspace*{-0.8cm}
+      \end{figure}
+      \begin{center}
+        \textbf{NÃO é uma função injetora}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Sobrejetora}
+\begin{frame}
+  \begin{definition}[Função Sobrejetora]
+    Seja $f:A\rightarrow B$ uma função. Dizemos que $f$ é uma \textbf{função sobrejetora} se cada elemento de seu contradomínio é imagem de \emph{ao menos um} elemento de seu domínio. Em outras palavras, para cada $y\in B$, existe $x\in A$ tal que $y = f(x)$, resultando em:\vspace*{-0.2cm}
+    \begin{equation*}
+      B = \Image{f}\vspace*{-0.2cm}
+    \end{equation*}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.45\textwidth}\vspace*{-0.45cm}
+      \begin{figure}
+        \includefigure[width=0.9\textwidth]{diagrama-venn-sobrejetora-1.pdf}
+      \end{figure}
+      \begin{center}
+        \textbf{É uma função sobrejetora}
+      \end{center}
+    \end{column}
+    \begin{column}{0.45\textwidth}\vspace*{-0.45cm}
+      \begin{figure}
+        \includefigure[width=0.9\textwidth]{diagrama-venn-sobrejetora-2.pdf}
+      \end{figure}
+      \begin{center}
+        \textbf{NÃO é uma função sobrejetora}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Bijetora}
+\begin{frame}
+  \begin{definition}[Função Bijetora]
+    Seja $f:A\rightarrow B$ uma função. Dizemos que $f$ é uma \textbf{função bijetora} se esta for, ao mesmo tempo, \emph{injetora e sobrejetora}.
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}<only@1>{0.33\textwidth}\vspace*{0.4cm}
+      \begin{figure}
+        \includefigure[width=0.9\textwidth]{diagrama-venn-bijetora-1.pdf}
+      \end{figure}
+      \begin{center}
+        \textbf{NÃO é uma função bijetora}
+      \end{center}
+    \end{column}
+    \begin{column}<only@1>{0.33\textwidth}\vspace*{0.4cm}
+      \begin{figure}
+        \includefigure[width=0.9\textwidth]{diagrama-venn-bijetora-2.pdf}
+      \end{figure}
+      \begin{center}
+        \textbf{NÃO é uma função bijetora}
+      \end{center}
+    \end{column}
+    \begin{column}<only@1>{0.33\textwidth}\vspace*{0.4cm}
+      \begin{figure}
+        \includefigure[width=0.9\textwidth]{diagrama-venn-bijetora-3.pdf}
+      \end{figure}
+      \begin{center}
+        \textbf{NÃO é uma função bijetora}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \only<2>{
+    \begin{figure}
+      \includefigure[width=0.4\textwidth]{diagrama-venn-bijetora-4.pdf}
+    \end{figure}
+    \begin{center}
+      \textbf{É uma função bijetora}
+    \end{center}
+  }
+\end{frame}
+
+\subsection{Função Inversa}
+\begin{frame}
+  \begin{definition}[Função Inversa]
+    Seja $f:A\rightarrow B$ uma função. Dizemos que $f$ admite \textbf{inversa} se existir uma função $g:B\rightarrow A$ tal que $g(f(x)) = x$ para todo $x\in A$ e $f(g(y))=y$ para todo $y\in B$.
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure< 1 >[width=\textwidth]{diagrama-venn-inversa-1.pdf}
+        \includefigure< 2- >[width=\textwidth]{diagrama-venn-inversa-2.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}< 2- >{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Observações:}
+        \begin{enumerate}
+          \item A inversa, \emph{quando existir}, é \textbf{única}. Por isso, denotamos $ g=f^{-1}$;
+          \item<3> Ainda, podemos reescrever:\vspace*{-0.3cm}
+          \begin{equation*}
+            f^{-1}(f(x)) = x\mbox{ e }f(f^{-1}(y)) = y\vspace*{-0.3cm}
+          \end{equation*}
+          para cada $x\in A$ e $y\in B$;
+          \item<3> Ainda, temos que:\vspace*{-0.3cm}
+          \begin{equation*}
+            \Domain{f^{-1}} = \Codomain{f}\mbox{ e }\Codomain{f^{-1}} = \Domain{f};\vspace*{-0.3cm}
+          \end{equation*}
+          \item<3> Não confundir $f^{-1}$ com $\dfrac{1}{f}$.
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Existência da Função Inversa]
+    Seja $f:A\rightarrow B$ uma função. Então, $f$ \textbf{admite uma inversa} se, e somente se, $f$ for uma função \textbf{bijetora}.
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Dem.: ($f$ invertível $\Rightarrow$ $f$ bijetora)}
+        \begin{itemize}
+          \item Lembre que $f^{-1}$ é uma função de $B$ em $A$;
+          \item A condição $f^{-1}(f(x))=x$ para todo $x\in A$ implica que $f$ deve ser uma função injetora, do contrário um elemento de $B$ poderia possuir duas (ou mais) imagens;
+          \item A condição $f(f^{-1}(y))=y$ para todo $y\in B$ implica que $f$ deve ser uma função sobrejetora, pois $y$ é imagem de $f^{-1}(y)$ pela $f$.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure[width=\textwidth]{diagrama-venn-bijetora-4.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Existência da Função Inversa]
+    Seja $f:A\rightarrow B$ uma função. Então, $f$ \textbf{admite uma inversa} se, e somente se, $f$ for uma função \textbf{bijetora}.
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure[width=\textwidth]{diagrama-venn-bijetora-4.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Dem.: ($f$ invertível $\Leftarrow$ $f$ bijetora)}
+        \begin{itemize}
+          \item Como $f$ é sobrejetora, dado $y\in B$, existe $x\in A$ tal que $f(x) = y$;
+          \item Como $f$ é injetora, não existe outro $x$ com tal propriedade;
+          \item Com isso, podemos definir a função $f^{-1}$ através da lei $f^{-1}(y)=x$;
+          \item Dessa forma, temos que:
+          \begin{equation*}
+            f^{-1}(y) = x \Leftrightarrow f(x) = y
+          \end{equation*}
+          \begin{equation*}
+            f^{-1}(f(x)) = x \Leftrightarrow f(f^{-1}(y)) = y
+          \end{equation*}
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{definition}[Obtenção da Função Inversa]
+    Dada uma função $f:A\rightarrow B$, injetora, alguns passos são úteis no processo de determinação da sua função inversa $f^{-1}$:
+    \begin{enumerate}
+      \item Escrever $y=f(x)$;
+      \item Substituir $y$ por $x$ e $x$ por $y$ na expressão;
+      \item Isolar $y$ em função de $x$ para obter $y=f^{-1}(x)$.
+    \end{enumerate}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Importante:}
+        \begin{itemize}
+          \item Nem sempre é possível realizar o \textbf{Passo 3} de maneira analítica!
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Determine, se possível, inversas para as funções a seguir:
+  \end{example}
+  \begin{enumerate}
+    \item $f:\mathbb{R}\rightarrow\mathbb{R}$, $f(x)=x^{3}+1$;
+    \item $g:\mathbb{R}\rightarrow\mathbb{R}$, $g(x)=x^{2}+1$;
+    \item $h:\mathbb{R}\rightarrow[1,+\infty)$, $h(x)=x^{2}+1$;
+    \item $p:\mathbb{R}_{+}\rightarrow[1,+\infty)$, $p(x)=x^{2}+1$.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.55cm}
+      \begin{theorem}[Gráfico da Função Inversa]
+        Seja $f:A\rightarrow B$ uma função bijetora. Então, o gráfico da função inversa $f^{-1}:B\rightarrow A$ é obtido pela reflexão do gráfico da função $f$ em torno da reta $y=x$.
+      \end{theorem}
+      \begin{highlight}
+        \textbf{Para esboçar:}
+        \begin{enumerate}
+          \item< 2- > Esboçar o gráfico de $y=f(x)$;
+          \item< 3- > Esboçar a reta $y=x$;
+          \item< 4- > À cada ponto $(x,y)$ do gráfico da $f$, determinar a sua reflexão em torno da reta $y=x$, o ponto $(y,x)$;
+          \item< 5- > Esboçar o gráfico da $f^{-1}$ com base nos pontos obtidos no \textbf{Passo 3}.
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.55cm}
+      \begin{figure}
+        \includefigure<2>[width=\textwidth]{grafico-inversa-1.pdf}
+        \includefigure<3>[width=\textwidth]{grafico-inversa-2.pdf}
+        \includefigure<4>[width=\textwidth]{grafico-inversa-3.pdf}
+        \includefigure<5>[width=\textwidth]{grafico-inversa-4.pdf}
+        \includefigure<6>[width=\textwidth]{grafico-inversa-5.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.6\textwidth}\vspace*{-0.55cm}
+      \begin{example}
+        Esboce o gráfico das inversas das funções a seguir.
+      \end{example}
+      \begin{enumerate}
+        \item $f:\mathbb{R}_{+}\rightarrow \mathbb{R}_{+}$, onde $f(x) = x^{4}$;
+        \item $g:\mathbb{R}_{-}\rightarrow \mathbb{R}_{+}$, onde $g(x) = x^{4}$;
+        \item $h:\mathbb{R}\rightarrow \mathbb{R}^{*}_{+}$, onde $h(x) = 2^{x}$.
+        \item $p:\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\rightarrow [-1,1]$, onde $p(x) = \sen{x}$.
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.4\textwidth}\vspace*{-0.55cm}
+      %
+    \end{column}
+  \end{columns}
+\end{frame}

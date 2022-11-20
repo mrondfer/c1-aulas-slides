@@ -1,0 +1,82 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\tiny]
+    \begin{axis}[%
+      trig format plots=rad,
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={\scriptsize$x$},ylabel={\scriptsize$y$},
+      xlabel style={below},ylabel style={right},
+      xmin=-pi/2-0.25,xmax=pi/2+0.25,
+      xtick={0,1,pi/2},
+      xticklabels={$0$,$1$,$\frac{\pi}{2}$},
+      extra x ticks={-pi/2,-1},
+      extra x tick labels={$-\frac{\pi}{2}$,$-1$},
+      extra x tick style={xticklabel style={yshift=1.75em,xshift=-0.25em}},
+      ymin=-pi/2-0.25,ymax=pi/2+0.25,
+      ytick={0,1,pi/2},
+      yticklabels={$0$,$1$,$\frac{\pi}{2}$},
+      extra y ticks={-pi/2,-1},
+      extra y tick labels={$-\frac{\pi}{2}$,$-1$},
+      extra y tick style={yticklabel style={xshift=2.25em}},
+      axis line style={-latex},
+      declare function={
+        f(\x) = sin(\x);
+        g(\x) = asin(\x);
+      }
+    ]%
+
+      \draw[dotted] (-pi/2,0) -- (-pi/2,{f(deg(-pi/2))});
+      \draw[dotted] (-pi/2,{f(deg(-pi/2))}) -- (0,{f(deg(-pi/2))});
+      
+      \draw[dotted] (0,-pi/2) -- ({f(deg(-pi/2))},-pi/2);
+      \draw[dotted] ({f(deg(-pi/2))},-pi/2) -- ({f(deg(-pi/2))},0);
+
+      \draw[dotted] (pi/2,0) -- (pi/2,{f(deg(pi/2))});
+      \draw[dotted] (pi/2,{f(deg(pi/2))}) -- (0,{f(deg(pi/2))});
+      
+      \draw[dotted] (0,pi/2) -- ({f(deg(pi/2))},pi/2);
+      \draw[dotted] ({f(deg(pi/2))},pi/2) -- ({f(deg(pi/2))},0);
+
+      \addplot[%
+        mark=none,
+        dashed,
+        domain=-pi/2-0.25:pi/2+0.25,
+        samples=1000
+      ] {x} node[%
+        pos=0.09,
+        rotate=45,
+        xshift=-0.4em,
+        yshift=-0.4em
+      ] {\scriptsize$y=x$};
+
+      \addplot[%
+        mark=none,
+        domain=-pi/2:pi/2,
+        color=orange,
+        thick,
+        samples=1000
+      ] {f(x)} node[%
+        pos=0.98,
+        yshift=0.4em
+      ] {\scriptsize$\mbox{sen}\,{x}$};
+      
+      \addplot[%
+        mark=none,
+        domain=-1:1,
+        color=red,
+        thick,
+        samples=1000
+      ] {g(x)} node[%
+        pos=1,
+        yshift=0.4em
+      ] {\scriptsize$\mbox{arcsen}\,{x}$};
+
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

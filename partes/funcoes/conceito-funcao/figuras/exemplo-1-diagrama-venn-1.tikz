@@ -1,0 +1,37 @@
+\documentclass[crop,tikz]{standalone}
+\begin{document}
+  \usetikzlibrary{shapes.geometric,positioning}
+  \begin{tikzpicture}
+    \node[ellipse,draw,fill=white,thick,minimum height=3.5cm,minimum width=1.5cm,outer sep=8pt] (A) at (0,0) {};    
+    \node at (A.115) {A};
+
+    \node[circle,draw=gray,inner sep=0pt,minimum size=7pt,fill=black,yshift=30pt,xshift=5pt] (A1) at (A) {};
+    \node[left=2pt of A1,yshift=0.5pt] at (A1) {\scriptsize Fev};
+
+    \node[circle,draw=gray,inner sep=0pt,minimum size=7pt,fill=black,yshift=-30pt,xshift=5pt] (A2) at (A1) {};
+    \node[left=2pt of A2,yshift=0.5pt] at (A2) {\scriptsize Mar};
+
+    \node[circle,draw=gray,inner sep=0pt,minimum size=7pt,fill=black,yshift=-60pt] (A3) at (A1) {};
+    \node[left=2pt of A3,yshift=0.5pt] at (A3) {\scriptsize Abr};    
+    
+    \node[ellipse,draw,fill=white,thick,minimum height=3.5cm,minimum width=1.5cm,outer sep=8pt,right=1cm of A] (B) at (A) {};  
+    \node at (B.65) {B};
+
+    \node[circle,draw=gray,inner sep=0pt,minimum size=7pt,fill=black,yshift=35pt,xshift=-5pt] (B1) at (B) {};
+    \node[xshift=7pt] at (B1.-60) {\scriptsize 28};
+
+    \node[circle,draw=gray,inner sep=0pt,minimum size=7pt,fill=black,yshift=-20pt,xshift=-5pt] (B2) at (B1) {};
+    \node[xshift=7pt] at (B2.-60) {\scriptsize 29};
+
+    \node[circle,draw=gray,inner sep=0pt,minimum size=7pt,fill=black,yshift=-25pt] (B3) at (B2) {};
+    \node[xshift=7pt] at (B3.-60) {\scriptsize 30};
+
+    \node[circle,draw=gray,inner sep=0pt,minimum size=7pt,fill=black,yshift=-70pt] (B4) at (B1) {};
+    \node[xshift=7pt] at (B4.-60) {\scriptsize 31};
+
+    \draw[-stealth,line width=1pt,color=gray] (A1) -- (B1);
+    \draw[-stealth,line width=1pt,color=gray] (A1) -- (B2);
+    \draw[-stealth,line width=1pt,color=gray] (A2) -- (B4);
+    \draw[-stealth,line width=1pt,color=gray] (A3) -- (B3);    
+  \end{tikzpicture}%
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below,font=\scriptsize},
+      ylabel style={left,font=\scriptsize},
+      xmin=-3.5,xmax=8.5,
+      xtick={-3,-2,-1,0,1,2,3,4,5,6,7,8},
+      xticklabel style={font=\tiny},
+      ymin=-1.5,ymax=6.5,
+      ytick={-1,0,1,2,3,4,5,6},
+      yticklabel style={font=\tiny,xshift=0.3em},
+      axis line style={-latex},
+      grid=major,
+      major grid style={gray!15},
+      declare function={
+        f(\x) = \x + 1;
+        g(\x) = -\x + 8;
+      }
+    ]%
+      \addplot[mark=none,color=orange,thick,samples=1000,%
+        domain=-5:2,
+      ] {f(x)};
+      \addplot[mark=none,color=orange,thick,samples=1000,%
+        domain=2:8,
+      ] {g(x)};
+
+      \addplot[mark=*,mark size=1.5pt,color=orange] coordinates {(2,3)};
+      \addplot[mark=*,mark size=1pt,color=white] coordinates {(2,3)};
+      \addplot[mark=*,mark size=1.5pt,color=orange] coordinates {(2,6)};
+      \addplot[mark=*,mark size=1pt,color=white] coordinates {(2,6)};
+      \addplot[mark=*,mark size=1.5pt,color=orange] coordinates {(2,4)};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

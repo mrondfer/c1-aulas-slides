@@ -1,0 +1,13 @@
+\documentclass[crop,tikz]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[axis x line=center,axis y line=center,xlabel={$t$},ylabel={$y$},xlabel style={right},ylabel style={left},xmin=-6,xmax=6,xtick={-5,-4,-3,-2,-1,0,1,2,3,4,5},ymin=-6,ymax=5,ytick={-5,-4,-3,-2,-1,0,1,2,3,4},axis line style={-latex},major grid style={dotted,gray},grid=major]
+      \addplot[mark=none,domain=-1:5,color=blue,thick,samples=200] {-(x-2)^2+4};
+      \addplot[mark=none,color=blue,thick] coordinates {(-1,-5)(-3,2)};
+      \addplot[mark=none,color=blue,thick] coordinates {(-3,2)(-4,-2)};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

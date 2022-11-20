@@ -1,0 +1,266 @@
+\section{Formalização do Conceito de Limite}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}\small
+      \begin{definition}[Limite]
+        Sejam $f$ uma função definida em \\$I=(a,\,b)$, $x_{0}\in I$, com a possível exceção de que $f(x)$ não precisa estar definida em $x_{0}$. Quando existir, $L\in\mathbb{R}$ é o \textbf{limite} da $f$ quando $x$ tende para $x_{0}$, denotado por\vspace*{-0.2cm}
+        \begin{equation*}
+          \lim_{x\to x_{.}}{f(x)}=L,\vspace*{-0.2cm}
+        \end{equation*}
+        se, $\forall\epsilon>0$, $\exists\delta>0$ tal que\vspace*{-0.2cm}
+        \begin{equation*}
+          0<\left|x-x_{0}\right|<\delta \to \left|f\left(x\right)-L\right|<\epsilon\vspace*{-0.2cm}
+        \end{equation*}
+      \end{definition}
+      \begin{itemize}\small
+        \item \textbf{Weierstrass:} formaliza as noções de ``estar tão próximo quanto se queira'' e de ``estar suficientemente próximo''.
+        \item A ideia é aproximar o valor de $L$ \emph{tão bem quanto se queira} a partir dos valores de $f(x)$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}\small
+      Assim, para que $\displaystyle\lim_{x\to a}f(x) = L$, deve-se:
+      \begin{itemize}
+        \item Para toda escolha de $\epsilon > 0$\vspace{-0.1cm}
+        \item Buscar algum $\delta > 0$ tal que\vspace{-0.1cm}
+        \item Para $x$ suficientemente próximo de $a$ ($0<|x-a|<\delta$)\vspace{-0.1cm}
+        \item $f(x)$ esteja tão próximo de $L$ quanto se queira ($|f(x)-L|<\epsilon$)\vspace{-0.1cm}
+      \end{itemize}
+      \begin{figure}
+        \includefigure[width=0.99\textwidth]{definicao-formal.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Discuta a relação entre a existência do limite e o valor da função no ponto.
+      \end{example}
+      \begin{enumerate}
+        \item<only@1-2> $f(x) = 2x-1$ \\ \vspace{0.2cm}
+        $\displaystyle\lim_{x\to 2}{f(x)}=3$
+        \item<only@3-4> $\displaystyle g(x) = \frac{x^{2}+x-2}{x-1}$ \\ \vspace{0.2cm}
+        $\displaystyle\lim_{x\to 1}{g(x)}$
+        \item<only@5-6> $h(x) = \begin{cases}x+3, &\mbox{ se } x\not=-3 \\ 4, &\mbox{ se } x = -3\end{cases}$ \\ \vspace{0.2cm}
+        $\displaystyle\lim_{x\to -3}{h(x)}$
+        \item<only@7-8>
+        $\displaystyle p(x) = \begin{cases}x^{2} - 4, &\mbox{ se } x < -1 \\ 2x-5, &\mbox{ se } x \geq -1\end{cases}$ \\ \vspace{0.2cm}
+        $\displaystyle\lim_{x\to -1}{p(x)}$
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.48\textwidth}\vspace{-0.75cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo1-vazio.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo1.pdf}
+        \includefigure<3>[width=\textwidth]{exemplo2-vazio.pdf}
+        \includefigure<4>[width=\textwidth]{exemplo2.pdf}
+        \includefigure<5>[width=\textwidth]{exemplo3-vazio.pdf}
+        \includefigure<6>[width=\textwidth]{exemplo3.pdf}
+        \includefigure<7>[width=\textwidth]{exemplo4-vazio.pdf}
+        \includefigure<8>[width=\textwidth]{exemplo4.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Unicidade do Limite]
+    Seja $I$ um intervalo aberto contendo um ponto $a$ e $f$ uma função definida em $I$ exceto, talvez, em $x=a$. Se existir um número real $L$ para o qual
+    \begin{equation*}
+      \lim_{x\to a}{f\left(x\right)}=L,
+    \end{equation*}
+    então esse valor de $L$ é único.
+  \end{theorem}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Limite Lateral à Direita]
+        Seja $f$ uma função definida em um intervalo aberto $I$ contendo o ponto $a$, com a possível exceção de que $f$ não precisa estar definida em $a$. Quando existir, um número real $L$ é o limite pela direita da $f$ quando $x$ tende para $a$ por números maiores que $a$, denotado por 
+        \begin{equation*}
+          \lim_{x\to a^{+}}{f(x)}=L,
+        \end{equation*}
+        se, dado qualquer número real $\epsilon>0$, for possível encontrar um número real $\delta>0$ tal que $\left|f\left(x\right)-L\right|<\epsilon$ sempre que $a<x<a+\delta$.
+      \end{definition}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example-highlight}
+        Calcule o limite.
+        \begin{equation*}
+          \displaystyle\lim_{x\to -2^{+}}{\sqrt{x+2}}
+        \end{equation*}
+      \end{example-highlight}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo5-vazio.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo5.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Limite Lateral à Esquerda]
+        Seja $f$ uma função definida em um intervalo aberto $I$ contendo o ponto $a$, com a possível exceção de que $f$ não precisa estar definida em $a$. Quando existir, um número real $L$ é o limite pela esquerda da $f$ quando $x$ tende para $a$ por números menores que $a$, denotado por 
+        \begin{equation*}
+          \lim_{x\to a^{-}}{f(x)}=L,
+        \end{equation*}
+        se, dado qualquer número real $\epsilon>0$, for possível encontrar um número real $\delta>0$ tal que $\left|f\left(x\right)-L\right|<\epsilon$ sempre que $a-\delta<x<a$.
+      \end{definition}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example-highlight}
+        Calcule o limite.
+      \end{example-highlight}
+      \begin{equation*}
+        \displaystyle\lim_{x\to 2^{-}}{f(x)}
+      \end{equation*}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo6-vazio.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo6.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Existência do Limite]
+    Seja $f$ uma função definida em um intervalo aberto $I$ contendo o ponto $a$, com a possível exceção de que $f$ não precisa estar definida em $a$. Então, existe o limite da $f$ com $x$ tendendo para $a$ se, e somente se, existirem os limites laterais e estes foram idênticos.
+    
+    Em outras palavras, existe um número real $L$ tal que
+    \begin{equation*}
+      \lim_{x\to a}{f\left(x\right)}=L
+    \end{equation*}
+    se, e somente se, existirem os limites laterais e estes forem tais que
+    \begin{equation*}
+      \lim_{x\to a^+}{f\left(x\right)}=\lim_{x\to a^-}{f\left(x\right)}=L.
+    \end{equation*}
+  \end{theorem}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Considere a função
+        \begin{equation*}
+          f(x) = \sen{\left(\frac{\pi}{x}\right)}
+        \end{equation*}
+        para discutir o limite $\displaystyle\lim_{x\to 0}f(x)$.
+      \end{example}
+      \begin{itemize}
+        \item<only@1> Ao tomar valores de $x$ tais que
+        \begin{equation*}
+          x = \pm\frac{1}{10^k}, \quad k=0,\,1,\,2,\,3,\,4 \dots\vspace{-0.1cm}
+        \end{equation*}
+        \item<only@1> Pode-se verificar que $x\to 0$ e que
+        \begin{equation*}
+          \sen{\left(\frac{\pi}{x}\right)} = 0, \quad k=0,\,1,\,2,\,3,\,4 \dots
+        \end{equation*}
+        \item<only@2> Ao tomar valores de $x$ tais que
+        \begin{equation*}
+          x = \frac{2}{1 \pm 4k}, \quad k=0,\,1,\,2,\,3,\,4 \dots\vspace{-0.1cm}
+        \end{equation*}
+        \item<only@2> Pode-se verificar que $x\to 0$ e que
+        \begin{equation*}
+          \sen{\left(\frac{\pi}{x}\right)} = 1, \quad k=0,\,1,\,2,\,3,\,4 \dots
+        \end{equation*}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.85cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{exemplo7.pdf}
+      \end{figure}
+      \begin{itemize}
+        \item<only@1> ``Conclui-se'' que
+        \begin{equation*}
+          \lim_{x\to 0}{\sen{\left(\frac{\pi}{x}\right)}}=0
+        \end{equation*}
+        \textbf{Mas...}
+        \item<only@2> ``Conclui-se'' que
+        \begin{equation*}
+          \lim_{x\to 0}{\sen{\left(\frac{\pi}{x}\right)}}=1
+        \end{equation*}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Considere a função
+        \begin{equation*}
+          f(x) = \sen{\left(\frac{\pi}{x}\right)}
+        \end{equation*}
+        para discutir o limite $\displaystyle\lim_{x\to 0}f(x)$.
+      \end{example}
+      \textbf{Lições aprendidas:}
+      \begin{itemize}\small
+        \item Ao passo em que $x\to 0$, os valores da função oscilam, cada vez mais rapidamente, entre $-1$ e $1$.
+        \item Logo, não existem os limites laterais, nem o limite quando $x\to 0$.
+        \item Foram encontrados dois candidatos para o ``limite'', fato que violaria o teorema de unicidade do limite.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.85cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{exemplo7.pdf}
+      \end{figure}
+      \vspace{-0.1cm}
+      \begin{itemize}\small
+        \item Deve-se \textbf{cuidar com a simples amostragem} de valores para tentar encontrar o limite, ela pode levar a equívocos.
+        \item Alerta para a necessidade de recursos adicionais (teoremas) para que se possa analisar adequadamente certos limites.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Calcule, se existir o limite $\lim_{x\to 0}{f(x)}$, 
+        \begin{equation*}
+          f(x) = \begin{cases}
+            1 - x^{2}, &\mbox{ se } x < 0 \\
+            2, &\mbox{ se } x = 0 \\
+            e^{x}, &\mbox{ se } x > 0
+          \end{cases}
+        \end{equation*}
+      \end{example}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.85cm}
+      \begin{figure}
+        \includefigure<1>[width=0.8\textwidth]{exemplo8-vazio.pdf}
+        \includefigure<2>[width=0.8\textwidth]{exemplo8.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{block}{Exemplo 8}
+        Considere a função $f$ definida pelo gráfico a seguir. Caso existam, determine os valores solicitados.
+      \end{block}
+      \begin{enumerate}\small
+        \item $f(-2) = \qquad\qquad f(2) = $\vspace{0.5cm}
+        \item $\displaystyle\lim_{x\to 2}f(x) = $\vspace{0.8cm}
+        \item $\displaystyle\lim_{x\to 3}f(x) = $\vspace{0.8cm}
+        \item $\displaystyle\lim_{x\to -1}f(x) = $
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.85cm}
+      \begin{figure}
+        \includefigure[width=0.95\textwidth]{exemplo9.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}

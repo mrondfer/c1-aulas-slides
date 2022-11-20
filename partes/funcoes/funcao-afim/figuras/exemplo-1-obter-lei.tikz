@@ -1,0 +1,11 @@
+\documentclass[crop,tikz]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[axis x line=center,axis y line=center,xlabel={$x$},ylabel={$y$},xlabel style={right},ylabel style={left},xmin=-3.5,xmax=5.5,xtick={-3,-2,-1,0,1,2,3,4,5},ymin=-1.5,ymax=12,ytick={-1,0,1,2,3,4,5,6,7,8,9,10,11},axis line style={-latex},major grid style={dotted,gray},grid=major]
+      \addplot[mark=none,domain=-1:11,color=blue,thick] {-2*x+8};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

@@ -1,0 +1,171 @@
+\section{Derivada em Um Ponto}
+\subsection{Limites de Retas Secantes}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}\vspace*{-0.5cm}
+      \begin{itemize}
+        \item Considere $y=f(x)$, $x_{0}\in D(f)$ e $\Delta x\in\mathbb{R}$
+        \item E a \textbf{reta secante} $r$ ao gráfico da $f$ em\vspace{-0.2cm}
+        \begin{equation*}
+          P_{0}(x_{0},\,f(x_{0})) \mbox{ e } P(x_{0} + \Delta x,\,f(x_{0} + \Delta x))
+        \end{equation*}
+        \item Com isso, temos
+        \begin{itemize}
+          \item[$\to$] $\Delta x$: \emph{incremento} na variável $x$
+          \item[$\to$] $\Delta y = f(x_0+\Delta x) - f(x_{0})$
+          \item[$\to$]  $\tan\beta = \dfrac{\Delta y}{\Delta x}$
+        \end{itemize}
+        \item Observe a \textbf{reta tangente} $t$ ao gráfico da $f$ no ponto $P_{0}$
+        \item Ao passo que $\Delta x \to 0$, temos que $P \to P_{0}$, $r \to t$, $\beta \to \alpha$ e, por fim,
+        \begin{equation*}
+          \begin{split}
+            \tan{\alpha} &= \lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x} \\ &= \lim_{\Delta x\to 0}\frac{f(x_0+\Delta x) - f(x_{0})}{\Delta x}
+          \end{split}
+        \end{equation*}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}\vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{secante-tangente.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{A Derivada em um Ponto}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Derivada]
+        Seja $f$ uma função definida em um intervalo aberto $I$ contendo $x_{0}$. A \textbf{derivada} da função $f$ no ponto $(x_{0},\,f(x_{0}))$ é o número real
+        \begin{equation*}
+          f^{\prime}(x_{0}) = \lim_{h\to 0}\frac{f(x_{0}+h)-f(x_{0})}{h}
+        \end{equation*}
+        \emph{desde que} o limite exista.
+      \end{definition}
+      \begin{highlight}
+        \begin{itemize}
+          \item Caso o limite exista, dizemos que $f$ é derivável (ou diferenciável) em $x_{0}$;
+          \item Nesse caso, temos que\vspace*{-0.26cm}
+          \begin{equation*}
+            f^{\prime}(x_{0}) = \tan{\alpha},\vspace*{-0.26cm}
+          \end{equation*}
+          onde $\alpha$ é a \textbf{inclinação da reta tangente} ao gráfico da $f$ no ponto $(x_{0},\,f(x_{0}))$
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.5\textwidth}\vspace{-0.5cm}
+      \begin{itemize}
+        \item Definições alternativas\small
+        \begin{equation*}
+          f^{\prime}(x_{0}) = \lim_{\Delta x\to 0}\frac{f(x_{0}+\Delta x)-f(x_{0})}{\Delta x}
+        \end{equation*}
+        \begin{equation*}
+          f^{\prime}(x_{0}) = \lim_{x\to x_{0}}\frac{f(x)-f(x_{0})}{x - x_{0}}
+        \end{equation*}
+        \begin{equation*}
+          f^{\prime}(x_{0}) = \lim_{x\to x_{0}}\frac{y - y_{0}}{x - x_{0}}
+        \end{equation*}
+        \begin{equation*}
+          f^{\prime}(x_{0}) = \lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x}
+        \end{equation*}
+      \end{itemize}
+      \begin{itemize}
+        \item Notações alternativas
+        \begin{itemize}
+          \item[$\to$] Lagrange: $f^{\prime}(x_{0})$, $y^{\prime}(x_{0})$
+          \item[$\to$] Leibniz: $\dfrac{dy}{dx}(x_{0})$, $\dfrac{df}{dx}(x_{0})$
+          \item[$\to$] Newton: $\dot{x}(t_{0}) = \dfrac{dx}{dt}(t_{0})$
+        \end{itemize}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}\vspace{-0.5cm}
+      \begin{theorem}[Inclinação da Reta Tangente]
+        Seja $f$ uma função definida em um intervalo aberto $I$ contendo $x_{0}$ para a qual a derivada
+        \begin{equation*}
+          f^{\prime}(x_{0}) = \lim_{h\to 0}\frac{f(x_{0}+h)-f(x_{0})}{h}
+        \end{equation*}
+        exista. Então, a inclinação $m$ da reta tangente ao gráfico da função $f$ no ponto de coordenadas $(x_{0},\,f(x_{0}))$ é dada por
+        \begin{equation*}
+          m = f^{\prime}(x_{0}).
+        \end{equation*}
+      \end{theorem}
+      \begin{highlight}
+        \textbf{E a reta tangente é dada por:}
+        \begin{equation*}
+          y = y_{0} + m\cdot(x-x_{0})\vspace*{-0.2cm}
+        \end{equation*}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.5\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{secante-tangente.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Determine o valor da derivada de
+        \begin{equation*}
+          f(x) = x^{2} - 4
+        \end{equation*}
+        nos pontos $x_{0} = 1$ e $x_{1}=-2$. Faça a representação das retas tangentes ao gráfico nos pontos dados.
+      \end{example}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.8cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo1-vazio.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo1.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Encontre uma equação para a reta \\tangente à curva de equação
+        \begin{equation*}
+          y = \frac{2}{x}
+        \end{equation*}
+        no ponto de coordenadas $(2,\,1)$. Esboce a curva e a reta tangente.
+      \end{example}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo2-vazio.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Encontre as inclinações das retas tangentes à curva
+        \begin{equation*}
+          y = \sqrt{x}
+        \end{equation*}
+        em $x_{0} = 1$ e $x_{1} = 2$. Esboce a curva e as retas tangentes.
+      \end{example}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo3-vazio.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo3.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}

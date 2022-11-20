@@ -1,0 +1,68 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}%[font=\scriptsize]
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below},ylabel style={left},
+      xmin=-3,xmax=3,xtick={\empty},
+      ymin=-3,ymax=3,ytick={\empty},
+      axis line style={-latex},
+      declare function={
+        f(\x) = \x^3+0.25;
+        g(\x) = (\x-0.25)/abs(\x-0.25)*(abs(\x-0.25))^(1/3);
+      }
+    ]%
+      \addplot[%
+        mark=none,
+        dashed,
+        domain=-2.8:2.8,
+        samples=1000
+      ] {x} node[%
+        pos=0.93,
+        rotate=45,
+        xshift=0.4em,
+        yshift=0.4em
+      ] {\scriptsize$y=x$};
+      
+      \addplot[%
+        mark=none,
+        domain=-2.8:2.8,
+        color=orange,
+        thick,
+        samples=1000
+      ] {f(x)} node[%
+        pos=0.57,
+        xshift=-0.4em
+      ] {\scriptsize$f$};
+      
+      \addplot[%
+        mark=none,
+        domain=-3:3,
+        color=red,
+        thick,
+        samples=1000
+      ] {g(x)} node[%
+      pos=0.97,
+      yshift=-0.4em
+    ] {\scriptsize$f^{-1}$};
+
+    \def\xx{1.2};
+    \addplot[mark=*,mark size=1pt] coordinates {(\xx,{f(\xx)})};
+    \addplot[mark=*,mark size=1pt] coordinates {({f(\xx)},\xx)};
+
+    \draw[dotted] (\xx,{f(\xx)}) -- (\xx,0) node[yshift=-0.5em] {$x$};
+    \draw[dotted] ({f(\xx)},\xx) -- ({f(\xx)},0) node[yshift=-0.5em] {$y$};
+
+    \draw[dotted] (\xx,{f(\xx)}) -- (0,{f(\xx)}) node[xshift=-0.5em] {$y$};
+    \draw[dotted] ({f(\xx)},\xx) -- (0,\xx) node[xshift=-0.5em] {$x$};
+
+    \draw (\xx,{f(\xx)}) -- ({f(\xx)},\xx) node[rotate=-45,pos=0.25] {\tiny | } node[rotate=-45,pos=0.75] {\tiny | };
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

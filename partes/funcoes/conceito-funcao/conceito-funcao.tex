@@ -1,0 +1,277 @@
+\section{Conceito de Função}
+
+\begin{frame}
+  \begin{example}[Situação Problema]
+    Uma companhia de abastecimento de água cobra uma taxa fixa mensal de R\$ 20,00, além de R\$ 5,00 por cada metro cúbico (m\textsuperscript{3}) de água consumida.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.4\textwidth}
+      \vspace{-0.3cm}
+      \begin{enumerate}
+        \item Determine o valor da conta mensal de água para um consumo de 4 m\textsuperscript{3} de água no mês.
+        \item Determine uma relação entre o valor da conta mensal de água em e o consumo.
+        \item Apresente uma representação gráfica para a situação problema.
+      \end{enumerate}
+    \end{column}
+
+    \begin{column}{0.6\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{definition}[Função Real de Variável Real]
+    Dados dois conjuntos $A\subseteq\mathbb{R}$ e $B\subseteq\mathbb{R}$ não vazios, uma função $f$ de $A$ em $B$ é uma \emph{relação} que associa a cada elemento $x\in A$ um único elemento $y\in B$.
+  \end{definition}
+
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \textbf{Além disso}
+      \begin{itemize}
+        \item Lê-se: \\ ``$f$ \emph{é uma função de} $A$ \emph{em} $B$''
+        \item Denota-se $f:A\rightarrow B$
+        \item $A$ é o domínio de $f$
+        \item $x\in A$ é a variável independente
+        \item $B$ é o contradomínio de $f$
+        \item $y\in B$ é a variável dependente, $y=f(x)$
+        \item $Im\subseteq B$ é formado pelos elementos que possuem correspondente no domínio
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+       \includefigure[scale=1.2]{diagrama-venn.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Determine qual ou quais das relações a seguir representam uma função dos meses no número de dias:
+  \end{example}
+  \vspace*{1cm}
+  \begin{figure}
+    \includefigure[scale=1.2]{exemplo-1-diagrama-venn-1.pdf}
+    \includefigure[scale=1.2]{exemplo-1-diagrama-venn-2.pdf}
+    \includefigure[scale=1.2]{exemplo-1-diagrama-venn-3.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{definition}{Valor Numérico de uma Função}
+    Seja $f:A\rightarrow B$ uma função. O valor numérico de $f$ em um ponto $x\in A$ é o número $y\in B$ tal que $y=f(x)$.
+    
+    \textbf{Observação}
+    \begin{itemize}
+      \item Também é chamado de imagem de $x$ por $f$.
+      \item Isto é, $y$ é a imagem obtida ao aplicar a função $f$ em $x$
+    \end{itemize}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{example-highlight}
+        Considere a função $f(x) = x^2 - 4$ definida de $\mathbb{R}$ em $\mathbb{R}$. Determine:
+        \begin{enumerate}
+          \item O valor da $f$ em $x=4$
+          \item A imagem do ponto $x=-6$ pela função
+          \item O número $f(3)$
+        \end{enumerate}
+      \end{example-highlight}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      %
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{Definição 3. Zeros de uma Função}
+    Seja $f:A\rightarrow B$ uma função. Os zeros da $f$ são os valores de $x\in A$ para os quais $f(x) = 0$.
+
+    \textbf{Obervação}
+    \begin{itemize}
+      \item Geometricamente, cada zero é um ponto de interseção entre o eixo $Ox$ e o gráfico da função.
+    \end{itemize}
+  \end{block}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{example-highlight}
+        Considere a função $f(x) = x^2 - 4$ definida de $\mathbb{R}$ em $\mathbb{R}$. Determine:
+      \end{example-highlight}
+      \begin{enumerate}
+        \item Os valores de $x$ tais que $f(x) = 12$
+        \item Os zeros dessa função
+      \end{enumerate}
+    \end{column}
+      %
+    \begin{column}{0.48\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Teste da Reta Vertical]
+    Seja $f:A\rightarrow B$ uma função. Dado $x\in A$, a reta vertical que contém o ponto $x$ deve cortar o gráfico da função uma e apenas uma vez.
+  \end{theorem}
+  \begin{figure}
+    \includefigure[scale=1.2]{teorema-reta-vertical-1.pdf}
+    \hspace*{0.75cm}
+    \includefigure[scale=1.2]{teorema-reta-vertical-2.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{theorem}[Domínio via Gráfico]
+        Seja $f:A\rightarrow B$ uma função. O domínio da função $f$ é o conjunto representado pela projeção do seu gráfico sobre eixo das abscissas (eixo $Ox$).
+      \end{theorem}
+      %
+      \begin{theorem}[Imagem via Gráfico]
+        Seja $f:A\rightarrow B$ uma função. A imagem da função $f$ é o conjunto representado pela projeção do seu gráfico sobre eixo das ordenadas (eixo $Oy$).
+      \end{theorem}
+      %
+      \begin{example-highlight}
+        Sobre a função $f$ cujo gráfico é exibido ao lado, determine:
+      \end{example-highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \begin{enumerate}
+          \item O domínio da função $f$
+          \item A imagem da função $f$
+        \end{enumerate}
+      \end{highlight}
+      \vspace*{-0.25cm}
+      \begin{figure}
+        \includefigure{exemplo-2-reta-vertical.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{example}
+        Considere o gráfico a seguir de uma função $y=g(x)$ para fazer o que é pedido.
+      \end{example}
+      \vspace*{-0.25cm}
+      \begin{figure}
+        \includefigure{exemplo-3-reta-vertical.pdf}
+      \end{figure}
+    \end{column}
+    %
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \begin{enumerate}
+          \item O domínio da função $g$
+          \item A imagem da função $g$
+          \item Quais são os valores de $x$ tais que $g(x) = 3$?
+          \item Quais são os zeros dessa função?
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Estudo da Monotonia}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Estudo da Monotonia I]
+        Seja $f$ uma função real, $I\subseteq\Domain{f}$ um intervalo e $x_{1},x_{2}\in I$. Dizemos que: 
+        \begin{enumerate}
+          \item $f$ é \textbf{crescente} em $I$ se $f(x_{1}) \leq f(x_{2})$ sempre que $x_{1} < x_{2}$;
+          \item $f$ é \textbf{estritamente crescente} em $I$ se $f(x_{1}) < f(x_{2})$ sempre que $x_{1} < x_{2}$.
+        \end{enumerate}
+      \end{definition}
+      \begin{itemize}
+        \item Se $f$ é \textbf{crescente} em $I$, os valores de seu gráfico \textbf{nunca decrescem} a medida que este é percorrido da esquerda para a direita em $I$;
+        \item Se $f$ é \textbf{estritamente crescente} em $I$, os valores de seu gráfico \textbf{sempre crescem} a medida que este é percorrido da esquerda para a direita em $I$.
+      \end{itemize}
+    \end{column}
+    %
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure[width=\textwidth]{funcao-crescente-decrescente.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Estudo da Monotonia II]
+        Seja $f$ uma função real, $I\subseteq\Domain{f}$ um intervalo e $x_{1},x_{2}\in I$. Dizemos que: 
+        \begin{enumerate}
+          \item $f$ é \textbf{decrescente} em $I$ se $f(x_{1}) \geq f(x_{2})$ sempre que $x_{1} < x_{2}$;
+          \item $f$ é \textbf{estritamente decrescente} em $I$ se $f(x_{1}) > f(x_{2})$ sempre que $x_{1} < x_{2}$.
+        \end{enumerate}
+      \end{definition}
+      \vspace*{-0.1cm}
+      \begin{itemize}
+        \item Se $f$ é \textbf{decrescente} em $I$, os valores de seu gráfico \textbf{nunca crescem} a medida que este é percorrido da esquerda para a direita em $I$;
+        \item Se $f$ é \textbf{estritamente decrescente} em $I$, os valores de seu gráfico \textbf{sempre decrescem} a medida que este é percorrido da esquerda para a direita em $I$.
+      \end{itemize}
+    \end{column}
+    %
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure[width=\textwidth]{funcao-crescente-decrescente.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{example}
+        Considere o gráfico a seguir de uma função $y=h(t)$ para fazer o que é pedido.
+      \end{example}
+      \vspace*{-0.45cm}
+      \begin{figure}
+        \includefigure{exemplo-4-reta-vertical.pdf}
+      \end{figure}
+    \end{column}
+
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \begin{enumerate}
+          \item Confirme que é o gráfico de uma função
+          \item O domínio da função $h$
+          \item A imagem da função $h$
+          \item $h(-2)$, $h(2)$, $h(3)$, $h(-5)$, $h(4)$
+          \item Quais os valores de $t$ tais que $h(t) = 3$?
+          \item Os intervalos de crescimento/decrescimento?
+          \item Valores de $t$ para os quais $h(t)>0$
+          \item Valores de $t$ para os quais $h(t)<0$
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Domínio Natural]
+        Seja $f$ uma função real. Chamados de \textbf{domínio natural} o conjunto máximo de valores para os quais a função é definida.
+      \end{definition}
+      \begin{example-highlight}
+        \,Determine o domínio natural das funções a seguir:
+        \begin{enumerate}
+          \item $f(x) = x^{2}$
+          \item $g(x) = \dfrac{1}{x}$
+          \item $h(x) = \dfrac{1}{x^{2}-1}$
+          \item $p(x) = \sqrt{x}$
+        \end{enumerate}
+      \end{example-highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}

@@ -1,0 +1,69 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[%
+      % trig format plots=rad,
+      axis x line=center,axis y line=center,
+      % axis on top,
+      unit vector ratio={1 1.1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below},ylabel style={left},
+      xmin=-2*pi-1,xmax=2*pi+1,
+      xtick={pi/2,(pi/2)/(b)},
+      xticklabels={$\frac{\pi}{2}$,$\pi$},
+      xtick style={draw=none},
+      extra x ticks={-(pi/2)/(b),-pi/2},
+      extra x tick labels={$-\pi$,$-\frac{\pi}{2}$},
+      extra x tick style={xticklabel style={above,xshift=0.3em,yshift=0.3em}},
+      ymin=-1.5,ymax=1.5,
+      ytick={1},
+      ytick style={draw=none},
+      yticklabels={$1$},
+      extra y ticks={-1},
+      extra y tick style={yticklabel style={right}},
+      extra y tick labels={$-1$},
+      restrict y to domain=-3:3,
+      axis line style={-latex},
+      % legend entries={$\mbox{sen}\,{x}$,,$\mbox{sen}\,{\frac{1}{2}x}$},
+      % legend columns=2,
+      %legend style={at={(axis cs:-2.8,-1.6)}},
+      declare function={
+        b = 0.5;
+        f(\x) = sin(deg(\x));
+        g(\x) = f(b*\x);
+      }
+    ]%
+      \def\x{pi/2};
+
+      \draw[dotted] (\x,{f(\x)}) -- (\x,0);
+      \draw[dotted] (\x/b,{g(\x/b)}) -- (\x/b,0);
+      \draw[dotted] (0,{g(\x/b)}) -- (\x/b,{g(\x/b)});
+
+      \draw[dotted] (-\x,{f(-\x)}) -- (-\x,0);
+      \draw[dotted] (-\x/b,{g(-\x/b)}) -- (-\x/b,0);
+      \draw[dotted] (0,{g(-\x/b)}) -- (-\x/b,{g(-\x/b)});
+
+      \draw[densely dotted,-stealth] (3*pi/2,{g(3*pi/2)}) -- +(0.95em,0.5em);
+      \node[color=red,xshift=2.2em,yshift=0.6em] at (3*pi/2,{g(3*pi/2)})  {$\mbox{sen}\,{\frac{1}{2}x}$};
+
+      \draw[densely dotted,-stealth] (-3*pi/2,{f(-3*pi/2)}) -- +(-0.95em,0.4em);
+      \node[color=orange,xshift=-1.9em,yshift=0.5em] at (-3*pi/2,{f(-3*pi/2)})  {$\mbox{sen}\,{x}$};
+
+      \addplot[mark=none,domain=-2*pi:2*pi,color=orange,thick,samples=1000]{f(x)};
+      \addplot[mark=none,dashed,domain=-2*pi-1:2*pi+1,color=orange,thick,samples=1000]{f(x)};
+      \addplot[mark=none,domain=-2*pi:2*pi,color=red,thick,samples=1000]{g(x)};
+      \addplot[mark=none,dashed,domain=-2*pi-1:2*pi+1,color=red,thick,samples=1000]{g(x)};
+
+      \draw[fill=black] (\x,{f(\x)}) circle (1pt);
+      \draw[fill=black] (\x/b,{g(\x/b)}) circle (1pt);
+
+      \draw[fill=black] (-\x,{f(-\x)}) circle (1pt);
+      \draw[fill=black] (-\x/b,{g(-\x/b)}) circle (1pt);
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

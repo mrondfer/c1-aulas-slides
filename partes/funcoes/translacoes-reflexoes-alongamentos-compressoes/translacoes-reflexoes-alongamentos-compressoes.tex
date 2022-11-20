@@ -1,0 +1,208 @@
+\section{Translações, Reflexões, Alongamentos e Compressões}
+
+\subsection{Translação Vertical}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Translação Vertical]
+        Seja $f$ uma função real. Dado $k\in\R$, definimos a translação vertical de $f$ por $k$ unidades através da função
+        \begin{equation*}
+          g(x) = f(x) + k.
+        \end{equation*}
+      \end{definition}
+      \vspace*{-0.2cm}
+      \begin{itemize}
+       \item À cada ponto $P(x,\,f(x))$ do gráfico da $f$, corresponderá o ponto $Q(x,f(x)+k)$ (ou $Q(x,g(x))$) no gráfico da $g$;
+        \item A distância entre os pontos $P$ e $Q$ sempre será de $|k|$ unidades;
+        \item O gráfico da $g$ com respeito ao de $f$:
+        \begin{itemize}
+          \item \emph{``subirá''} $k$ unidades se $k>0$;
+          \item<2> \emph{``descerá''} $|k|$ unidades se $k<0$.
+        \end{itemize}
+        \item Temos que $\Domain{g} = \Domain{f}$ e $\Image{g}=\{y+k:y\in\Image{f}\}$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{translacao-vertical-1.pdf}
+        \includefigure<2>[width=\textwidth]{translacao-vertical-2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Translação Horizontal}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Translação Horizontal]
+        Seja $f$ uma função real. Dado $h\in\R$, definimos a translação horizontal de $f$ por $h$ unidades através da função
+        \begin{equation*}
+          g(x) = f(x-h).
+        \end{equation*}
+      \end{definition}
+      \vspace*{-0.2cm}
+      \begin{itemize}
+        \item À cada ponto $P(x,\,f(x))$ do gráfico da $f$, corresponderá o ponto $Q(x+h,g(x+h))$ (ou $Q(x+h,f(x))$) no gráfico da $g$;
+        \item A distância entre os pontos $P$ e $Q$ sempre será de $|h|$ unidades;
+        \item O gráfico da $g$ com respeito ao de $f$:
+        \begin{itemize}
+          \item \emph{``avançará''} $h$ unidades se $h>0$;
+          \item<2> \emph{``retrocederá''} $|h|$ unidades se $h<0$.
+        \end{itemize}
+        \item Temos que $\Domain{g} = \{x:x-h\in\Domain{f}\}$ e $\Image{g}=\Image{f}$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{translacao-horizontal-1.pdf}
+        \includefigure<2>[width=\textwidth]{translacao-horizontal-2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Reflexão em Relação ao Eixo das Abscissas}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Reflexão em Torno de $Ox$]
+        Seja $f$ uma função real. Definimos a reflexão de $f$ em torno do eixo $x$ por meio da função
+        \begin{equation*}
+          g(x) = -f(x).
+        \end{equation*}
+      \end{definition}
+      \begin{itemize}
+        \item À cada ponto $P(x,\,f(x))$ do gráfico da $f$, corresponderá o ponto $Q(x,g(x))$ (ou $Q(x,-f(x))$) no gráfico da $g$;
+        \item A distância entre o ponto $P$ e o eixo $x$ é a mesma entre o ponto $Q$ e o eixo $x$;
+        \item Os pontos $P$ e $Q$ são simétricos com respeito ao eixo $x$;
+        \item Temos que $\Domain{g} = \Domain{f}$ e $\Image{g}=\{-y:y\in\Image{f}\}$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure[width=\textwidth]{reflexao-x.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Reflexão em Relação ao Eixo das Ordenadas}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Reflexão em Torno de $Oy$]
+        Seja $f$ uma função real. Definimos a reflexão de $f$ em torno do eixo $x$ por meio da função
+        \begin{equation*}
+          g(x) = f(-x).
+        \end{equation*}
+      \end{definition}
+      \begin{itemize}
+        \item À cada ponto $P(x,\,f(x))$ do gráfico da $f$, corresponderá o ponto $Q(-x,g(-x))$ (ou $Q(-x,f(x))$) no gráfico da $g$;
+        \item A distância entre o ponto $P$ e o eixo $y$ é a mesma entre o ponto $Q$ e o eixo $y$;
+        \item Os pontos $P$ e $Q$ são simétricos com respeito ao eixo $y$;
+        \item Temos que $\Domain{g} = \{x:-x\in\Domain{f}\}$ e $\Image{g}=\Image{f}$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure[width=\textwidth]{reflexao-y.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Alongamentos e Compressões Verticais}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Alongamento Vertical]
+        Seja $f$ uma função real. Dado $a\in\R$, com $a>1$, definimos o alongamento vertical (ou dilatação vertical) de $f$ em por meio da função
+        \begin{equation*}
+          g(x) = a\cdot f(x).
+        \end{equation*}
+      \end{definition}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.6cm}
+      \begin{itemize}
+        \item À cada ponto $P(x,\,f(x))$ do gráfico da $f$, corresponderá o ponto $Q(x,g(x))$ (ou $Q(x,a\cdot f(x))$) no gráfico da $g$;
+        \item Alonga o gráfico da $f$ verticalmente por um fator de $a$;
+        \item Temos que $\Domain{g} = \Domain{f}$ e $\Image{g}=\{a\cdot y:y\in\Image{f}\}$.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{figure}
+    \includefigure[width=0.9\textwidth]{alongamento-vertical.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Compressão Vertical]
+        Seja $f$ uma função real. Dado $a\in\R$, com $0<a<1$, definimos a compressão vertical (ou contração vertical) de $f$ em por meio da função
+        \begin{equation*}
+          g(x) = a\cdot f(x).
+        \end{equation*}
+      \end{definition}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.6cm}
+      \begin{itemize}
+        \item À cada ponto $P(x,\,f(x))$ do gráfico da $f$, corresponderá o ponto $Q(x,g(x))$ (ou $Q(x,a\cdot f(x))$) no gráfico da $g$;
+        \item Comprime o gráfico da $f$ verticalmente por um fator de $a$;
+        \item Temos que $\Domain{g} = \Domain{f}$ e $\Image{g}=\{a\cdot y:y\in\Image{f}\}$.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace*{-0.5cm}
+  \begin{figure}
+    \includefigure[width=0.9\textwidth]{compressao-vertical.pdf}
+  \end{figure}
+\end{frame}
+
+\subsection{Alongamentos e Compressões Horizontais}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Alongamento Horizontal]
+        Seja $f$ uma função real. Dado $b\in\R$, com $0<b<1$, definimos o alongamento horizontal (ou dilatação horizontal) de $f$ em por meio da função
+        \begin{equation*}
+          g(x) = f(b\cdot x).
+        \end{equation*}
+      \end{definition}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.6cm}
+      \begin{itemize}
+        \item À cada ponto $P(x,\,f(x))$ do gráfico da $f$, corresponderá o ponto $Q(x/b,g(x/b))$ (ou $Q\left(x/b\,,f(x)\right)$) no gráfico da $g$;
+        \item Alonga o gráfico da $f$ horizontalmente por um fator de $1/b$;
+        \item Temos que $\Domain{g} = \{x:b\cdot x\in\Domain{f}\}$ e $\Image{g}=\Image{f}$.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{figure}
+    \includefigure[width=0.95\textwidth]{alongamento-horizontal.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Compressão Horizontal]
+        Seja $f$ uma função real. Dado $b\in\R$, com $b>1$, definimos a compressão horizontal (ou contração horizontal) de $f$ em por meio da função
+        \begin{equation*}
+          g(x) = f(b\cdot x).
+        \end{equation*}
+      \end{definition}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.6cm}
+      \begin{itemize}
+        \item À cada ponto $P(x,\,f(x))$ do gráfico da $f$, corresponderá o ponto $Q(x/b,g(x/b))$ (ou $Q\left(x/b\,,f(x)\right)$) no gráfico da $g$;
+        \item Alonga o gráfico da $f$ horizontalmente por um fator de $1/b$;
+        \item Temos que $\Domain{g} = \{x:b\cdot x\in\Domain{f}\}$ e $\Image{g}=\Image{f}$.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{figure}
+    \includefigure[width=0.9\textwidth]{compressao-horizontal.pdf}
+  \end{figure}
+\end{frame}

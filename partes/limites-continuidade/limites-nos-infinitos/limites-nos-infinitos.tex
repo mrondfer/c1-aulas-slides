@@ -1,0 +1,201 @@
+\section{Limites nos Infinitos}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.55\textwidth}\vspace{-0.5cm}
+      \begin{definition}
+        Seja $f$ uma função definida em um intervalo \\aberto $(a,\,+\infty)$.Escrevemos $\displaystyle\lim_{x\rightarrow +\infty}f(x)=L$ se para qualquer $\epsilon>0$, existir um $A>0$ tal que $|f(x)-L| < \epsilon$ sempre que $x > A$.
+      \end{definition}
+    \end{column}
+    \begin{column}{0.44\textwidth}\vspace{-0.5cm}
+      \begin{highlight}
+        \textbf{Em outras palavras:}
+        \begin{itemize}
+          \item A medida com que $x$ cresce sem \emph{cota} \emph{superior}, os valores de $y$ permanecem \emph{praticamente} \emph{inalterados}.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+  \vspace*{-0.5cm}
+  \begin{figure}
+    \includefigure[width=\textwidth]{exemplo1.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.55\textwidth}\vspace{-0.5cm}
+      \begin{definition}
+        Seja $f$ uma função definida em um intervalo \\aberto $(-\infty,\,b)$. Escrevemos $\displaystyle\lim_{x\rightarrow -\infty}f(x)=L$ se para qualquer $\epsilon>0$, existir um $B<0$ tal que $|f(x)-L| < \epsilon$ sempre que $x < B$.
+      \end{definition}
+    \end{column}
+    \begin{column}{0.44\textwidth}\vspace{-0.5cm}
+      \begin{highlight}
+        \textbf{Em outras palavras:}
+        \begin{itemize}
+          \item A medida com que $x$ decresce sem \emph{cota inferior}, os valores de $y$ permanecem \emph{praticamente inalterados}
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+  \vspace*{-0.5cm}
+  \begin{figure}
+    \includefigure[width=\textwidth]{exemplo2.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}\vspace*{-0.5cm}
+      \begin{theorem}[\phantom{ç}]
+        Se $n$ é um número inteiro positivo qualquer, então
+        \begin{enumerate}
+          \item $\displaystyle\lim_{x\rightarrow +\infty}\dfrac{1}{x^{n}} = 0$
+          \item $\displaystyle\lim_{x\rightarrow -\infty}\dfrac{1}{x^{n}} = 0$
+        \end{enumerate}
+      \end{theorem}
+      \begin{highlight}
+        \textbf{Veja que}
+        \begin{itemize}
+          \item $\dfrac{k}{\pm\infty} = 0$
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.5\textwidth}\vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo3.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo4.pdf}
+        \includefigure<3>[width=\textwidth]{exemplo5.pdf}
+        \includefigure<4>[width=\textwidth]{exemplo6.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Use o teorema anterior para determinar o limite a seguir.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item $\displaystyle\lim_{x\rightarrow -\infty}\dfrac{3x^{5} - 5x^{4} + 3x}{x^{2} - 3x}$
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[\phantom{ç}]
+    Sejam as funções polinomiais $$p(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \cdots + a_{1}x + a_{0},$$ e $$q(x) = b_{m}x^{m} + b_{m-1}x^{m-1} + \cdots + b_{1}x + b_{0}.$$ Então, temos os limites nos infinitos da função racional
+    \begin{equation*}
+      \lim_{x\rightarrow\pm\infty}\dfrac{p(x)}{q(x)} = \lim_{x\rightarrow\pm\infty}\dfrac{a_{n}x^{n}}{b_{m}x^{m}}
+    \end{equation*}
+  \end{theorem}
+  \begin{highlight}
+    \textbf{Em outras palavras}
+    \begin{itemize}
+      \item Os limites nos infinitos de funções racionais podem ser encontrados analisando apenas os limites da função racional obtida ao considerarmos apenas os termos dominantes do numerador e do dominador
+    \end{itemize}
+  \end{highlight}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Use o teorema anterior para determinar o limite a seguir.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item $\displaystyle\lim_{x\rightarrow-\infty}\dfrac{3x^{5} - 5x^{4} + 3x}{x^{2} - 3x}$
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Determine os limites a seguir.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \begin{enumerate}
+        \item $\displaystyle\lim_{x\rightarrow +\infty}\dfrac{10x^{2} - x + 7}{2x^{2} + 9x - 3}$\vspace*{1cm}
+        \item $\displaystyle\lim_{x\rightarrow +\infty}\dfrac{- 3x + 6}{x^{3} + 2x + 1}$\vspace*{1cm}
+        \item $\displaystyle\lim_{x\rightarrow +\infty} 2x^{5} - 4x^{3} + 1$
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{definition}[Assíntota Horizontal]
+    Se $\displaystyle\lim_{x\rightarrow \infty}f(x)=L$ ou se $\displaystyle\lim_{x\rightarrow -\infty}f(x)=L$, então a reta $y=L$ é chamada de \textbf{assíntota horizontal} do gráfico da função $y=f(x)$.
+  \end{definition}
+  \begin{figure}
+    \includefigure[width=\textwidth]{exemplo7.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Esboce os gráficos e determine as assíntotas horizontais para as seguintes funções.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{enumerate}
+        \item<only@1-2> $f(x) = \arctan{x}$
+        \item<only@3-4> $f(x) = \dfrac{4x^{2}-1}{x^{2}}$
+        \item<only@5-6> $f(x) = e^{x} - 1$
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=0.9\textwidth]{exemplo8-vazio.pdf}
+        \includefigure<2>[width=0.9\textwidth]{exemplo8.pdf}
+        \includefigure<3>[width=\textwidth]{exemplo9-vazio.pdf}
+        \includefigure<4>[width=\textwidth]{exemplo9.pdf}
+        \includefigure<5>[width=\textwidth]{exemplo10-vazio.pdf}
+        \includefigure<6>[width=\textwidth]{exemplo10.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Considere a função $f(x) = \dfrac{3x+7}{x+2}$. Calcule os limites a seguir, as suas assíntotas (horizontais e verticais) e o seu gráfico.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.4\textwidth}
+      \begin{enumerate}
+        \item<only@1> $\displaystyle\lim_{x\rightarrow -1}f(x)$
+        \item<only@1> $\displaystyle\lim_{x\rightarrow -2}f(x)$
+        \item<only@1> $\displaystyle\lim_{x\rightarrow 0}f(x)$
+        \item<only@1> $\displaystyle\lim_{x\rightarrow +\infty}f(x)$
+        \item<only@1> $\displaystyle\lim_{x\rightarrow -\infty}f(x)$
+      \end{enumerate}
+      \visible<only@2->{
+        \begin{enumerate}
+          \item<only@2> $\displaystyle\lim_{x\rightarrow -1}f(x) = 4$
+          \item<only@2> $\displaystyle\lim_{x\rightarrow -2}f(x)\quad\not\exists$
+          \item<only@2> $\displaystyle\lim_{x\rightarrow 0}f(x) = 7/2$
+          \item<only@2> $\displaystyle\lim_{x\rightarrow +\infty}f(x) = 3$
+          \item<only@2> $\displaystyle\lim_{x\rightarrow -\infty}f(x) = 3$
+        \end{enumerate}
+      }
+    \end{column}
+    \begin{column}{0.6\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=0.9\textwidth]{exemplo11-vazio.pdf}
+        \includefigure<2>[width=0.9\textwidth]{exemplo11.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}

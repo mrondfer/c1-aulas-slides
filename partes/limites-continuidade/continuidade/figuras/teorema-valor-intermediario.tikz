@@ -1,0 +1,81 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below},ylabel style={left},
+      xmin=-4.0,xmax=10.0,xtick={\empty},
+      ymin=-1,ymax=7,ytick={\empty},
+      axis line style={-latex},
+      declare function={
+        fa(\x) = 0.3100*(\x+4.0900)^0+1.5028*(\x+4.0900)^1+0.0*(\x+4.0900)^2+0.0377*(\x+4.0900)^3;
+        fb(\x) = 2.5000*(\x+2.7000)^0+1.7211*(\x+2.7000)^1+0.1571*(\x+2.7000)^2-0.1174*(\x+2.7000)^3;
+        fc(\x) = 5.5000*(\x+0.8300)^0+1.0812*(\x+0.8300)^1-0.5015*(\x+0.8300)^2+0.0422*(\x+0.8300)^3;
+        fd(\x) = 5.5000*(\x-2.0000)^0-0.5918*(\x-2.0000)^1-0.1432*(\x-2.0000)^2+0.0320*(\x-2.0000)^3;
+        fe(\x) = 4.0000*(\x-4.0000)^0-0.7801*(\x-4.0000)^1+0.0490*(\x-4.0000)^2-0.0170*(\x-4.0000)^3;
+        ff(\x) = 2.5000*(\x-6.0000)^0-0.7877*(\x-6.0000)^1-0.0528*(\x-6.0000)^2+0.1608*(\x-6.0000)^3;
+        fg(\x) = 2.0000*(\x-8.0000)^0+0.9305*(\x-8.0000)^1+0.9122*(\x-8.0000)^2-0.1528*(\x-8.0000)^3;
+      }
+    ]%
+      \addplot[mark=none,color=orange,thick,samples=1000,%
+        domain=-4.0900:-2.7000,
+      ] {fa(x)};
+      \addplot[mark=none,color=orange,thick,samples=1000,%
+        domain=-2.7000:-0.8300,
+      ] {fb(x)};
+      \addplot[mark=none,color=orange,thick,samples=1000,%
+        domain=-0.8300:2.0000,
+      ] {fc(x)};
+      \addplot[mark=none,color=orange,thick,samples=1000,%
+        domain=2.0000:4.0000,
+      ] {fd(x)};
+      \addplot[mark=none,color=orange,thick,samples=1000,%
+        domain=4.0000:6.0000,
+      ] {fe(x)};
+      \addplot[mark=none,color=orange,thick,samples=1000,%
+        domain=6.0000:8.0000,
+      ] {ff(x)};
+      \addplot[mark=none,color=orange,thick,samples=1000,%
+        domain=8.0000:9.9900,
+      ] {fg(x)};
+      \addplot[mark=none,dashed,color=red,thick,samples=1000,
+      domain=-5:10,
+    ] {fd(4.75)} node[pos=0.32,yshift=0.3em] {\scriptsize$k$};
+
+      \addplot[mark=*,mark size=1.5pt,color=red] coordinates {(2.5,{fd(2.5)})};
+      \addplot[mark=*,mark size=1.5pt,color=red] coordinates {(7.0,{ff(7.0)})};
+      \addplot[mark=*,mark size=1.5pt,color=red] coordinates {(4.75,{fd(4.75)})};
+
+      \draw[densely dotted,color=red] (2.5,0) -- (2.5,{fd(2.5)}) node[pos=0,yshift=-0.3em] {\scriptsize$a$};
+      \draw[densely dotted,color=red] (2.5,{fd(2.5)}) -- (0,{fd(2.5)}) node[xshift=-0.72em] {\scriptsize$f(a)$};
+
+      \draw[densely dotted,color=red] (7.0,0) -- (7.0,{ff(7.0)}) node[pos=0,yshift=-0.3em] {\scriptsize$b$};
+      \draw[densely dotted,color=red] (7.0,{ff(7.0)}) -- (0,{ff(7.0)}) node[xshift=-0.72em] {\scriptsize$f(b)$};
+
+      \draw[densely dotted,color=red] (4.75,0) -- (4.75,{fd(4.75)}) node[pos=0,yshift=-0.3em] {\scriptsize$x_{0}$};
+
+      % \draw[densely dotted,color=gray!60] (-5,4.75) -- (11,2.5);
+      % \draw[densely dotted,color=gray!60] (-5,5.5) -- (11,5.5);
+      % \draw[densely dotted,color=gray!60] (2,-5) -- (2,10);
+      % \draw[densely dotted,color=gray!60] (6,-5) -- (6,10);
+      % \draw[dashed] (0,4) -- (4,4);
+      % \draw[dashed] (4,0) -- (4,4);
+
+      % \addplot[mark=*,mark size=1pt,color=red] coordinates {(4,4)} node[xshift=1.0em,yshift=0.7em] {\footnotesize$(x_{0},\,L)$};
+      % \addplot[mark=*,mark size=1pt,color=red] coordinates {(0,4)} node[xshift=-0.5em] {\footnotesize $L$};
+      % \addplot[mark=*,mark size=1pt,color=red] coordinates {(4,0)} node[yshift=-0.5em] {\footnotesize $x_{0}$};
+
+      % \addplot[mark=*,mark size=1pt,color=purple] coordinates {(2,0)} node[xshift=-0.2em,yshift=-0.5em] {\footnotesize$x_{0}-\delta$};
+      % \addplot[mark=*,mark size=1pt,color=purple] coordinates {(6,0)} node[xshift=-0.2em,yshift=-0.5em] {\footnotesize$x_{0}+\delta$};
+
+      % \addplot[mark=*,mark size=1pt,color=purple] coordinates {(0,2.5)} node[xshift=1em,yshift=-0.5em] {\footnotesize$L-\epsilon$};
+      % \addplot[mark=*,mark size=1pt,color=purple] coordinates {(0,5.5)} node[xshift=1em,yshift=-0.5em] {\footnotesize$L+\epsilon$};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

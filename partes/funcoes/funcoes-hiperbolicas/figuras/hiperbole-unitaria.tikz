@@ -1,0 +1,88 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below},ylabel style={left},
+      xmin=-3,xmax=3,xtick={\empty},
+      ymin=-3,ymax=3,ytick={\empty},
+      axis line style={-latex},
+      declare function={
+        f(\x) = sqrt(\x^2-1);
+        g(\x) = -sqrt(\x^2-1);
+      }
+    ]%
+
+      \addplot[dotted] {x};
+      \addplot[dotted] {-x};
+
+      \draw[%
+        loosely dashed,
+        color=black!20
+      ] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- cycle;
+
+      \addplot[%
+        mark=none,
+        domain=-5:-1,
+        color=orange,
+        thick,
+        samples=1000
+      ] {f(x)};
+
+      \addplot[%
+        mark=none,
+        domain=1:5,
+        color=orange,
+        thick,
+        samples=1000
+      ] {f(x)};
+
+      \addplot[%
+        mark=none,
+        domain=-5:-1,
+        color=orange,
+        thick,
+        samples=1000
+      ] {g(x)};
+
+      \addplot[%
+        mark=none,
+        domain=1:5,
+        color=orange,
+        thick,
+        samples=1000
+      ] {g(x)};
+
+      \draw[dashed] (0,{f(1.8)}) -- (1.8,{f(1.8)}) node[pos=0,xshift=-0.75em] {$y_{M}$} node[pos=0.5,yshift=0.7em] {$\mbox{cosh}\,{\alpha}$};
+
+      \draw[dashed] (1.8,0) -- (1.8,{f(1.8)}) node[pos=0,yshift=-0.5em] {$x_{M}$} node[pos=0.5,rotate=-90,yshift=0.7em] {$\mbox{senh}\,{\alpha}$};
+
+      \draw[name path=r] (0,0) -- (1.8,{f(1.8)});
+
+      \addplot[%
+      mark=none,
+      domain=1:1.8,
+      color=orange,
+      thick,
+      samples=1000,
+      name path=f
+    ] {f(x)};
+
+    \addplot[red!30, opacity=0.6] fill between[of=r and f];
+    \node at (0.75,0.25) {\normalsize$\frac{\alpha}{2}$};
+
+    \draw[fill=black] (1,0) circle (0.1em) node[xshift=0.25em,yshift=-0.4em] {\tiny$1$};
+    \draw[fill=black] (-1,0) circle (0.1em) node[xshift=-0.5em,yshift=-0.4em] {\tiny$-1$};
+    \draw[fill=black] (0,1) circle (0.1em) node[xshift=0.25em,yshift=-0.4em] {\tiny$1$};
+    \draw[fill=black] (0,-1) circle (0.1em) node[xshift=-0.5em,yshift=-0.4em] {\tiny$-1$};
+    \draw[fill=black] (1.8,{f(1.8)}) circle (0.1em) node[xshift=0.5em,yshift=-0.1em] {$M$};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

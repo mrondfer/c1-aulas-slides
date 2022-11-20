@@ -1,0 +1,34 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 2.2},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below,font=\scriptsize},
+      ylabel style={right,font=\scriptsize},
+      xmin=-22,xmax=22,
+      % xtick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+      xticklabel style={font=\tiny},
+      ymin=-0.5,ymax=6.5,
+      ytick={1,2,3,4,5,6},
+      yticklabel style={font=\tiny,xshift=0.3em},
+      axis line style={-latex},
+      restrict y to domain=-1:15,
+      declare function={
+        f(\x) = (1 + 1/\x)^\x;
+      }
+    ]%
+      \addplot[mark=none,color=orange,thick,samples=1000,domain=-25:25] {f(x)};
+      \addplot[mark=*,mark size=1.5pt,color=orange] coordinates {(0,1)};
+      \addplot[mark=*,mark size=1pt,color=white] coordinates {(0,1)};
+      \draw[densely dotted,red] (-25,{exp(1)}) -- (25,{exp(1)}) node[pos=0.5,xshift=2.8em,yshift=0.3em] {\scriptsize$e\approx 2.71828\dots$};
+      \addplot[mark=*,mark size=1.5pt,color=red] coordinates {(0,{exp(1)})};
+      % \draw[densely dotted,red] (3,-2) -- (3,15) node[pos=0.09,xshift=0.6em] {\small $x_{0}$};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

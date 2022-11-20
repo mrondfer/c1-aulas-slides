@@ -1,0 +1,44 @@
+\section{Propriedades Algébricas dos Limites}
+
+\begin{frame}
+  \begin{theorem}[Propriedades Algébricas dos Limites]
+    Sejam $f$ e $g$ funções definidas em um intervalo aberto $I$ contendo o ponto $a$, com a possível exceção de que $f$ ou $g$ não precisam estar definidas em $a$, e $c$ e $p$ números reais. Se $\lim_{x\rightarrow a}{f(x)}$ e $\lim_{x\rightarrow a}{g(x)}$ existirem, então são válidas as seguintes propriedades algébricas:
+    \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{enumerate}\small
+        \item $\displaystyle\lim_{x\rightarrow a}\left[f(x)+g(x)\right]=\lim_{x\rightarrow a}{f(x)}+\lim_{x\rightarrow a}{g(x)}$
+        \item $\displaystyle\lim_{x\rightarrow a}\left[f(x)-g(x)\right]=\lim_{x\rightarrow a}{f(x)}-\lim_{x\rightarrow a}{g(x)}$
+        \item $\displaystyle\lim_{x\rightarrow a}[c\cdot f(x)]=c\cdot\lim_{x\rightarrow a}{f(x)}$
+        \item $\displaystyle\lim_{x\rightarrow a}\left[f(x)\cdot g(x)\right]=\left[\lim_{x\rightarrow a}{f(x)}\right]\cdot\left[\lim_{x\rightarrow a}{g(x)}\right]$
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{enumerate}\setcounter{enumi}{3}\small
+        \item $\displaystyle\lim_{x\rightarrow a}\left[\dfrac{f(x)}{g(x)}\right]=\dfrac{\displaystyle\lim_{x\rightarrow a}{f(x)}}{\displaystyle\lim_{x\rightarrow a}{g(x)}}$, se $\displaystyle\lim_{x\rightarrow a}{g(x)}\not= 0$
+        \item $\displaystyle\lim_{x\rightarrow a}\left[f(x)\right]^{p}=\left[\lim_{x\rightarrow a}{f(x)}\right]^{p}$
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+  \end{theorem}
+  \begin{itemize}\small
+    \item Os mesmos resultados valem ao substituir o limite quando $x\rightarrow a$ pelos limites laterais, isto é, quando $x\rightarrow a^{-}$ ou $x\rightarrow a^{+}$.
+    \item A demonstração dos itens 1 até 5 dependem do uso da definição ($\epsilon$'s e $\delta$'s) de limite. O item 6 pode ser demonstrado em um momento mais avançado do curso.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Limite de Funções Polinomiais]
+    Se $f$ é uma função polinomial, então $\lim_{x\rightarrow a}f(x)=f(a)$ para todo número real $a$.
+  \end{theorem}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Determine os limites a seguir.
+  \end{example}
+  \begin{enumerate}
+    \item $\displaystyle\lim_{x\rightarrow 2}(3x^{2} - 5x + 2)$\vspace{1.0cm}
+    \item $\displaystyle\lim_{w\rightarrow 3}(2w-8)^{5}$\vspace{1.0cm}
+    \item $\displaystyle\lim_{t\rightarrow -1}\sqrt[3]{\frac{t^{2}+2t-7}{4t+3}}$
+  \end{enumerate}
+\end{frame}

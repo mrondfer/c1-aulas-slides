@@ -1,0 +1,54 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+  \begin{tikzpicture}[font=\tiny]
+    \def\r{1.1}
+    \def\t{45}
+    \def\ox{1.8}
+    \def\oy{1.8}
+    
+    \def\xm{\r*cos(\t)}
+    \def\ym{\r*sin(\t)}
+    \def\secv{\r*sec(\t)}
+    \def\cscv{\r*cosec(\t)}
+
+    \draw[-latex,line width=0.25pt] ({-\ox},0) -- ({\ox},0);
+    \node at ({\ox+0.1},0) {$x$};
+    \draw[-latex,line width=0.25pt] (0,{-\oy}) -- (0,{\oy});
+    \node at (0,{\oy+0.1}) {$y$};
+    
+    \draw (0,0) circle (\r);
+    \draw[red] (0.2,0) arc (0:\t:0.2);
+    \draw[red] (\r,0) arc (0:\t:\r);
+    \draw[line width=0.25pt] (0,0) -- ({\xm},{\ym});
+    \node[red] at (0.3,0.12) {$\alpha$};
+    
+    \fill (\r,0) circle (0.04);
+    \node at ({\r+0.35},-0.15) {$A(1,0)$};
+
+    \fill ({\xm},{\ym}) circle (0.04);
+    \node at ({\xm},{\ym+0.17}) {$M$};
+
+    \draw[line width=0.25pt,dashed] (0,{\ym}) -- ({\xm},{\ym});
+    \node at (-0.2,{\ym}) { $y_{M}$};
+    
+    \draw[line width=0.25pt,dashed] ({\xm},0) -- ({\xm},{\ym});
+    \node at ({\xm},-0.1) { $x_{M}$};
+
+    \fill (0,0) circle (0.04);
+    \node at (-0.1,-0.1) {$O$};
+
+    % \fill (0,{\cscv}) circle (0.04);
+
+    \fill ({\secv},0) circle (0.04);
+    \node at ({\secv},{0.15}) {$S$};
+
+    \draw[line width=0.25pt] (0,{\cscv}) -- ({\secv},0);
+
+    \draw[line width=0.25pt,densely dotted] (0,-\r-0.1) -- ({\secv},-\r-0.1);
+    \node at ({\secv/2},{-\r-0.2}) {$\sec{\alpha}$};
+  \end{tikzpicture}%
+\end{document}

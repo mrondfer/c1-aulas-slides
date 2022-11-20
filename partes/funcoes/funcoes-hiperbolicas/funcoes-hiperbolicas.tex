@@ -1,0 +1,126 @@
+\section{Funções Hiperbólicas}
+
+\subsection{Definições das Funções Hiperbólicas}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Funções Hiperbólicas]
+        As relações hiperbólicas são definidas na hipérbole unitária:\vspace*{-0.35cm}
+        \begin{equation*}
+          x^{2} - y^{2} = 1.\vspace*{-0.35cm}
+        \end{equation*}
+        Para um setor de área $\alpha/2$, definimos:
+        \begin{enumerate}
+          \item $\displaystyle\senh{\alpha} = \frac{e^{\alpha}-e^{-\alpha}}{2}$
+          \item $\displaystyle\cosh{\alpha} = \frac{e^{\alpha}+e^{-\alpha}}{2}$
+          \item $\displaystyle\tanh{\alpha} = \frac{\senh{\alpha}}{\cosh{\alpha}} = \frac{e^{\alpha}-e^{-\alpha}}{e^{\alpha}+e^{-\alpha}}$
+          \item $\displaystyle\coth{\alpha} = \frac{\cosh{\alpha}}{\senh{\alpha}} = \frac{e^{\alpha}+e^{-\alpha}}{e^{\alpha}-e^{-\alpha}}$
+          \item $\displaystyle\sech{\alpha} = \frac{1}{\cosh{\alpha}} = \frac{2}{e^{\alpha}+e^{-\alpha}}$
+          \item $\displaystyle\csch{\alpha} = \frac{1}{\senh{\alpha}} = \frac{2}{e^{\alpha}-e^{-\alpha}}$
+        \end{enumerate}
+      \end{definition}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{hiperbole-unitaria.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Seno Hiperbólico e Sua Inversa}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Seno Hiperbólico]
+        A função seno hiperbólico é definida como $f:\R\rightarrow\R$, que a cada $x\in\R$ associa o número real
+        \begin{equation*}
+          f(x) = \senh{x}
+        \end{equation*}
+      \end{definition}
+      \begin{highlight}
+        \textbf{Temos que a função seno possui:}
+        \begin{itemize}
+          \item $\Domain{f} = \R$;
+          \item $\Image{f} = \R$;
+          \item Função ímpar;
+          \item<2> Arco seno hiperbólico: $f^{-1}:\R\rightarrow\R$\small
+          \begin{equation*}
+            f^{-1}(x)=\asenh{x} = \ln{\left(x + \sqrt{x^{2}+1}\right)}
+          \end{equation*}
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{funcao-seno-hiperbolico.pdf}
+        \includefigure<2>[width=\textwidth]{funcao-arco-seno-hiperbolico.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Cosseno Hiperbólico e Sua Inversa}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Cosseno Hiperbólico]
+        A função cosseno hiperbólico é definida \\como $f:\R\rightarrow\R$, que a cada $x\in\R$ associa o número real
+        \begin{equation*}
+          f(x) = \cosh{x}
+        \end{equation*}
+      \end{definition}
+      \begin{highlight}
+        \textbf{Temos que a função seno possui:}
+        \begin{itemize}
+          \item $\Domain{f} = \R$, $\Image{f} = \R$;
+          \item Função par;
+          \item< 2- > Admite inversa apenas se restrita: $f:[0,+\infty)\rightarrow[1,+\infty)$;
+          \item<3> Arco cosseno hiperbólico: $f^{-1}:[1,+\infty)\rightarrow[0,+\infty)$\small\vspace*{-0.2cm}
+          \begin{equation*}
+            f^{-1}(x)=\acosh{x} = \ln{\left(x + \sqrt{x^{2}-1}\right)}\vspace*{-0.2cm}
+          \end{equation*}
+        \end{itemize}
+        \vspace*{-0.5cm}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{funcao-cosseno-hiperbolico.pdf}
+        \includefigure<2>[width=\textwidth]{funcao-cosseno-hiperbolico-restrito.pdf}
+        \includefigure<3>[width=\textwidth]{funcao-arco-cosseno-hiperbolico.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Tangente Hiperbólico e Sua Inversa}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Tangente Hiperbólica]
+        A função tangente hiperbólica é definida como $f:\R\rightarrow\R$, que a cada $x\in\R$ associa o número real
+        \begin{equation*}
+          f(x) = \tanh{x}
+        \end{equation*}
+      \end{definition}
+      \begin{highlight}
+        \textbf{Temos que a função seno possui:}
+        \begin{itemize}
+          \item $\Domain{f} = \R$, $\Image{f} = (-1,1)$;
+          \item Função ímpar;
+          \item<2> Arco tangente hiperbólica: $f^{-1}:(-1,1)\rightarrow\R$\small
+          \begin{equation*}
+            f^{-1}(x)=\atanh{x} = \frac{1}{2}\ln{\left(\frac{1+x}{1-x}\right)}
+          \end{equation*}
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{funcao-tangente-hiperbolica.pdf}
+        \includefigure<2>[width=\textwidth]{funcao-arco-tangente-hiperbolica.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}

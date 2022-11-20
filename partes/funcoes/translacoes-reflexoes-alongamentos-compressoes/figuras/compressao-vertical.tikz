@@ -1,0 +1,66 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[%
+      % trig format plots=rad,
+      axis x line=center,axis y line=center,
+      % axis on top,
+      unit vector ratio={0.9 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below},ylabel style={left},
+      xmin=-2*pi-1,xmax=2*pi+1,
+      xtick={pi/2},
+      xticklabels={$\frac{\pi}{2}$},
+      xtick style={draw=none},
+      extra x ticks={-pi/2},
+      extra x tick labels={$-\frac{\pi}{2}$},
+      extra x tick style={xticklabel style={above,xshift=-0.3em,yshift=0.3em}},
+      ymin=-2,ymax=2,
+      ytick={0.5,1},
+      ytick style={draw=none},
+      yticklabels={$\frac{1}{2}$,$1$},
+      extra y ticks={-1,-0.5},
+      extra y tick style={yticklabel style={right}},
+      extra y tick labels={$-\frac{1}{2}$,$-1$},
+      restrict y to domain=-3:3,
+      axis line style={-latex},
+      declare function={
+        a = 0.5;
+        f(\x) = sin(deg(\x));
+        g(\x) = a*f(\x);
+      }
+    ]%
+      \def\x{pi/2};
+
+      \draw[dotted] (\x,{max(f(\x),g(\x))}) -- (\x,0);
+      \draw[dotted] (0,{f(\x)}) -- (\x,{f(\x)});
+      \draw[dotted] (0,{g(\x)}) -- (\x,{g(\x)});
+
+      \draw[dotted] (-\x,{min(f(-\x),g(-\x))}) -- (-\x,0);
+      \draw[dotted] (0,{f(-\x)}) -- (-\x,{f(-\x)});
+      \draw[dotted] (0,{g(-\x)}) -- (-\x,{g(-\x)});
+
+      \draw[densely dotted,-stealth] (5*pi/4,{g(5*pi/4)}) -- +(1.3em,1.5em);
+      \node[color=red,xshift=1.5em,yshift=1.8em] at (5*pi/4,{g(5*pi/4)})  {$\frac{1}{2}\mbox{sen}\,{x}$};
+
+      \draw[densely dotted,-stealth] (-3*pi/2,{f(-3*pi/2)}) -- +(1.2em,0.6em);
+      \node[color=orange,xshift=2.2em,yshift=0.7em] at (-3*pi/2,{f(-3*pi/2)})  {$\mbox{sen}\,{x}$};
+
+      \addplot[mark=none,domain=-2*pi:2*pi,color=orange,thick,samples=1000]{f(x)};
+      \addplot[mark=none,dashed,domain=-2*pi-1:2*pi+1,color=orange,thick,samples=1000]{f(x)};
+      \addplot[mark=none,domain=-2*pi:2*pi,color=red,thick,samples=1000]{g(x)};
+      \addplot[mark=none,dashed,domain=-2*pi-1:2*pi+1,color=red,thick,samples=1000]{g(x)};
+
+      \draw[fill=black] (\x,{f(\x)}) circle (1pt);
+      \draw[fill=black] (\x,{g(\x)}) circle (1pt);
+
+      \draw[fill=black] (-\x,{f(-\x)}) circle (1pt);
+      \draw[fill=black] (-\x,{g(-\x)}) circle (1pt);
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

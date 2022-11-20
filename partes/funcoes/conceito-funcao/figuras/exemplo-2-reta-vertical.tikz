@@ -1,0 +1,22 @@
+\documentclass[crop,tikz]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[axis x line=center,axis y line=center,xlabel={$x$},ylabel={$y$},xlabel style={below right},ylabel style={above left},xmin=-1,xmax=5,xtick={0,1,2,3,4},ytick={0,1,2,3,4,5},ymin=-1,ymax=5.5,axis line style={-latex}]
+      \addplot[mark=none,color=gray,dashed] coordinates {(1,0)(1,2)};
+      \addplot[mark=none,color=gray,dashed] coordinates {(0,2)(1,2)};
+      \addplot[mark=none,color=gray,dashed] coordinates {(2,0)(2,3)};
+      \addplot[mark=none,color=gray,dashed] coordinates {(0,3)(2,3)};
+      \addplot[mark=none,color=gray,dashed] coordinates {(3,0)(3,4)};
+      \addplot[mark=none,color=gray,dashed] coordinates {(0,4)(3,4)};
+      \addplot[mark=none,color=gray,dashed] coordinates {(4,0)(4,5)};
+      \addplot[mark=none,color=gray,dashed] coordinates {(0,5)(4,5)};
+      \addplot[mark=none,color=red,very thick] coordinates {(0,0)(4,0)};
+      \addplot[mark=none,color=cyan,very thick] coordinates {(0,1)(0,5)};
+      \addplot[mark=none,domain=0:4,color=blue,thick] {x+1};
+      \node[xshift=-4pt,yshift=-9.5pt] at (0,0) {0};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

@@ -1,0 +1,47 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \def\r{1.5}
+    \def\t{30}
+    \def\ox{2.5}
+    \def\oy{2.5}
+    
+    \def\xm{\r*cos(\t)}
+    \def\ym{\r*sin(\t)}
+
+    \draw[-latex,line width=0.25pt]({-\ox},0) -- ({\ox},0);
+    \node at ({\ox+0.1},0) {$x$};
+    
+    \draw[-latex,line width=0.25pt](0,{-\oy}) -- (0,{\oy});
+    \node at (0,{\oy+0.1}) {$y$};
+    
+    \draw (0,0) circle ({\r});
+    \draw[red] (0.2,0) arc (0:\t:0.2);
+    \draw[red] (\r,0) arc (0:\t:\r);
+    \draw[line width=0.25pt] (0,0) -- ({\xm},{\ym});
+    \fill[red] ({\xm},{\ym}) circle (0.04);
+    \node[red] at ({\r*cos(\t/2)/3},{\r*sin(\t/2)/3}) {$\alpha$};
+    \node[red] at ({\r+0.15},0.15) {$A$};
+    \node[red] at ({\xm+0.15},{\ym+0.15}) {$B$};
+    
+    \node at (-0.1,-0.1) {$0$};
+    \fill (0,0) circle (0.04);
+    \node at ({\r+0.1},-0.15) {$1$};
+    \fill[red] (\r,0) circle (0.04);
+    \node at ({-\r-0.2},-0.15) {$-1$};
+    \fill ({-\r},0) circle (0.04);
+    \node at (0.1,{\r+0.1}) {$1$};
+    \fill (0,\r) circle (0.04);
+    \node at (-0.2,{-\r-0.15}) {$-1$};
+    \fill (0,{-\r}) circle (0.04);
+
+    \node[draw=gray!20,fill=gray!20] at (0.6,0.8) {1°Q};
+    \node[draw=gray!20,fill=gray!20] at (-0.6,0.8) {2°Q};
+    \node[draw=gray!20,fill=gray!20] at (-0.6,-0.8) {3°Q};
+    \node[draw=gray!20,fill=gray!20] at (0.6,-0.8) {4°Q};
+  \end{tikzpicture}%
+\end{document}

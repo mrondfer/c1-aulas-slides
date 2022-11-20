@@ -1,0 +1,26 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\small]
+    \begin{axis}[%
+      unit vector ratio={1 1.1},
+      unit rescale keep size=false,
+      axis x line=center, axis y line=center,
+      xlabel={$x$}, ylabel={$y$},
+      xlabel style={below left}, ylabel style={below left},
+      xmin=-1.5,xmax=1.5,xticklabels=\empty,xtick style={draw=none},
+      ymin=-0.5,ymax=4.0,yticklabels=\empty,ytick style={draw=none},
+      axis line style={-latex},
+    ]%
+      \def\XV{-0.5}
+      \def\YV{1}
+      \def\A{1}
+      \addplot[mark=none,color=black,thick,samples=1000,%
+        domain=-1.0+\XV:1.0+\XV]{\A*(x-\XV)^2+\YV};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

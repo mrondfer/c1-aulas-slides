@@ -1,0 +1,538 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             BASIC PACKAGES               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{import}
+\RequirePackage{etoolbox}
+\RequirePackage{calc}
+\RequirePackage{hyperref}
+\hypersetup{%
+  colorlinks,
+  urlcolor  = CPBlue,
+  linkcolor = CPBlack
+}
+\RequirePackage[brazil]{babel}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{siunitx}
+
+% \RequirePackage[activate={true,nocompatibility},final,tracking=true,factor=1100,stretch=10,shrink=10]{microtype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 MACROS                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NewDocumentCommand{\includefigure}{D<>{.-} O{} m}{%
+  \includegraphics<#1>[#2]{\CurrentFilePath/figuras/#3}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            FONTS AND COLORS              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{fontspec}
+\RequirePackage{unicode-math}
+
+\setmathfont{STIXTwoMath-Regular}[%
+  Extension={.otf},
+  Path=./fontes/,
+  Scale=1
+]
+
+\setmainfont{STIXTwoText}[%
+  Extension={.otf},
+  Path=./fontes/,
+  UprightFont={*-Regular},
+  BoldFont={*-Bold},
+  ItalicFont={*-Italic},
+  BoldItalicFont={*-BoldItalic},
+]
+
+\setsansfont{SourceSans3}[%
+  Extension={.otf},
+  Path=./fontes/,
+  UprightFont={*-Regular},
+  BoldFont={*-Bold},
+  ItalicFont={*-It},
+  BoldItalicFont={*-BoldIt},
+]
+
+\setmonofont{SourceCodePro}[%
+  Extension={.otf},
+  Path=./fontes/,
+  UprightFont={*-Regular},
+  BoldFont={*-Bold},
+  ItalicFont={*-It},
+  BoldItalicFont={*-BoldIt},
+]
+
+% Color list
+\definecolor{CPBlack}{RGB}{5,5,5}
+\definecolor{CPWhite}{RGB}{255,254,254}
+\definecolor{CPGrey0}{RGB}{250, 250, 251}
+\definecolor{CPGrey1}{RGB}{243, 242, 240}
+\definecolor{CPGrey2}{RGB}{234, 231, 226}
+\definecolor{CPGrey3}{RGB}{222, 219, 214}
+\definecolor{CPGrey4}{RGB}{210, 205, 199}
+\definecolor{CPRed}{RGB}{201,12,15}
+\definecolor{CPGreen}{RGB}{53,152,48}
+\definecolor{CPBlue}{RGB}{11,90,157}
+
+%% Standard colours:
+\setbeamercolor{background canvas}{bg = CPWhite}
+\setbeamercolor{title}{fg = CPBlack}
+\setbeamercolor{subtitle}{fg = CPGreen}
+\setbeamercolor{frametitle}{fg = CPBlack}
+\setbeamercolor*{qed symbol}{fg = CPGreen}
+\setbeamercolor{block title}{fg=CPWhite, bg=CPGreen}
+\setbeamercolor{block body} {bg = CPGrey1}
+\setbeamercolor{block title alerted}{fg=CPWhite, bg=CPRed}
+\setbeamercolor{block body alerted} {bg = CPGrey1}
+\setbeamercolor{alerted text} {fg = CPRed}
+\setbeamercolor{footnote mark}{fg = CPRed}
+\setbeamercolor{caption name} {fg = CPRed}
+\setbeamercolor{section in head/foot}{fg=CPWhite, bg=CPGreen}
+\setbeamercolor{section in toc}{fg = black}
+\setbeamercolor*{enumerate item}{fg = CPWhite, bg = CPRed}
+\setbeamercolor*{enumerate subitem}{fg = CPWhite, bg = CPRed}
+\setbeamercolor*{itemize item}{fg = CPRed, bg=CPRed}
+\setbeamercolor*{itemize subitem}{fg = CPRed, bg=CPRed}
+\setbeamercolor*{itemize subsubitem}{fg = CPRed, bg=CPRed}
+\setbeamercolor*{item projected}{fg = CPWhite, bg = CPRed}
+\setbeamercolor*{description item}{fg = CPRed}
+\setbeamercolor{bibliography item}{fg = black}
+\setbeamercolor{bibliography entry author}{fg = black}
+\setbeamercolor{bibliography entry location}{fg = CPGreen}
+\setbeamercolor{highlight body}{fg=CPBlack, bg=CPGrey1!40}
+\setbeamercolor{example title}{fg=CPWhite, bg=CPGreen}
+\setbeamercolor{example body}{bg=CPGrey1}
+\setbeamercolor{example highlight title}{fg=CPBlack, bg=CPGrey1!40}
+\setbeamercolor{example highlight body}{bg=CPGrey1!40}
+\setbeamercolor{definition title}{fg=CPWhite, bg=CPGreen}
+\setbeamercolor{definition body}{bg=CPGrey1}
+\setbeamercolor{theorem title}{fg=CPWhite, bg=CPGreen}
+\setbeamercolor{theorem body}{bg=CPGrey1}
+\setbeamercolor{author in final frame}{fg = CPWhite}
+\setbeamercolor{title in final frame}{fg = CPWhite}
+\setbeamercolor{subtitle in final frame}{fg = CPWhite}
+\setbeamercolor*{section page}{fg = black, bg = CPGrey1}
+\setbeamercolor*{part page}{fg = black, bg = CPGrey1}
+
+%% Fonts
+\setbeamerfont{author}{size=\Large,series=\normalfont\bfseries}
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{subtitle}{size=\Large,series=\normalfont\rmfamily}
+\setbeamerfont{date}{size=\large,series=\bfseries}
+\setbeamerfont{frametitle}{size=\LARGE,series=\bfseries}
+\setbeamerfont{title in head/foot}{series=\bfseries}
+\setbeamerfont{author in head/foot}{series=\bfseries}
+\setbeamerfont{date in head/foot}{series=\bfseries}
+\setbeamerfont{section in toc}{series=\bfseries}
+\setbeamerfont{bibliography item}{series=\bfseries}
+\setbeamerfont{bibliography entry author}{series=\bfseries}
+\setbeamerfont{bibliography entry title}{series=\mdseries}
+\setbeamerfont{enumerate item}{size=\footnotesize,series=\normalfont}
+\setbeamerfont{enumerate subitem}{size=\scriptsize,series=\normalfont}
+\setbeamerfont{itemize item}{size=\footnotesize,series=\normalfont}
+\setbeamerfont{itemize subitem}{size=\footnotesize,series=\normalfont}
+\setbeamerfont{item projected}{series=\bfseries}
+\setbeamerfont{author in final frame}{size=\Large,series=\normalfont\bfseries}
+\setbeamerfont{title in final frame}{size=\LARGE,series=\bfseries}
+\setbeamerfont{subtitle in final frame}{size=\Large,series=\normalfont\rmfamily}
+\setbeamerfont*{section page}{size=\Huge,series=\bfseries}
+\setbeamerfont*{part page}{size=\Huge,series=\bfseries}
+\setbeamerfont{highlight body}{size=\normalsize,series=\normalfont}
+\setbeamerfont{example title}{size=\large,series=\normalfont}
+\setbeamerfont{example body}{size=\normalsize,series=\normalfont}
+\setbeamerfont{example highlight title}{size=\small,series=\normalfont\bfseries}
+\setbeamerfont{example highlight body}{size=\normalsize,series=\normalfont}
+\setbeamerfont{definition title}{size=\large,series=\normalfont}
+\setbeamerfont{definition body}{size=\normalsize,series=\normalfont}
+\setbeamerfont{theorem title}{size=\large,series=\normalfont}
+\setbeamerfont{theorem body}{size=\normalsize,series=\normalfont}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             MATH OPERATORS               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\senh}{senh}
+\DeclareMathOperator{\asenh}{asenh}
+\DeclareMathOperator{\acosh}{acosh}
+\DeclareMathOperator{\atanh}{atanh}
+\DeclareMathOperator{\asen}{asen}
+\DeclareMathOperator{\asin}{asin}
+\DeclareMathOperator{\acos}{acos}
+\DeclareMathOperator{\atan}{atan}
+
+\NewDocumentCommand{\Domain}{m}{\mathrm{D}(#1)}
+\NewDocumentCommand{\Codomain}{m}{\mathrm{Cd}(#1)}
+\NewDocumentCommand{\Image}{m}{\mathrm{Im}(#1)}
+
+\NewDocumentCommand{\R}{o}{\mathbb{R}}
+\NewDocumentCommand{\Q}{o}{\mathbb{Q}}
+\NewDocumentCommand{\Z}{o}{\mathbb{Z}}
+\NewDocumentCommand{\N}{o}{\mathbb{N}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      TEMPLATE GENERAL CONFIGURATION      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Vertical text alignment:
+\DeclareOptionBeamer{t}{\beamer@centeredfalse}
+\ExecuteOptionsBeamer{t}
+\ProcessOptionsBeamer\relax
+
+%% Widescreen
+%% Equivalent to document class option "aspectratio = 169"
+\setlength\beamer@paperwidth{16.00cm}
+\setlength\beamer@paperheight{9.00cm}
+
+\AtBeginDocument{%
+  % Default spacings surrounding equations
+  \setlength{\belowdisplayskip}{0.5em}
+  \setlength{\belowdisplayshortskip}{0em}
+  \setlength{\abovedisplayskip}{0.5em}
+  \setlength{\abovedisplayshortskip}{0em}
+
+  \titlepage
+}
+\AtEndDocument  { \finalframe  }
+
+
+%% Allow more stretching
+\setlength{\emergencystretch}{3em}
+
+
+%%%%
+\mode<presentation>
+
+\useinnertheme{circles}
+
+\setbeamertemplate{qed symbol}{\(\blacksquare\)}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption label separator}{: }
+\setbeamersize{text margin left  = 2.5mm, text margin right = 2.5mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                TITLE PAGE                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{title page}{%
+  \begin{frame}[plain, noframenumbering]
+    \begin{minipage}{0.33\textwidth}
+      \includegraphics[width=\textwidth]{logos/ifsul-pelotas-logo-2.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.33\textwidth}
+      \includegraphics[width=\textwidth]{logos/coordenadoria-matematica-logo-2.png}
+    \end{minipage}
+    \\[0.2\paperheight]
+    %
+    \begin{minipage}{\textwidth}
+      \usebeamerfont{title}
+      \usebeamercolor[fg]{title}
+      \inserttitle
+      \vskip0ptplus1filll\relax
+      \usebeamerfont{subtitle}
+      \usebeamercolor[fg]{subtitle}
+      \insertsubtitle
+    \end{minipage}
+    %
+    \vskip0ptplus1filll\relax
+    \begin{minipage}{\textwidth}
+      \usebeamerfont{author}
+      \centering
+      \insertauthor
+    \end{minipage}
+  \end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              FINAL FRAME                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\finalframe}{%
+  \setbeamercolor{background canvas}{bg = black}
+  \begin{frame}[plain, noframenumbering]
+    \begin{minipage}{0.33\textwidth}
+      \includegraphics[width=\textwidth]{logos/ifsul-pelotas-logo-2-mono.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.33\textwidth}
+      \includegraphics[width=\textwidth]{logos/coordenadoria-matematica-logo-2-mono.png}
+    \end{minipage}
+    \\[0.2\paperheight]
+    %
+    \begin{minipage}{\textwidth}
+      \usebeamerfont{title in final frame}
+      \usebeamercolor[fg]{title in final frame}
+      \inserttitle
+      \vskip0ptplus1filll\relax
+      \usebeamerfont{subtitle in final frame}
+      \usebeamercolor{subtitle in final frame}
+      \insertsubtitle
+    \end{minipage}
+    %
+    \vskip0ptplus1filll\relax
+    \begin{minipage}{\textwidth}
+      \usebeamerfont{author in final frame}
+      \usebeamercolor[fg]{author in final frame}
+      \centering
+      \vspace*{-10mm}
+      \insertauthor
+    \end{minipage}
+  \end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              FRAME TITLE                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{frametitle}{%
+  \vbox{
+    \strut\insertframetitle\strut
+  }
+  \vskip-1.3ex
+}
+\renewcommand{\framesubtitle}[1]{\par\smallskip\textbf{\large#1}\par\medskip}
+
+% \setbeamertemplate{headline}{%
+%   \vspace*{1.7 mm}
+% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         ENUMERATE AND ITEMIZE            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Increase indentation:
+\AtBeginEnvironment{itemize}  { \addtolength{\leftmargini}{1mm} }
+\AtBeginEnvironment{enumerate}{ \addtolength{\leftmargini}{1.5mm} }
+\setlength{\leftmarginii}{1em}
+
+%% Reference enumerate items
+\newcommand{\enumref}[1]{{%
+  \leavevmode\unskip
+  \def\insertenumlabel{\ref{#1}}
+}}
+
+\setbeamertemplate{enumerate item}{%
+  \usebeamercolor{enumerate item}
+  \usebeamerfont{enumerate item}
+  \begin{tikzpicture}[baseline=(char.base)]
+  \node[shape=circle,fill=bg,text=fg,draw,inner sep=2pt,text width=1em,align=center] (char) {\insertenumlabel};
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{enumerate subitem}{%
+  \usebeamercolor{enumerate subitem}
+  \usebeamerfont{enumerate subitem}
+  \begin{tikzpicture}[baseline=(char.base)]
+  \node[shape=rectangle,fill=bg,text=fg,draw,align=center] (char) {\insertenumlabel};
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{itemize item}{%
+  \usebeamercolor{itemize item}
+  \usebeamerfont{itemize item}
+  \begin{tikzpicture}[baseline=-3pt]
+  \node[shape=circle,fill=bg,draw] (char) {};
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{itemize subitem}{%
+  \usebeamercolor{itemize subitem}
+  \usebeamerfont{itemize subitem}
+  \begin{tikzpicture}[baseline=-3pt]
+  \node[shape=rectangle,fill=bg,draw] (char) {};
+  \end{tikzpicture}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                PART PAGE                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{part page}{%
+  \setbeamercolor{background canvas}{bg = CPGrey1}
+  \begin{frame}[c, plain, noframenumbering]
+    \begin{center}
+      \vskip\baselineskip
+      Unidade~\insertromanpartnumber
+      \vskip\baselineskip
+      \insertpart
+    \end{center}
+  \end{frame}  
+}
+\AtBeginPart{\partpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              SECTION PAGE                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{section page}{%
+  \setbeamercolor{background canvas}{bg = CPGrey1}
+  \begin{frame}[c, plain, noframenumbering]
+    \begin{center}
+      \vskip\baselineskip
+      \insertsection
+    \end{center}
+  \end{frame}
+}
+\AtBeginSection{\sectionpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              ENVIRONMENTS                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{theorems}[numbered]
+
+\setbeamertemplate{theorem begin}{%
+  \begin{\inserttheoremblockenv}{%
+    \inserttheoremname
+    \inserttheoremnumber.
+    \ifx\inserttheoremaddition\@empty\else\ \phantom{(}\hskip-1em\,\,\,\inserttheoremaddition\phantom{)}\fi%
+  }%
+}
+\setbeamertemplate{theorem end}{\end{\inserttheoremblockenv}}
+
+\newenvironment<>{highlight}[1][]{%
+  \vfill
+  \begin{beamercolorbox}[%
+    leftskip=0.25em,
+    rightskip=0.25em,
+    vmode
+  ]{highlight body}
+    \begin{minipage}{\textwidth-2em}
+      \vspace*{0.5em}
+      \usebeamerfont{highlight body}
+      #2
+}{%
+      \vspace*{0.5em}
+    \end{minipage}
+  \end{beamercolorbox}
+}
+
+\let\example\undefined
+\newtheorem{example}{Exemplo}
+\AtBeginEnvironment{example}{
+  \setbeamertemplate{block begin}{%
+    \begin{beamercolorbox}[%
+      ht=1.6em,
+      sep=0.2em,
+    ]{example title}
+      \usebeamerfont{example title}
+      \insertblocktitle
+    \end{beamercolorbox}
+    \nointerlineskip
+    \usebeamerfont{example body}
+    \begin{beamercolorbox}[%
+      leftskip=0.25em,
+      rightskip=0.25em,
+      vmode
+    ]{example body}
+      \begin{minipage}{\textwidth-2em}
+        \vspace*{0.5em}
+  }
+  
+  \setbeamertemplate{block end}{%
+        \vspace*{0.25em}
+      \end{minipage}
+    \end{beamercolorbox}
+    \vspace*{0.5em}
+  }
+}
+
+\newtheorem{example-highlight}[example]{Exemplo}
+\AtBeginEnvironment{example-highlight}{
+  \setbeamertemplate{block begin}{%
+    \begin{beamercolorbox}[%
+      ht=1em,
+      dp=0.4em,
+      leftskip=0.25em,
+      rightskip=0.25em
+    ]{example highlight title}
+      \usebeamerfont{example highlight title}
+      \insertblocktitle
+    \end{beamercolorbox}
+    \nointerlineskip
+    \usebeamerfont{example highlight body}
+    \begin{beamercolorbox}[%
+      leftskip=0.25em,
+      rightskip=0.25em,
+      vmode
+    ]{example highlight body}
+      \begin{minipage}{\textwidth-2em}
+  }
+  
+  \setbeamertemplate{block end}{%
+      \end{minipage}
+      \vspace*{0.5em}
+    \end{beamercolorbox}
+    \vspace*{0.5em}
+  }
+}
+
+\let\definition\undefined
+\newtheorem{definition}{Definição}
+\AtBeginEnvironment{definition}{
+  \setbeamertemplate{block begin}{%
+    \begin{beamercolorbox}[%
+      ht=1.6em,
+      sep=0.2em,
+    ]{definition title}
+      \usebeamerfont{definition title}
+      \insertblocktitle
+    \end{beamercolorbox}
+    \nointerlineskip
+    \usebeamerfont{definition body}
+    \begin{beamercolorbox}[%
+      leftskip=0.25em,
+      rightskip=0.25em,
+      vmode
+    ]{definition body}
+      \begin{minipage}{\textwidth-2em}
+        \vspace*{0.5em}
+  }
+  
+  \setbeamertemplate{block end}{%
+        \vspace*{0.5em}
+      \end{minipage}
+    \end{beamercolorbox}
+    \vspace*{0.5em}
+  }
+}
+
+\let\theorem\undefined
+\let\c@theorem\undefined
+\newtheorem{theorem}{Teorema}
+
+\AtBeginEnvironment{theorem}{
+  \setbeamertemplate{block begin}{%
+    \begin{beamercolorbox}[%
+      ht=1.6em,
+      sep=0.2em,
+    ]{theorem title}
+      \usebeamerfont{theorem title}
+      \insertblocktitle
+    \end{beamercolorbox}
+    \nointerlineskip
+    \usebeamerfont{theorem body}
+    \begin{beamercolorbox}[%
+      leftskip=0.25em,
+      rightskip=0.25em,
+      vmode
+    ]{theorem body}
+      \begin{minipage}{\textwidth-2em}
+        \vspace*{0.5em}
+  }
+  
+  \setbeamertemplate{block end}{%
+        \vspace*{0.5em}
+      \end{minipage}
+    \end{beamercolorbox}
+    \vspace*{0.5em}
+  }
+}
+
+\mode<all>

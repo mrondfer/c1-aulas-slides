@@ -1,0 +1,123 @@
+\section{Propriedades Algébricas das Derivadas}
+\begin{frame}
+  \begin{theorem}[Derivadas da Soma, da Diferença e do Produto por Escalar]
+    Sejam $u$ e $v$ funções deriváveis em $x_{0}$ e $a$ um número real. Então, são válidas as propriedades a seguir:
+    \begin{enumerate}
+      \item Se $f(x) = a\cdot u(x)$, então a derivada de $f$ em $x_{0}$ é
+      \begin{equation*}
+        f^{\prime}(x_{0}) = a\cdot u^{\prime}(x_{0})
+      \end{equation*}
+      \item Se $f(x) = u(x) + v(x)$, então a derivada de $f$ em $x_{0}$ é
+      \begin{equation*}
+        f^{\prime}(x_{0}) = u^{\prime}(x_{0}) + v^{\prime}(x_{0})
+      \end{equation*}
+      \item Se $f(x) = u(x) - v(x)$, então a derivada de $f$ em $x_{0}$ é
+      \begin{equation*}
+        f^{\prime}(x_{0}) = u^{\prime}(x_{0}) - v^{\prime}(x_{0})
+      \end{equation*}
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.55\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Determine as derivadas das funções a seguir.
+        \begin{enumerate}
+          \item $f(x) = 3x^{4} - 2x^{3} + 7x - 5$
+          \item $g(x) = 3\cdot 4^{x} - 5x^2$
+          \item $h(x) = x(2x-1)^{2}$
+        \end{enumerate}
+      \end{example}
+    \end{column}
+    \begin{column}{0.43\textwidth}\vspace{-0.5cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}[Derivada do Produto]
+    Vamos considerar as funções $f(x) = -2x$ e $g(x) = x^4$. Qual é a derivada da função produto $h(x) = f(x)\cdot g(x)$?
+  \end{example}
+\end{frame}
+
+\subsection{Derivada do Produto}
+\begin{frame}
+  \begin{theorem}[Derivada do Produto de Funções]
+    Sejam $u$ e $v$ funções deriváveis em um dado ponto $x_{0}$. Então, a função produto $u\cdot v$ também é derivável em $x_{0}$ e a sua derivada é dada pela expressão
+    \begin{equation*}
+      \frac{d}{dx}\left[u(x_{0}) v(x_{0})\right]=u(x_{0}) \frac{d}{dx}\left[v(x_{0})\right]+v(x_{0}) \frac{d}{dx}\left[u(x_{0})\right]
+    \end{equation*}
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \begin{example-highlight}
+        Calcule a derivada da funções a seguir.
+        \begin{enumerate}
+          \item $f(x)=(x+1)(2x^3-4)$
+          \item $g(x) = -2x\cdot 3^{x}$
+          \item $h(x) = e^{x}(x-1)(x+1)$
+        \end{enumerate}
+      \end{example-highlight}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \end{column}
+  \end{columns}
+  \vspace*{-0.2cm}
+  \visible<2>{%
+    \begin{highlight}
+      \textbf{Observação:}
+      \begin{itemize}
+        \item A regra da cadeia pode ser ampliada para o produto de três, quatro, ..., $n$ funções.
+      \end{itemize}
+    \end{highlight}
+  }
+\end{frame}
+
+\subsection{Derivada do Quociente}
+\begin{frame}
+  \begin{theorem}[Derivada do Quociente de Funções]
+    Sejam $u$ e $v$ funções deriváveis em $x_{0}$. Então, a função quociente $\dfrac{u}{v}$ é derivável em $x_{0}$ e a sua derivada em $x_{0}$ é dada por pela expressão
+    \begin{equation*}
+      \frac{d}{dx}\left[\frac{u(x_{0})}{v(x_{0})}\right]=\frac{v(x_{0})\dfrac{d}{dx}\left[u(x_{0})\right] - u(x_{0})\dfrac{d}{dx}\left[v(x_{0})\right]}{\left[v(x_{0})\right]^{2}},
+    \end{equation*}
+    desde que $v(x_{0}) \not= 0$.
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \begin{example-highlight}
+        Calcule a derivada da função a seguir.
+        \begin{enumerate}
+          \item $f(x)=\dfrac{4x+2}{x^2+1}$.
+          \item $f(x)=\dfrac{x\cdot 2^{x}}{e^{x}}$.
+        \end{enumerate}
+      \end{example-highlight}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Derivada das Potências de x}
+\begin{frame}
+  \begin{theorem}[Derivada das Potências de $x$]
+    Seja $f:I\rightarrow\mathbb{R}$ a função definida por $f(x) = x^{n}$, com $n\in\mathbb{Z}$. Então, 
+    \begin{equation*}
+      f^{\prime}(x) = n\cdot x^{n-1}.
+    \end{equation*}
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.55\textwidth}
+      \begin{example-highlight}
+        Determine as derivadas das funções a seguir.
+        \begin{enumerate}
+          \item $f(x) = \dfrac{1}{x^{2}}$
+          \item $y = -\dfrac{4}{x^{5}}$
+        \end{enumerate}
+      \end{example-highlight}
+    \end{column}
+    \begin{column}{0.43\textwidth}\vspace{-0.6cm}
+    \end{column}
+  \end{columns}
+\end{frame}

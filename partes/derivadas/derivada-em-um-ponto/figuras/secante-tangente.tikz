@@ -1,0 +1,74 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{angles,quotes}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below,font=\scriptsize},
+      ylabel style={left,font=\scriptsize},
+      xmin=-1.7,xmax=5.5,
+      xtick=\empty,
+      xticklabel style={font=\tiny},
+      ymin=-1.0,ymax=5.5,
+      ytick=\empty,
+      yticklabel style={font=\tiny,xshift=0.3em},
+      axis line style={-latex},
+      restrict y to domain=-5:5,
+      declare function={
+        x_zero = 2;
+        delta_x = 2;
+        x_zero_delta_x = x_zero + delta_x;
+        f(\x) = 0.06*\x^3;
+        f_linha(\x) = 0.15*\x^2;
+        secante(\x) = f(x_zero) + ((f(x_zero_delta_x)-f(x_zero))/(x_zero_delta_x - x_zero))*(\x - x_zero);
+        tangente(\x) = f(x_zero) + f_linha(x_zero)*(\x - x_zero);
+      }
+    ]%
+      \draw[blue,fill=blue!2!white] ({x_zero - f(x_zero)*((x_zero_delta_x-x_zero)/(f(x_zero_delta_x)-f(x_zero)))},0) -- (x_zero_delta_x,0) -- (4,{f(4)}) --cycle;
+
+      \draw[blue,fill=blue!2!white] (x_zero,{f(x_zero)}) -- (x_zero_delta_x,{f(x_zero)}) -- (4,{f(4)}) --cycle;
+
+      \draw ({x_zero - f(x_zero)*((x_zero_delta_x-x_zero)/(f(x_zero_delta_x)-f(x_zero)))+0.3},0) arc (0:45:0.35cm) node[pos=0.5,xshift=0.4em,yshift=0.1em] {\scriptsize $\beta$};
+
+      \draw (x_zero-0.45,0) arc (0:32:0.35cm) node[pos=0.5,xshift=0.28em] {\scriptsize $\alpha$};
+
+      \addplot[%
+        mark=none,
+        color=orange,
+        thick,
+        samples=1000,
+        domain=-5:5,
+      ] {f(x)};
+
+      \addplot[%
+        mark=none,
+        color=blue,
+        thick,
+        samples=10,
+        domain=-1:5,
+      ] {secante(x)} node[pos=0.95,xshift=0.7em,yshift=0.5em] {\scriptsize $r$};
+
+      \addplot[%
+        mark=none,
+        color=red,
+        thick,
+        samples=10,
+        domain=-5:5,
+      ] {tangente(x)};
+
+      \addplot[mark=*,mark size=1.5pt] coordinates {(x_zero,{f(x_zero)})};
+      \draw[dotted] (x_zero,0) -- (x_zero,{f(x_zero)}) node[pos=0,yshift=-0.5em] {\scriptsize $x_{0}$} node[xshift=-0.5em,yshift=0.5em] {\scriptsize $P_{0}$};
+      \draw[dotted] (0,{f(x_zero)}) -- (x_zero,{f(x_zero)}) node[pos=0,xshift=-1.0em] {\scriptsize $f(x_{0})$};
+      
+      \addplot[mark=*,mark size=1.5pt] coordinates {(x_zero_delta_x,{f(x_zero_delta_x)})};
+      \draw[dotted] (x_zero_delta_x,0) -- (x_zero_delta_x,{f(x_zero_delta_x)}) node[pos=0,xshift=0.15em,yshift=-0.5em] {\scriptsize $x_{0}+\Delta x$} node[xshift=-0.5em,yshift=0.5em] {\scriptsize $P$};
+      \draw[dotted] (0,{f(x_zero_delta_x)}) -- (x_zero_delta_x,{f(x_zero_delta_x)}) node[pos=0,xshift=-2.05em] {\scriptsize $f(x_{0}+\Delta x)$};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

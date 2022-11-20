@@ -1,0 +1,37 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}%[font=\scriptsize]
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      % axis on top,
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={right},ylabel style={left},
+      xmin=-3.5,xmax=3.5,
+      xtick={-3,-2,-1},
+      xticklabel style={above},
+      extra x ticks={1,2,3},
+      extra x tick labels={1,2,3},
+      extra x tick style={xticklabel style={yshift=-1.2em}},
+      ymin=-6,ymax=6,ytick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+      restrict y to domain=-5:5,
+      axis line style={-latex},
+      major grid style={dotted,gray!40},
+      grid=major,
+      legend entries={$x$,$x^{3}$,$x^{5}$},
+      legend style={at={(axis cs:3,-1.5)}}
+    ]%
+      \addplot[mark=none,domain=-5:5,color=MidnightBlue,thick,samples=1000] {x};
+      \addplot[mark=none,domain=-5:5,color=Mahogany,thick,samples=1000] {x^3};
+      \addplot[mark=none,domain=-5:5,color=DarkOrchid,thick,samples=1000] {x^5};
+
+      \addplot[mark=*,mark size=1.5pt,color=black!90] coordinates {(1,1)};
+      \addplot[mark=*,mark size=1.5pt,color=black!90] coordinates {(-1,-1)};
+      \addplot[mark=*,mark size=1.5pt,color=black!90] coordinates {(0,0)};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

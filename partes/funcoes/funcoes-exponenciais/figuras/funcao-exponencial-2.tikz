@@ -1,0 +1,34 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[%
+      trig format plots=rad,
+      axis x line=center,axis y line=center,
+      axis equal image,
+      % unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below},ylabel style={right},
+      xmin=-1,xmax=2,
+      xtick=\empty,
+      xtick style={draw=none},
+      extra x ticks={0},
+      extra x tick labels={$0$},
+      extra x tick style={xticklabel style={xshift=-0.3em,yshift=0.2em}},
+      ymin=-0.2,ymax=3,
+      restrict y to domain=-0.2:3,
+      ytick=\empty,
+      ytick style={draw=none},
+      axis line style={-latex},
+    ]%
+      \addplot[mark=none,domain=-1:1.92,color=orange,thick,samples=1000] {(1/8)^x};
+      \fill[black!70] (0,1) circle (0.04);
+      \node[xshift=1.2em] at (0,1) {$(0,1)$};
+      \node[draw] at (1,2) {\Large$0<a<1$};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

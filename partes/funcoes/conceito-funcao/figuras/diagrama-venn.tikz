@@ -1,0 +1,43 @@
+\documentclass[crop,tikz]{standalone}
+\begin{document}
+  \usetikzlibrary{shapes.geometric,positioning}
+  \begin{tikzpicture}
+    \node[ellipse,draw,fill=green!40,minimum height=3.5cm,minimum width=2cm,outer sep=8pt] (A-ellipse) at (0,0) {};
+    \node (A) at (A-ellipse.north) {A};
+    \node[yshift=-22pt] (A1-bullet) at (A-ellipse.north) {};
+    \node (A1-text) at (A1-bullet.center) {\scriptsize -3};
+    \node[yshift=-25pt] (A2-bullet) at (A1-bullet) {};
+    \node (A2-text) at (A2-bullet.center) {\scriptsize -2};
+    \node[yshift=-25pt] (A3-bullet) at (A2-bullet) {};
+    \node (A3-text) at (A3-bullet.center) {\scriptsize -5};
+    \node[yshift=-25pt] (A4-bullet) at (A3-bullet) {};
+    \node (A4-text) at (A4-bullet.center) {\scriptsize 0};
+    \node[ellipse,draw,fill=green!40,minimum height=3.5cm,minimum width=2cm,outer sep=0.3cm,right=2cm of A-ellipse] (B-ellipse) at (A-ellipse) {};
+    \node (B) at (B-ellipse.north) {B};
+    \node[ellipse,draw,dashed,fill=green!20,minimum height=1.3cm,minimum width=1.3cm,below=15pt of B-ellipse] (Im-ellipse) at (B-ellipse.north) {};
+    \node[xshift=15pt,yshift=-10pt] (B11-bullet) at (B-ellipse.north west) {};
+    \node[xshift=20pt] (B12-bullet) at (B11-bullet) {};
+    \node[yshift=-17pt] (B21-bullet) at (B11-bullet) {};
+    \node[yshift=-17pt] (B22-bullet) at (B12-bullet) {};
+    \node[yshift=-17pt] (B31-bullet) at (B21-bullet) {};
+    \node[yshift=-17pt] (B32-bullet) at (B22-bullet) {};
+    \node[yshift=-17pt] (B41-bullet) at (B31-bullet) {};
+    \node[yshift=-17pt] (B42-bullet) at (B32-bullet) {};
+    \node[yshift=-17pt] (B51-bullet) at (B41-bullet) {};
+    \node[yshift=-17pt] (B52-bullet) at (B42-bullet) {};
+    \node[xshift=2pt,yshift=1pt] (B11-text) at (B11-bullet.center) {\scriptsize 1};
+    \node[xshift=-2pt,yshift=1pt] (B12-text) at (B12-bullet.center) {\scriptsize 0};
+    \node[xshift=2pt,yshift=1pt] (B21-text) at (B21-bullet.center) {\scriptsize 4};
+    \node[xshift=-2pt,yshift=1pt] (B22-text) at (B22-bullet.center) {\scriptsize 9};
+    \node[xshift=2pt,yshift=1pt] (B31-text) at (B31-bullet.center) {\scriptsize 2};
+    \node[xshift=-2pt,yshift=1pt] (B32-text) at (B32-bullet.center) {\scriptsize 3};
+    \node[xshift=2pt,yshift=1pt] (B41-text) at (B41-bullet.center) {\scriptsize 5};
+    \node[xshift=-2pt,yshift=1pt] (B42-text) at (B42-bullet.center) {\scriptsize 6};
+    \node[xshift=2pt,yshift=1pt] (B51-text) at (B51-bullet.center) {\scriptsize 7};
+    \node[xshift=-2pt,yshift=1pt] (B52-text) at (B52-bullet.center) {\scriptsize 8};
+    \draw[-stealth] (A1-bullet) -- (B22-bullet.west);
+    \draw[-stealth] (A2-bullet.east) -- (B21-bullet.center);
+    \draw[-stealth] (A3-bullet.east) -- (B11-bullet.center);
+    \draw[-stealth] (A4-bullet.east) -- (B12-bullet.west);        
+  \end{tikzpicture}
+\end{document}

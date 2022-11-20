@@ -1,0 +1,31 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below,font=\scriptsize},
+      ylabel style={left,font=\scriptsize},
+      xmin=-4.5,xmax=4.5,
+      xtick={-4,-3,-2,-1,0,1,2,3,4},
+      xticklabel style={font=\tiny},
+      ymin=-4.5,ymax=4.5,
+      restrict y to domain=-5:5,
+      ytick={-4,-3,-2,-1,0,1,2,3,4},
+      yticklabel style={font=\tiny,xshift=0.3em},
+      axis line style={-latex},
+      grid=major,
+      major grid style={gray!15},
+      declare function={
+        f(\x) = 1/\x^2;
+      }
+    ]%
+      \addplot[mark=none,color=orange,thick,samples=1000,domain=-4:4] {f(x)} node[pos=0.6,xshift=2em] {\scriptsize$\displaystyle f(x) = \frac{1}{x^{2}}$};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

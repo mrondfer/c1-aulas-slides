@@ -1,0 +1,144 @@
+\section{Função Definida por Partes}
+
+\subsection{Conceito de Função Definida por Partes}
+\begin{frame}
+  \begin{definition}[Função Definida por Várias Sentenças]
+    Chamamos de \textbf{função definida por várias sentenças} (ou definida por partes) qualquer função definida através de múltiplas sub-funções, onde cada uma é aplicada em um sub-intervalo diferente do domínio.
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.6\textwidth}
+      \begin{highlight}
+        \textbf{Observações:}
+        \begin{enumerate}
+          \item Uma função definida por várias sentenças é apenas uma maneira de expressar a função, não alguma característica da função em si;
+          \item Tipicamente definimos a função definida por várias sentenças como ao lado;
+          \item Os intervalos $I_{1}$, $I_{2}$, $\cdots$, $I_{n}$ devem ser disjuntos;
+          \item $D(f) = I_{1}\cup I_{2}\cup\cdots\cup I_{n}$.
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.4\textwidth}\vspace*{0.5cm}
+      \begin{center}
+        \begin{equation*}
+          f(x) = \begin{cases}
+            f_{1}(x), &x\in I_{1},\\
+            f_{2}(x), &x\in I_{2},\\
+            &\vdots\\
+            f_{n}(x), &x\in I_{n}
+          \end{cases}
+        \end{equation*}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Uma empresa distribuidora de água cobra mensalmente R\$ 30,00 por um consumo de até 5 m\textsuperscript{3}. Caso o consumo residencial
+    ultrapasse 5 m\textsuperscript{3}, cobra-se R\$ 6,00 por cada m\textsuperscript{3}.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}< 2- >{0.49\textwidth}
+      \textbf{Determine:}
+      \begin{enumerate}
+        \item< 2- > O valor da conta para um consumo de 4,7 m\textsuperscript{3};
+        \item< 3- > O valor da conta para um consumo de 8,5 m\textsuperscript{3};
+        \item< 4- > Determine a lei para o valor da conta $C$ em função do consumo $x$;
+        \item< 5- > Construa o gráfico da função $C(x)$:
+        \begin{equation*}
+          C(x) = \begin{cases}
+            30, &x\in [0,\,5],\\
+            6x, &x\in\, ]5,\,\infty[.
+          \end{cases}
+        \end{equation*}
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \vspace{-0.5cm}
+        \includefigure<5>[width=\textwidth]{exemplo-1-1.pdf}
+        \includefigure<6>[width=\textwidth]{exemplo-1-2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Sobre a função a seguir, determine o domínio, a imagem e esboce o gráfico.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.35\textwidth}
+      \begin{equation*}
+        g(x) = \begin{cases}
+          x^{2} - 1, & x < 2 ,\\
+          x + 1, & 2 \leq x < 4 ,\\
+          5, & x \geq 4.
+        \end{cases}
+      \end{equation*}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.2cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo-2-1.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo-2-2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Modular}
+\begin{frame}
+  \begin{definition}[Função Modular]
+    Chamamos de \textbf{função modular} a função $f:\mathbb{R}\rightarrow\mathbb{R}$ definida por meio da lei
+    \begin{equation*}
+      f(x) = |x| = \begin{cases}
+        \phantom{-}x, & x \geq 0,\\
+        -x, & x < 0.
+      \end{cases}
+    \end{equation*}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Observações:}
+        \begin{enumerate}
+          \item Também é chamada de \emph{valor absoluto} do número $x$;
+          \item Representa a \emph{distância} de $x$ à origem;
+          \item $\Image{f}=\R_{+}$;
+          \item Função par.
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \vspace{-0.6cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{funcao-modular.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Determine o gráfico das seguintes funções.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{enumerate}
+        \item< only@1-2 > $f(x) = |3x + 6|$
+        \item< only@3-4 > $f(x) = |x^{2} - 4|$
+        \item< only@5-6 > $f(x) = |x^{2} - 4| - 2$
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}\vspace*{-0.8cm}
+        \includefigure<1>[width=\textwidth]{exemplo-3-1.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo-3-2.pdf}
+        \includefigure<3>[width=\textwidth]{exemplo-4-1.pdf}
+        \includefigure<4>[width=\textwidth]{exemplo-4-2.pdf}
+        \includefigure<5>[width=\textwidth]{exemplo-5-1.pdf}
+        \includefigure<6>[width=\textwidth]{exemplo-5-2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}

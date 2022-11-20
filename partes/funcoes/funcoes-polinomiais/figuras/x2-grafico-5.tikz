@@ -1,0 +1,32 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\small]
+    \begin{axis}[%
+      unit vector ratio={1 1.1},
+      unit rescale keep size=false,
+      axis x line=center, axis y line=center,
+      xlabel={$x$}, ylabel={$y$},
+      xlabel style={below left}, ylabel style={below left},
+      xmin=-0.5,xmax=2.5,xticklabels=\empty,xtick style={draw=none},
+      ymin=-0.5,ymax=4.0,yticklabels=\empty,ytick style={draw=none},
+      axis line style={-latex},
+    ]%
+      \def\XV{1}
+      \def\YV{2}
+      \def\A{-1}
+      \addplot[mark=none,color=black,thick,samples=1000,%
+        domain=0.1:1.9]{\A*(x-\XV)^2+\YV};
+      \addplot[mark=*,mark size=1.5pt,color=black] coordinates {(\XV,\YV)};
+      \addplot[mark=none,dashed,color=black] coordinates {(\XV,0)(\XV,\YV)};
+      \addplot[mark=none,dashed,color=black] coordinates {(0,\YV)(\XV,\YV)};
+      \node at (axis cs: \XV+0.15,\YV-0.15) {$V$};
+      \node at (axis cs: \XV,-0.15) {$x_{v}$};
+      \node at (axis cs: -0.15,\YV) {$y_{v}$};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

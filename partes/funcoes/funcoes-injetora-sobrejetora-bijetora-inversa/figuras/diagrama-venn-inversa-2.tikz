@@ -1,0 +1,72 @@
+\documentclass[crop,tikz]{standalone}
+\begin{document}
+  \usetikzlibrary{shapes.geometric,positioning}
+  \begin{tikzpicture}
+    \node[%
+      ellipse,
+      draw,
+      fill=white,
+      thick,
+      minimum height=2cm,
+      minimum width=1.25cm,
+      outer sep=8pt,
+      fill=green!40
+      ] (A) at (0,0) {};
+    \node at (A.115) {\scriptsize A};
+
+    \node[%
+      ellipse,
+      draw,
+      fill=white,
+      thick,
+      minimum height=2cm,
+      minimum width=1.25cm,
+      outer sep=8pt,
+      right=1cm of A,
+      fill=green!40
+    ] (B) at (A) {};
+    \node at (B.115) {\scriptsize B};
+
+    \node[%
+      circle,
+      draw,
+      inner sep=0pt,
+      minimum size=2pt,
+      fill=black,
+    ] (x) at (A) {};
+    
+    \node[%
+      xshift=-0.4em
+    ] at (x) {\tiny $x$};
+
+    \node[%
+      circle,
+      draw,
+      inner sep=0pt,
+      minimum size=2pt,
+      fill=black,
+    ] (fx) at (B) {};
+    
+    \node[%
+      xshift=0.8em
+    ] at (fx) {\tiny $f(x)$};
+
+    \draw[%
+      out=20,
+      in=160,
+      shorten >= 0.1em,
+      shorten <= 0.1em,
+      -stealth
+    ] (x) to node[pos=0.5,yshift=0.6em] {$f$} (fx);
+
+    \draw[%
+      out=-160,
+      in=-20,
+      shorten >= 0.1em,
+      shorten <= 0.1em,
+      -stealth
+    ] (fx) to node[pos=0.5,yshift=-0.6em] {$f^{-1}$} (x);
+
+    
+  \end{tikzpicture}%
+\end{document}

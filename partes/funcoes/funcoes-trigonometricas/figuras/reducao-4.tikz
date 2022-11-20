@@ -1,0 +1,55 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \def\r{1.5}
+    \def\t{220}
+    \def\ox{2.0}
+    \def\oy{2.0}
+    
+    \def\xm{\r*cos(\t)}
+    \def\ym{\r*sin(\t)}
+
+    \draw[-latex,line width=0.25pt]({-\ox},0) -- ({\ox},0);
+    \node at ({\ox+0.1},0) {$x$};
+    
+    \draw[-latex,line width=0.25pt](0,{-\oy}) -- (0,{\oy});
+    \node at (0,{\oy+0.1}) {$y$};
+    
+    \draw (0,0) circle ({\r});
+
+    \draw[dashed] ({\xm},{\ym}) -- ({\xm},0);
+    \draw[dashed] ({\xm},{\ym}) -- (0,{\ym});
+
+    \draw[dashed] ({-\xm},{-\ym}) -- ({-\xm},0);
+    \draw[dashed] ({-\xm},{-\ym}) -- (0,{-\ym});
+
+    \draw[red] (\r,0) arc (0:\t:\r);
+    \draw[red] (0.2,0) arc (0:\t:0.2);
+    \node[red] at (-0.15,0.3) {$\alpha$};
+    \draw[red,line width=0.25pt] (0,0) -- ({\xm},{\ym});
+    \fill[red] ({\xm},{\ym}) circle (0.04);
+
+    \draw[blue] (0.3,0) arc (0:\t-180:0.3);
+    \draw[blue] (\r+0.1,0) arc (0:\t-180:\r+0.1);
+    % % \node[blue] at (0.9,0.12) {$180^{\circ}-\alpha$};
+    \node[blue,rotate=-70] at (1.7,0.6) {$\alpha-\pi$};
+    \draw[blue,line width=0.25pt] (0,0) -- ({-\xm},{-\ym});
+    \fill[blue] ({-\xm},{-\ym}) circle (0.04);
+
+    \fill[black] (\r,0) circle (0.04);
+
+    \node at ({\xm+0.1},0.1) {$x_{M}$};
+    \node at ({-\xm-0.1},-0.1) {$-x_{M}$};
+    \node at (0.25,{\ym}) {$y_{M}$};
+    \node at (-0.35,{-\ym+0.05}) {$-y_{M}$};
+
+    \node[red] at ({\xm-0.15},{\ym-0.15}) {$M$};
+    \node[blue] at ({-\xm+0.15},{-\ym+0.2}) {$M^{\star}$};
+
+
+  \end{tikzpicture}%
+\end{document}

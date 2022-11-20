@@ -1,0 +1,82 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\tiny]
+    \begin{axis}[%
+      trig format plots=rad,
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={\scriptsize$x$},ylabel={\scriptsize$y$},
+      xlabel style={below},ylabel style={right},
+      xmin=-5-0.25,xmax=5+0.25,
+      xtick={-1,1,pi/2,pi},
+      xticklabels={$-1$,$1$,$\frac{\pi}{2}$,$\pi$},
+      ymin=-5-0.25,ymax=5+0.25,
+      restrict y to domain=-5:5,
+      ytick={-1,1,pi/2,pi},
+      yticklabels={$-1$,$1$,$\frac{\pi}{2}$,$\pi$},
+      axis line style={-latex},
+      declare function={
+        f(\x) = sec(\x);
+        g(\x) = acos(1/\x);
+      }
+    ]%
+
+      \draw[densely dotted] (pi/2,-5) -- (pi/2,5);
+      % \draw[densely dotted] (-5,pi/2) -- (5,pi/2);
+      
+      \draw[dotted] (pi,{f(deg(pi))}) -- (pi,0);
+      \draw[dotted] (pi,{f(deg(pi))}) -- (0,{f(deg(pi))});
+      
+      % \draw[dotted] ({f(deg(pi))},pi) -- (0,pi);
+      % \draw[dotted] ({f(deg(pi))},pi) -- ({f(deg(pi))},0);
+
+      \addplot[%
+        mark=none,
+        dashed,
+        domain=-5-0.25:5+0.25,
+        samples=1000
+      ] {x} node[%
+        pos=0.93,
+        rotate=45,
+        xshift=0.4em,
+        yshift=0.4em
+      ] {\scriptsize$y=x$};
+
+      \addplot[%
+        mark=none,
+        domain=0:pi,
+        color=orange,
+        thick,
+        samples=1000
+      ] {f(x)} node[%
+        pos=0.47,
+        xshift=-1em
+      ] {\scriptsize$\sec{x}$};
+
+      % \addplot[%
+      %   mark=none,
+      %   domain=-5:-1,
+      %   color=red,
+      %   thick,
+      %   samples=1000
+      % ] {g(x)} node[%
+      %   pos=0.2,
+      %   yshift=0.4em
+      % ] {\scriptsize$\mbox{arcsec}\,{x}$};
+
+      % \addplot[%
+      %   mark=none,
+      %   domain=1:5,
+      %   color=red,
+      %   thick,
+      %   samples=1000
+      % ] {g(x)};
+
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

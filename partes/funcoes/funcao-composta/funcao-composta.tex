@@ -1,0 +1,83 @@
+\section{Função Composta}
+
+\begin{frame}
+  \begin{definition}[Função Composta]
+    Sejam $f:A\rightarrow B$ e $g:B\rightarrow C$ funções reais. Definimos a composição de $g$ e $f$ como a função $g\circ f:A\rightarrow C$ dada pela expressão
+    \begin{equation*}
+      (g\circ f)(x) = g(f(x)).
+    \end{equation*}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure[width=\textwidth]{diagrama-venn-funcao-composta.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \begin{itemize}
+          \item Lê-se: ``$g$ \emph{composta} $f$'' ou ``$g$ \emph{bola} $f$'';
+          \item Primeiro calculamos $f(x)$; depois $g(f(x))$; 
+          \item Nos referenciamos como ``função de dentro'', a $f$, e ``função de fora'', a $g$;
+          \item Em geral, temos que $g\circ f \not= f\circ g$;
+          \item Definida para três ou mais funções:\vspace*{-0.1cm}
+          \begin{equation*}
+            (h\circ g\circ f)(x) = h(g(f(x)))\vspace*{-0.1cm}
+          \end{equation*}
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Dadas as funções $f(x) = \sqrt{x}$ e $g(x) = x^{2} + 1$, determine as composições a seguir, destacando os respectivos domínios.
+    \begin{columns}[onlytextwidth]
+        \begin{column}{0.2\textwidth}\vspace*{-0.4cm}
+          \begin{enumerate}
+            \item $g\circ f$
+          \end{enumerate}
+        \end{column}
+        \begin{column}{0.2\textwidth}\vspace*{-0.4cm}
+          \begin{enumerate}
+            \setcounter{enumi}{1}
+            \item $f\circ g$
+          \end{enumerate}
+        \end{column}
+        \begin{column}{0.6\textwidth}\vspace*{-0.4cm}
+        \end{column}
+      \end{columns}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Expresse as funções a seguir como uma composição de funções.
+    \begin{columns}[onlytextwidth]
+        \begin{column}{0.2\textwidth}\vspace*{-0.4cm}
+          \begin{enumerate}
+            \item $\tan{x^{5}}$
+          \end{enumerate}
+        \end{column}
+        \begin{column}{0.2\textwidth}\vspace*{-0.4cm}
+          \begin{enumerate}
+            \setcounter{enumi}{1}
+            \item $\tan^{2}{x}$
+          \end{enumerate}
+        \end{column}
+        \begin{column}{0.2\textwidth}\vspace*{-0.4cm}
+          \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item $\tan^{2}{x^{5}}$
+          \end{enumerate}
+        \end{column}
+        \begin{column}{0.4\textwidth}\vspace*{-0.4cm}
+          \begin{enumerate}
+            \setcounter{enumi}{3}
+            \item $(x+1)^{6}=(x+1)^{2\cdot 3}$
+          \end{enumerate}
+        \end{column}
+      \end{columns}
+  \end{example}
+\end{frame}

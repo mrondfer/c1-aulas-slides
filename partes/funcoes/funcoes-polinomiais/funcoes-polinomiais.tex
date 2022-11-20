@@ -1,0 +1,400 @@
+\section{Função Quadrática}
+
+\subsection{Conceito de Função Quadrática}
+
+\begin{frame}
+  \begin{definition}[Função Quadrática]
+    Chamamos de \textbf{função polinomial de 2º grau} ou \textbf{função quadrática} qualquer função \\ $f:\mathbb{R}\rightarrow\mathbb{R}$ tal que
+    \begin{equation*}
+      f(x) = ax^{2} + bx + c,
+    \end{equation*}
+    onde $a,\,b,\,c\in\mathbb{R}$ e $a\not=0$.
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.59\textwidth}
+      \begin{highlight}
+        \begin{itemize}
+          \item Conforme a definição, $\Domain{f} = \mathbb{R}$, no entanto,
+          nas aplicações, é comum considerar \emph{domínios menores}.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.39\textwidth}
+      \begin{example-highlight}
+        \begin{enumerate}
+          \item $y = 5x^2 + 3x - 3$
+          \item $f(x) = -x^{2} + 7x$
+          \item $y = x^{2} - 9$
+          \item $h(t) = -t^{2} + 5t - 8$
+        \end{enumerate}
+      \end{example-highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% \begin{frame}
+%   \begin{example}
+%     Vamos iniciar considerando a mais básica de todas as funções quadráticas, a função $f(x) = x^{2}$, com o gráfico representado abaixo.
+%   \end{example}
+%   \begin{columns}[onlytextwidth]
+%     \begin{column}{0.49\textwidth}
+%       \begin{figure}
+%         \includefigure{x2-exemplo.pdf}
+%       \end{figure}
+%     \end{column}
+%     \begin{column}{0.49\textwidth}
+%       \begin{highlight}
+%         \textbf{Determine}
+%         \begin{enumerate}
+%           \item Domínio e imagem da função $f$\vspace{1.0cm}
+%           \item $f(7)-f(-4)$\vspace{1.5cm}
+%           \item Os valores de $x$ tais que $y = 36$\vspace*{1.0cm}
+%         \end{enumerate}
+%       \end{highlight}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
+
+\subsection{Gráfico da Função Quadrática}
+
+\begin{frame}
+  \frametitle{Gráfico da Função Quadrática}
+  \vspace*{-0.69cm}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.74\textwidth}
+      \begin{itemize}
+        \item< 1- > Considere a função quadrática
+        \begin{equation*}
+          f(x) = ax^{2} + bx + c
+        \end{equation*}
+        \item< 2- > O gráfico é uma \textbf{parábola} com \emph{eixo de simetria} paralelo ao eixo $Oy$;
+        \item< 3- > A \emph{concavidade} da parábola é voltada para:
+        \begin{itemize}
+          \item< 3- > \textbf{cima} quando $a > 0$;
+          \item< 4- > \textbf{baixo} quando $a < 0$.
+        \end{itemize}
+        \item< 5- > As coordenadas do \emph{vértice} da parábola são dadas por
+        \begin{equation*}
+          V = \left(x_{v},\,y_{v}\right) = \left( -\frac{b}{2a},\,-\frac{\Delta}{4a} \right)
+        \end{equation*}
+        com $\Delta = b^{2} - 4ac$, o famoso discriminante;
+        \item< 7- > O gráfico \emph{corta} o eixo $Oy$ no ponto $C(0,\,c)$;
+        \item< 9- > O sinal de $b$ indica \emph{como o gráfico corta} o eixo $Oy$:
+        \begin{itemize}
+          \item< 9- > \textbf{crescente} quando $b > 0$;
+          \item< 11- > \textbf{decrescente} quando $b < 0$;
+          \item< 13- > \textbf{vértice no eixo} $Oy$ quando $b = 0$.
+        \end{itemize}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.26\textwidth}
+      \begin{figure}
+        \includefigure<2>[width=1\textwidth]{x2-grafico-1.pdf}
+        \includefigure<3>[width=1\textwidth]{x2-grafico-2.pdf}
+        \includefigure<4>[width=1\textwidth]{x2-grafico-3.pdf}
+        \includefigure<5>[width=1\textwidth]{x2-grafico-4.pdf}
+        \includefigure<6>[width=1\textwidth]{x2-grafico-5.pdf}
+        \includefigure<7>[width=1\textwidth]{x2-grafico-6.pdf}
+        \includefigure<8>[width=1\textwidth]{x2-grafico-7.pdf}
+        \includefigure<9>[width=1\textwidth]{x2-grafico-8.pdf}
+        \includefigure<10>[width=1\textwidth]{x2-grafico-9.pdf}
+        \includefigure<11>[width=1\textwidth]{x2-grafico-10.pdf}
+        \includefigure<12>[width=1\textwidth]{x2-grafico-11.pdf}
+        \includefigure<13>[width=1\textwidth]{x2-grafico-12.pdf}
+        \includefigure<14>[width=1\textwidth]{x2-grafico-13.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Zeros da Função Quadrática}
+\begin{frame}
+  \frametitle{Zeros da Função Quadrática}
+  \vspace*{-0.6cm}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.6\textwidth}
+      \begin{itemize}
+        \item Considere a função quadrática
+        \begin{equation*}
+          f(x) = ax^{2} + bx + c
+        \end{equation*}
+        \item Os seus \emph{zeros} podem ser determinados ao calcular:
+        \begin{equation*}
+          f(x) = 0 \qquad\Longleftrightarrow\qquad ax^{2} + bx + c = 0
+        \end{equation*}
+        \item O que é feito pela aplicação da \textbf{fórmula}:
+        \begin{equation*}
+          x = \frac{-b\pm\sqrt{\Delta}}{2a}
+        \end{equation*}
+        onde $\Delta = b^{2} - 4ac$;
+        \item< 2- > Existem \textbf{três casos} dependentes do sinal de $\Delta$:
+        \begin{itemize}
+          \item< 2- > $\Delta > 0$ -- dois zeros reais e \emph{distintos};
+          \item< 4- > $\Delta = 0$ -- um zero \emph{duplo};
+          \item< 6- > $\Delta < 0$ -- nenhum zero \emph{real}.
+        \end{itemize}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \vspace*{1cm}
+      \begin{figure}
+        \includefigure<2>[width=1\textwidth]{x2-grafico-14.pdf}
+        \includefigure<3>[width=1\textwidth]{x2-grafico-15.pdf}
+        \includefigure<4>[width=1\textwidth]{x2-grafico-16.pdf}
+        \includefigure<5>[width=1\textwidth]{x2-grafico-17.pdf}
+        \includefigure<6>[width=1\textwidth]{x2-grafico-18.pdf}
+        \includefigure<7>[width=1\textwidth]{x2-grafico-19.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Formas da Função Quadrática}
+\begin{frame}
+  \frametitle{Formas da Função Quadrática}
+  \begin{itemize}
+    \item Até o momento estávamos escrevendo a forma quadrática por meio de sua \textbf{forma geral}
+    \begin{equation*}
+      f(x) = ax^{2} + bx + c
+    \end{equation*}
+    \item No entanto, ao analisar uma função quadrática, dependendo dos objetivos da analise, ou das informações disponíveis, é conveniente escrever a função quadrática em \emph{outras formas};
+  \end{itemize}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{overlayarea}{\textwidth}{0.6\textheight}
+        \only<2>{
+          \begin{itemize}
+            \item Se conhecidos os zeros $x_{1}$ e $x_{2}$ da função quadrática, é possível escrevê-la em sua \textbf{forma fatorada}:
+            \begin{equation*}
+              f(x) = a(x-x_{1})(x-x_{2})
+            \end{equation*}
+            \item Expõe diretamente os zeros da função quadrática;
+            \item Ainda é preciso conhecer ao menos um ponto adicional para que possamos determinar $a$.
+          \end{itemize}
+        }
+        \only<3>{
+          \begin{figure}
+            \includefigure[width=0.65\textwidth]{x2-grafico-21.pdf}
+          \end{figure}
+        }
+      \end{overlayarea}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{overlayarea}{\textwidth}{0.6\textheight}
+        \only<2>{
+          \begin{figure}
+            \includefigure[width=0.65\textwidth]{x2-grafico-20.pdf}
+          \end{figure}
+        }
+        \only<3>{
+          \begin{itemize}
+            \item Se conhecido o vértice $V(x_{v},y_{v})$ do gráfico da função quadrática, é possível escrevê-la em sua \textbf{forma canônica}:
+            \begin{equation*}
+              f(x) = a(x-x_{v})^{2}+y_{v}
+            \end{equation*}
+            \item Expõe diretamente o vértice da função quadrática;
+            \item Ainda é preciso conhecer ao menos um ponto adicional para que possamos determinar $a$.
+          \end{itemize}
+        }
+      \end{overlayarea}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% \subsection{Exemplos}
+
+% \begin{frame}\vspace{-0.5cm}
+%   \begin{block}{Exemplo 3}
+%     Sobre a função quadrática $f(x) = x^{2} - 6x + 5$
+%   \end{block}
+%   \begin{columns}[onlytextwidth]
+%     \begin{column}{0.4\textwidth}
+%       \textbf{Determine:}
+%       \begin{enumerate}
+%         \item<only@1> O vértice da parábola\vspace{1.5cm}
+%         \item<only@1> Os zeros da função\vspace{2.0cm}
+%         \item<only@1> O gráfico de $f$
+%         \item<only@2> O domínio $D(f)$ e a imagem $Im(f)$\vspace{1.0cm}
+%         \item<only@2> Qual a solução da inequação $x^{2} - 6x + 5 < 0$?
+%       \end{enumerate}
+%     \end{column}
+%     \begin{column}{0.6\textwidth}
+%       \begin{figure}
+%         \vspace{-0.4cm}
+%         \includefigure<1>[width=0.8\textwidth]{fig16.png}
+%         \includefigure<2>[width=0.8\textwidth]{fig17.png}
+%       \end{figure}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
+
+% \begin{frame}\vspace{-0.5cm}
+%   \begin{block}{Exemplo 4}
+%     Sobre a função quadrática $f(x) = -x^{2} + 4x - 3$.
+%   \end{block}
+%   \begin{columns}[onlytextwidth]
+%     \begin{column}{0.35\textwidth}
+%       \textbf{Determine}
+%       \begin{enumerate}
+%         \item<only@1> Os zeros da função\vspace{1.5cm}
+%         \item<only@1> O vértice da parábola\vspace{2.0cm}
+%         \item<only@1> O gráfico de $f$
+%         \item<only@2> Os conjuntos $D(f)$ e $Im(f)$\vspace{1.0cm}
+%         \item<only@2> Estudo da monotonia\vspace{2.0cm}
+%         \item<only@2> Estudo do sinal
+%       \end{enumerate}
+%     \end{column}
+%     \begin{column}{0.6\textwidth}
+%       \begin{figure}
+%         \vspace{-0.7cm}
+%         \includefigure<1>[width=0.8\textwidth]{fig18.png}
+%         \includefigure<2>[width=0.8\textwidth]{fig19.png}
+%       \end{figure}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
+
+% \begin{frame}\vspace{-0.5cm}
+%   \begin{block}{Exemplo 5}
+%     Considere o gráfico da função quadrática abaixo.
+%   \end{block}
+%   \begin{columns}[onlytextwidth]
+%     \begin{column}{0.4\textwidth}
+%       \textbf{Determine}
+%       \begin{enumerate}
+%         \item<only@1> Intervalo de crescimento e decrescimento\vspace{1.0cm}
+%         \item<only@1> Os valores de $x$ tais que $f(x) = 12$\vspace{1.5cm}
+%         \item<only@1> Os valores de $x$ tais que $f(x) > 0$
+%         \item<only@2> Sabendo que trata-se de uma função quadrática, determine a sua lei de formação
+%       \end{enumerate}
+%     \end{column}
+%     \begin{column}{0.6\textwidth}
+%       \begin{figure}
+%         \vspace{-0.7cm}
+%         \includefigure[width=0.8\textwidth]{fig20.png}
+%       \end{figure}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
+
+\section{Funções Polinomiais}
+
+\subsection{Conceito de Função Polinomial}
+
+\begin{frame}
+  \begin{definition}[Função Polinomial]
+    Chamamos de \textbf{função polinomial} qualquer função $f:\mathbb{R}\rightarrow\mathbb{R}$ tal que
+    \begin{equation*}
+      f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \cdots a_{2}x^{2} + a_{1}x + a_{0},
+    \end{equation*}
+    onde $a_{n},a_{n-1},\dots,a_{2},a_{1},a_{0}\in\mathbb{R}$ e $a_{n}\not=0$. Dizemos que o \textbf{grau} da função polinomial é dado pelo valor de $n$.
+  \end{definition}
+  \begin{highlight}
+    \textbf{Alguns casos importantes:}
+    \begin{enumerate}
+      \item Conforme a definição, $\Domain{f}=\mathbb{R}$, no entanto, nas aplicações, é comum considerar \emph{domínios menores};
+      \item Se $n=1$, temos a função polinomial do 1º grau: $f(x) = ax + b$;
+      \item Se $n=2$, temos a função polinomial do 2º grau: $f(x) = ax^{2} + bx + c$;
+      \item Para $n > 2$, o comportamento pode ser estudado por meio do
+      uso de \emph{limites} e \emph{derivadas}.
+    \end{enumerate}
+  \end{highlight}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.35cm}
+      \begin{example}
+        Considere a família de funções polinomiais $f(x)=x^{n}$, com $n$ par.
+      \end{example}
+      \textbf{Observe o gráfico das funções}:
+      \vspace*{-0.5cm}
+      \begin{columns}[onlytextwidth]
+        \begin{column}{0.5\textwidth}
+          \begin{enumerate}
+            \item< 1- > $f(x)=x^{2}$
+            \item< 2- > $f(x)=x^{4}$
+          \end{enumerate}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+          \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item< 3- > $f(x)=x^{6}$
+            \item< 4- > $f(x)=x^{8}$
+          \end{enumerate}
+        \end{column}
+      \end{columns}
+      \vspace*{0.35cm}
+      \begin{highlight}
+        \textbf{Note que:}
+        \begin{itemize}
+          \item< 1- > $f(0)=0$;
+          \item< 1- > $f(1) = 1$ e $f(-1)=1$;
+          \item< 4- > Se $|x| > 1$ e $p>q$, então $x^{p} > x^{q}$;
+          \item< 4- > Se $|x| < 1$ e $p>q$, então $x^{p} < x^{q}$;
+          \item< 4- > $\Domain{f}=\mathbb{R}$;
+          \item< 4- > $\Image{f}=\mathbb{R}_{+} = \left\{x\in\mathbb{R}:x\geq 0\right\}$.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+        \begin{figure}
+        \includefigure<1>[width=\textwidth]{xn-par-1.pdf}
+        \includefigure<2>[width=\textwidth]{xn-par-2.pdf}
+        \includefigure<3>[width=\textwidth]{xn-par-3.pdf}
+        \includefigure<4>[width=\textwidth]{xn-par-4.pdf}
+        \includefigure<5>[width=\textwidth]{xn-par-5.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.35cm}
+      \begin{example}
+        Considere a família de funções polinomiais $f(x)=x^{n}$, com $n$ ímpar.
+      \end{example}
+      \textbf{Observe o gráfico das funções}:
+      \vspace*{-0.5cm}
+      \begin{columns}[onlytextwidth]
+        \begin{column}{0.5\textwidth}
+          \begin{enumerate}
+            \item< 1- > $f(x)=x$
+            \item< 2- > $f(x)=x^{3}$
+          \end{enumerate}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+          \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item< 3- > $f(x)=x^{5}$
+            \item< 4- > $f(x)=x^{7}$
+          \end{enumerate}
+        \end{column}
+      \end{columns}
+      \vspace*{0.35cm}
+      \begin{highlight}
+        \textbf{Note que:}
+        \begin{itemize}
+          \item< 1- > $f(0)=0$;
+          \item< 1- > $f(1) = 1$ e $f(-1)=-1$;
+          \item< 4- > Se $|x| > 1$ e $p>q$, então $|x^{p}| > |x^{q}|$;
+          \item< 4- > Se $|x| < 1$ e $p>q$, então $|x^{p}| < |x^{q}|$;
+          \item< 4- > $\Domain{f}=\mathbb{R}$;
+          \item< 4- > $\Image{f}=\mathbb{R}$.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+        \begin{figure}
+        \includefigure<1>[width=\textwidth]{xn-impar-1.pdf}
+        \includefigure<2>[width=\textwidth]{xn-impar-2.pdf}
+        \includefigure<3>[width=\textwidth]{xn-impar-3.pdf}
+        \includefigure<4>[width=\textwidth]{xn-impar-4.pdf}
+        \includefigure<5>[width=\textwidth]{xn-impar-5.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}

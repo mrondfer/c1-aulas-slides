@@ -1,0 +1,35 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={\scriptsize$x$},ylabel={\scriptsize$y$},
+      xlabel style={below},ylabel style={left},
+      xmin=-5.5,xmax=5.5,
+      xtick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+      xticklabels={\tiny$-5$,\tiny$-4$,\tiny$-3$,\tiny$-2$,\tiny$-1$,\tiny$0$,\tiny$1$,\tiny$2$,\tiny$3$,\tiny$4$,\tiny$5$},
+      ymin=-5.5,ymax=5.5,
+      ytick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+      yticklabels={\tiny$-5$,\tiny$-4$,\tiny$-3$,\tiny$-2$,\tiny$-1$,\tiny$0$,\tiny$1$,\tiny$2$,\tiny$3$,\tiny$4$,\tiny$5$},
+      axis line style={-latex},
+      major grid style={gray!10},
+      grid=major,
+      declare function={
+        f(\x) = ln(\x+5);
+      }
+    ]%
+      \addplot[%
+        mark=none,
+        domain=-4.9999:6,
+        color=orange,
+        thick,
+        samples=1000
+      ] {f(x)};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

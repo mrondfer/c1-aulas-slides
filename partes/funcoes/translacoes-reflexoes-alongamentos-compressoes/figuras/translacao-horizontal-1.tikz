@@ -1,0 +1,76 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      % axis on top,
+      % unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below},ylabel style={left},
+      xmin=-5,xmax=5,xtick=\empty,
+      ymin=-2.5,ymax=10,ytick=\empty,
+      restrict y to domain=-2:10,
+      axis line style={-latex},
+      legend entries={$f(x)$,$g(x)$},
+      legend columns=1,
+      legend style={at={(axis cs:4.5,-0.25)}},
+      declare function={
+        h = 2;
+        f(\x) = 0.5*\x^2 + 1;
+        g(\x) = f(\x-h);
+      }
+    ]%
+      \node[draw] at (-4,-1.25) {$h>0$};
+
+      \addplot[mark=none,domain=-5:5,color=orange,thick,samples=1000] {f(x)};
+      \addplot[mark=none,domain=-5:5,color=red,thick,samples=1000] {g(x)};
+
+      \def\t{-3}
+
+      \draw[fill=black] (\t,{f(\t)}) circle (1pt);
+      \node[yshift=-0.5em] at (\t,0) {$x$};
+
+      \draw[fill=black] (\t+h,{g(\t+h)}) circle (1pt);
+      \node[yshift=-0.5em] at (\t+h,0) {$x+h$};
+
+      \draw[dotted] (\t,0) -- (\t,{f(\t)});
+      \draw[dotted] (\t+h,0) -- (\t+h,{g(\t+h)});
+      \draw[stealth-stealth] (\t+0.1,{f(\t)}) -- (\t+h-0.1,{g(\t+h)});
+      \draw[dotted] (\t,{f(\t)}) -- (0,{g(\t+h)});
+      \node[yshift=-0.75em] at (\t+h/2,{f(\t)}) {$|h|$};
+
+      \node[yshift=-0.4em,xshift=-0.4em] at (\t,{f(\t)}) {$P$};
+      \node[yshift=0.4em,xshift=0.4em] at (\t+h,{g(\t+h)}) {$Q$};
+      \node[yshift=0.8em,xshift=1.6em] at (0,{g(\t+h)}) {$g(x)$};
+      \node[xshift=1.8em] at (0,{g(\t+h)}) {$=$};
+      \node[yshift=-0.6em,xshift=1.6em] at (0,{g(\t+h)}) {$f(x-h)$};
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      % \draw[dotted] (0,{f(-1)}) -- (-3,{f(-1)});
+      % \draw[dotted] (0,{g(-1)}) -- (-3,{g(-1)});
+      % \draw[stealth-stealth] (-3,{f(-1)}) -- (-3,{g(-1)});
+      % \draw[fill=black] (-1,{f(-1)}) circle (1pt);
+      % \draw[fill=black] (-1,{g(-1)}) circle (1pt);
+      % \draw[dotted] (-1,{g(-1)}) -- (-1,0);
+      % \node[yshift=-0.5em] at (-1,0) {$x$};
+      % \node[yshift=-0.4em,xshift=-0.4em] at (-1,{f(-1)}) {$P$};
+      % \node[xshift=0.8em] at (0,{f(-1)}) {$f(x)$};
+      % \node[yshift=0.4em,xshift=0.4em] at (-1,{g(-1)}) {$Q$};
+      % \node[xshift=0.9em] at (0,{g(-1)}) {$g(x)$};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

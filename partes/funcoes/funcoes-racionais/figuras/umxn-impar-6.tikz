@@ -1,0 +1,38 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}%[font=\scriptsize]
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      % axis on top,
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={right},ylabel style={left},
+      xmin=-2,xmax=0.1,
+      xtick={-0.5,-1,-1.5},
+      xticklabel style={above},
+      ymin=-7,ymax=7,
+      ytick={-6,-5,-4,-3,-2,-1},
+      yticklabel style={right},
+      extra y ticks={1,2,3,4,5,6},
+      extra y tick labels={1,2,3,4,5,6},
+      extra y tick style={yticklabel style={xshift=-1em}},
+      restrict y to domain=-6:0.1,
+      axis line style={-latex},
+      major grid style={dotted,gray!40},
+      grid=major,
+      legend entries={$\frac{1}{x}$,$\frac{1}{x^{3}}$,$\frac{1}{x^{5}}$,$\frac{1}{x^{7}}$},
+      legend style={at={(axis cs:-1.5,-1.5)},/tikz/nodes={yshift=1pt},}
+    ]%
+      \addplot[mark=none,domain=-5:5,color=MidnightBlue,thick,samples=1000] {1/x};
+      \addplot[mark=none,domain=-5:5,color=Mahogany,thick,samples=1000] {1/x^3};
+      \addplot[mark=none,domain=-5:5,color=DarkOrchid,thick,samples=1000] {1/x^5};
+      \addplot[mark=none,domain=-5:5,color=PineGreen,thick,samples=1000] {1/x^7};
+
+      \addplot[mark=*,mark size=1.5pt,color=black!90] coordinates {(-1,-1)};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+  \begin{tikzpicture}[font=\tiny]
+    \def\r{1.2}
+    \def\t{45}
+    \def\ox{1.8}
+    \def\oy{1.8}
+    
+    \def\xm{\r*cos(\t)}
+    \def\ym{\r*sin(\t)}
+    \def\tanv{\r*tan(\t)}
+    \def\senv{\r*sin(\t)}
+
+    \draw[-latex,line width=0.25pt] ({-\ox},0) -- ({\ox},0);
+    \node at ({\ox+0.1},0) {$x$};
+    \draw[-latex,line width=0.25pt] (0,{-\oy+0.4}) -- (0,{\oy-0.2});
+    \node at (0,{\oy-0.1}) {$y$};
+    \draw[-latex,line width=0.25pt] (\r,{-\oy+0.4}) -- (\r,{\oy-0.2});
+    
+    \draw (0,0) circle (\r);
+    \draw[red] (0.2,0) arc (0:\t:0.2);
+    \draw[red] (\r,0) arc (0:\t:\r);
+    \draw[line width=0.25pt] (0,0) -- (\r,{\tanv});
+    \node[red] at (0.3,0.12) {$x$};
+    
+    \fill ({\xm},{\ym}) circle (0.04);
+    \node at ({\xm},{\ym+0.17}) {$M$};
+
+    \fill (\r,{\tanv}) circle (0.04);
+    \node at ({\r+0.12},{\tanv+0.12}) {$T$};
+    
+    \draw[line width=0.25pt,densely dotted] ({\r+0.25},0) -- ({\r+0.25},{\tanv});
+    \node[rotate=-90] at ({\r+0.35},{\tanv/2}) {$\tan{x}$};
+
+    \draw[line width=0.25pt,densely dotted] (-0.10,0) -- (-0.10,{\senv});
+    \node[rotate=90] at ({-0.2},{\senv/2}) {$\mbox{sen}\,{x}$};
+
+    \draw[line width=0.25pt,densely dotted] (0.03*\r,-0.10*\r) -- (0.97*\r,-0.10*\r);
+    \node at ({0.5*\r},{-0.2*\r}) {$1$};
+
+    \draw[line width=0.25pt,dashed] (0,{\ym}) -- ({\xm},{\ym});
+    
+    \draw[line width=0.25pt,dashed] ({\xm},0) -- ({\xm},{\ym});
+  \end{tikzpicture}%
+\end{document}

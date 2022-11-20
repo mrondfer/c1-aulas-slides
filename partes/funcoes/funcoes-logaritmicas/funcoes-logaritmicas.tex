@@ -1,0 +1,144 @@
+\section{Funções Logarítmicas}
+
+\subsection{Logaritmos}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.55cm}
+      \begin{definition}[Logaritmo]
+        Sendo $a$ e $b$ números reais e positivos, com $a\not= 1$. Chamamos de \textbf{logaritmo de $b$ na base $a$} o expoente $x$ ao qual se deve elevar a base $a$ de modo que a potência $a^{x}$ seja igual a $b$. Em outras palavras, define-se o logaritmo de $b$ na base $a$ por meio da relação:
+        \begin{equation*}
+          \log_{a}{b} = x \Leftrightarrow a^{x} = b.
+        \end{equation*}
+      \end{definition}
+      \begin{highlight}
+        \textbf{Temos que:}
+        \begin{itemize}
+          \item $a$ ($a>0$ e $a\not=1$) é a \textbf{base} do logaritmo;
+          \item $b$ ($b>0$) é o \textbf{logaritmando};
+          \item $x$ é o \textbf{logaritmo}.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.55cm}
+      \begin{highlight}
+        \textbf{Propriedades dos Logaritmos:}
+        \begin{enumerate}
+          \item $\log_{a}{1} = 0$; $\log_{a}{a} = 1$;
+          \item $\log_{a}{\left(b\cdot c\right)} = \log_{a}{b} + \log_{a}{c}$;
+          \item $\log_{a}{\left(\dfrac{b}{c}\right)} = \log_{a}{b} - \log_{a}{c}$;
+          \item $\log_{a}{b^{m}} = m\cdot\log_{a}{b}$;
+          \item $\log_{c}{b} = \dfrac{\log_{a}{b}}{\log_{a}{c}}$.
+        \end{enumerate}
+      \end{highlight}
+      \begin{highlight}
+        \textbf{Bases especiais:}
+        \begin{enumerate}
+          \item $\log{b}=\log_{10}{b}$;
+          \item $\lg{2}=\log_{2}{b}$;
+          \item $\ln{b} = \log_{b}{x}$, com $e=2.71828\dots$
+          (\textbf{logaritmo natural})
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.55cm}
+      \begin{example}
+        Calcule os logaritmos que seguem.
+      \end{example}
+      \begin{enumerate}
+        \item $\log_{4}{16}$
+        \item $\log{\sqrt[3]{100}}$
+        \item $\log{5}$
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Logarítmica}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.55cm}
+      \begin{definition}[Função Logarítmica]
+        Dados um número real $a$ (com $0 < a \not= 1$), definimos a \textbf{função logarítmica} de base $a$ como $f:\R^{*}_{+}\rightarrow\R$ dada pela lei
+        \begin{equation*}
+          f(x) = \log_{a}{x}.
+        \end{equation*}
+      \end{definition}
+      \textbf{Casos especiais:}
+      \begin{enumerate}
+        \item Se $a = 10$, denotamos $f(x) = \log{x}$;
+        \item Se $a = 2$, denotamos $f(x) = \lg{x}$;
+        \item Se $a = e$, denotamos $f(x) = \ln{x}$.
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.55cm}
+      \begin{theorem}[Inversa da Exponencial]
+        A função logarítmica de base $a$ é a \textbf{inversa} da função exponencial de base $a$.
+      \end{theorem}
+      \begin{highlight}
+        \textbf{Dem.:}
+        \begin{enumerate}
+          \item Seja $f(x) = a^{x}$ uma função exponencial;
+          \item Temos que $f$ é uma função bijetora, logo admite uma inversa $f^{-1}$;
+          \item Dado $x\in\R$, temos que
+          \begin{equation*}
+            y=a^{x} \Leftrightarrow x = \log_{a}y
+          \end{equation*}
+          \item Logo,
+          \begin{equation*}
+            f^{-1}(y) = \log_{a}{y}.
+          \end{equation*}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.55cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{funcao-logaritmica-crescente-1.pdf}
+        \includefigure<2>[width=\textwidth]{funcao-logaritmica-crescente-2.pdf}
+        \includefigure<3>[width=\textwidth]{funcao-logaritmica-crescente-3.pdf}
+        \includefigure<4>[width=\textwidth]{funcao-logaritmica-crescente-4.pdf}
+        \includefigure<5>[width=\textwidth]{funcao-logaritmica-crescente-5.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.55cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{funcao-logaritmica-decrescente-1.pdf}
+        \includefigure<2>[width=\textwidth]{funcao-logaritmica-decrescente-2.pdf}
+        \includefigure<3>[width=\textwidth]{funcao-logaritmica-decrescente-3.pdf}
+        \includefigure<4>[width=\textwidth]{funcao-logaritmica-decrescente-4.pdf}
+        \includefigure<5>[width=\textwidth]{funcao-logaritmica-decrescente-5.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.55cm}
+      \begin{example}
+        Faça o que é pedido.
+      \end{example}
+      \begin{enumerate}
+        \item<only@1-2> Determine o domínio e o gráfico da função $f(x) = \ln{(x+5)}$.
+        \item<only@3> Determine o domínio da função $f(x) = \log_{(x-1)}{(50-2x^{2})}$.
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.55cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo-1-1.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo-1-2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}

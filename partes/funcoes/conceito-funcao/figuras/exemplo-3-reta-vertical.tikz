@@ -1,0 +1,11 @@
+\documentclass[crop,tikz]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[axis x line=center,axis y line=center,xlabel={$x$},ylabel={$y$},xlabel style={right},ylabel style={left},xmin=-3.5,xmax=3.5,xtick={-3,-2,-1,0,1,2,3},ymin=-6,ymax=5,ytick={-5,-4,-3,-2,-1,0,1,2,3,4},axis line style={-latex},major grid style={dotted,gray},grid=major]
+      \addplot[mark=none,domain=-3:2,color=blue,thick,samples=200] {-(x+1)^2+4};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

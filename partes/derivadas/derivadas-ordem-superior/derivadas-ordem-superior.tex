@@ -1,0 +1,98 @@
+\section{Derivadas de Ordem Superior}
+\begin{frame}
+  \frametitle{Derivadas Sucessivas}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}\vspace{-0.5cm}
+      \begin{itemize}\small
+        \item Considere a função
+        \begin{equation*}
+          f(x) = 2x^{4} + 5x^{2}
+        \end{equation*}
+        \item Já sabemos calcular a sua derivada
+        \begin{equation*}
+          \frac{df(x)}{dx} = 8x^{3} + 10x
+        \end{equation*}
+        \item Notamos que $df/dx$ é também uma função. 
+        \item Uma pergunta natural é: \emph{podemos} calcular a sua derivada? \textbf{Sim!}
+        \begin{equation*}\hspace*{-1.0cm}
+          \frac{d}{dx}\left( \frac{df(x)}{dx} \right) = \frac{d}{dx}\left( 8x^{3} + 10x \right) = 24x^{2} + 10
+        \end{equation*}
+        \item Chamamos $y^{\prime} = \dfrac{dy}{dx}$ de derivada de \textbf{primeira} ordem
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}\vspace{-0.5cm}
+      \begin{itemize}\small
+        \item Definimos a derivada de \textbf{segunda} ordem\vspace{-0.2cm}
+        \begin{equation*}
+          y^{\prime\prime} = \frac{d^{2}f(x)}{dx^{2}} = \frac{d}{dx}\left( \frac{df(x)}{dx} \right)
+        \end{equation*}
+        \item Definimos a derivada de \textbf{terceira} ordem\vspace{-0.2cm}
+        \begin{equation*}
+          y^{\prime\prime\prime} = \frac{d^{3}f(x)}{dx^{3}} = \frac{d}{dx}\left( \frac{d^{2}f(x)}{dx^{2}} \right)
+        \end{equation*}
+        \item Definimos a derivada de \textbf{quarta} ordem\vspace{-0.2cm}
+        \begin{equation*}
+          y^{(4)} = \frac{d^{4}f(x)}{dx^{4}} = \frac{d}{dx}\left( \frac{d^{3}f(x)}{dx^{3}} \right)
+        \end{equation*}
+        \item E, sucessivamente, a derivada de \textbf{\emph{n}-ésima} ordem\vspace{-0.2cm}
+        \begin{equation*}
+          y^{(n)} = \frac{d^{n}f(x)}{dx^{n}} = \frac{d}{dx}\left( \frac{d^{n-1}f(x)}{dx^{n-1}} \right)
+        \end{equation*}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{definition}[Derivada de Ordem Superior]
+    Dada uma função $f$ que admite derivada de ordem $n-1$ em $x_{0}$, definimos a derivada de ordem $n$ da função $f$ pela expressão
+    \begin{equation*}
+      f^{(n)}(x_{0}) = \lim_{h\to 0}\frac{f^{(n-1)}(x_{0}+h)-f^{(n-1)}(x_{0})}{h},
+    \end{equation*}
+    contando que o limite exista.
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \begin{highlight}
+        \textbf{Observação:}
+        \begin{enumerate}
+          \item Em geral, denotamos\vspace*{-0.2cm}
+          \begin{equation*}
+            \frac{d^{n}}{dx^{n}}f(x) = \frac{d}{dx}\frac{d^{(n-1)}}{dx^{(n-1)}}f(x)\vspace*{-0.2cm}
+          \end{equation*}
+          \item Ou, ainda,\vspace*{-0.2cm}
+          \begin{equation*}
+            f^{(n)}(x) = \left(f^{(n-1)}(x)\right)\vspace*{-0.2cm}
+          \end{equation*}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.65\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Dada $f(x) = x^{5} + x^{3} - x^2 + 5 - \cos{x}$, determine $f^{(6)}(x)$.
+      \end{example}
+    \end{column}
+    \begin{column}{0.35\textwidth}\vspace{-0.75cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.65\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Dada $y = \mbox{arcsen}\,{x^{2}}$, determine $\dfrac{d^{2}y}{dx^{2}}$.
+      \end{example}
+    \end{column}
+    \begin{column}{0.35\textwidth}\vspace{-0.75cm}
+    \end{column}
+  \end{columns}
+\end{frame}

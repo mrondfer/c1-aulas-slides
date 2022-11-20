@@ -1,0 +1,124 @@
+\section{Derivação Implícita}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}\small
+      \begin{itemize}
+        \item Até agora temos trabalhado com funções \textbf{explicitamente} definidas;
+        \item Ou seja, funções da forma
+        \begin{equation*}
+          y = f(x),
+        \end{equation*}
+        a qual estabelece explicitamente a variável dependente $y$ em termos dos valores atribuídos à $f$ pela variável independente $x$. Em outras palavras, a variável $y$ \textbf{não} aparece sozinha em um dos lados da equação;
+        \item No entanto, algumas funções são definidas através de equações que não deixam exposta a relação entre as variáveis $x$ e $y$, situações nais quais a variável dependente $y$ não se encontra sozinha em um dos lados da equação.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Função Implícita]
+        Dizemos que uma dada equação em $x$ e $y$ define a função $f$ \textbf{implicitamente} se o gráfico de $y=f(x)$ coincidir com alguma porção do gráfico da equação.
+      \end{definition}
+      \begin{example-highlight}
+        Temos que a função\vspace*{-0.2cm}
+        \begin{equation*}
+          y = \frac{x-1}{x+1}\vspace*{-0.2cm}
+        \end{equation*}
+        define $y$ explicitamente em termos de $x$.
+      \end{example-highlight}
+      \begin{example-highlight}
+        Temos que a equação\vspace*{-0.2cm}
+        \begin{equation*}
+          yx + y + 1 = x\vspace*{-0.2cm}
+        \end{equation*}
+        define $y$ implicitamente em termos de $x$.
+      \end{example-highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{itemize}
+        \item Temos no exemplo que
+        \begin{equation*}
+          yx + y + 1 = x
+        \end{equation*}
+        define implicitamente $y$ em função de $x$.
+        \item Uma pergunta \emph{natural} seria: qual é a derivada de $y(x)$?
+        \item Dado que
+        \begin{equation*}
+          y = \frac{x-1}{x+1},
+        \end{equation*}
+        podemos usar a regra do quociente para obter a derivada desejada;
+        \item De fato, temos que
+        \begin{equation*}
+          y^{\prime} = \frac{(x+1)\cdot 1 - (x-1)\cdot 1}{(x+1)^{2}} = \frac{2}{(x+1)^{2}}
+        \end{equation*}
+        \item Podemos, contudo, obter o mesmo resultado sem determinar $y$ explicitamente em função de $x$;
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{itemize}
+        \item Para isso, vamos derivar os dois lados da equação que define $y$
+        \begin{equation*}
+          \frac{d}{dx}\left[yx + y + 1\right] = \frac{d}{dx}\left[x\right]
+        \end{equation*}
+        \item Pelas propriedades algébricas das derivadas, temos
+        \begin{equation*}
+          \frac{d}{dx}\left[yx\right] + \frac{d}{dx}\left[y\right] + \frac{d}{dx}\left[1\right] = \frac{d}{dx}\left[x\right]
+        \end{equation*}
+        \item \textbf{Supondo} que $y=f(x)$, temos que
+        \begin{equation*}
+          y\frac{d}{dx}\left[x\right] + x\frac{d}{dx}\left[y\right] + 0 = 1
+        \end{equation*}
+        \item De onde podemos obter
+        \begin{equation*}
+          y + xy^{\prime} = 1 \Rightarrow y^{\prime} = \frac{1-y}{x+1}
+        \end{equation*}
+        \item Temos que a derivada obtida é definida \textbf{implicitamente}!
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}\vspace*{-0.5cm}
+      \begin{example}
+        Determine a reta tangente à circunferência
+        \begin{equation*}
+          x^{2} + y^{2} = 25
+        \end{equation*}
+        no ponto $P(3,\,-4)$.
+      \end{example}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \includefigure[width=0.9\textwidth]{exemplo1.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Derivada das Potências de x}
+\begin{frame}
+  \begin{theorem}[Derivada das Potências de $x$]
+    Seja $f:I\rightarrow\mathbb{R}$ a função definida por $f(x) = x^{r}$, com $r\in\mathbb{Q}$. Então, 
+    \begin{equation*}
+      f^{\prime}(x) = r\cdot x^{r-1}.
+    \end{equation*}
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.55\textwidth}
+      \begin{example-highlight}
+        Determine as derivadas das funções a seguir.
+        \begin{enumerate}
+          \item $y = -\dfrac{1}{\sqrt[3]{x}}$
+          \item $f(x) = \sqrt{25-x^{2}}$
+        \end{enumerate}
+      \end{example-highlight}
+    \end{column}
+    \begin{column}{0.43\textwidth}\vspace{-0.6cm}
+    \end{column}
+  \end{columns}
+\end{frame}

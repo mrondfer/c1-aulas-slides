@@ -1,0 +1,87 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      % unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below},ylabel style={left},
+      xmin=-4.2,xmax=5.3,
+      xtick={-4,2,3,3.5,5},
+      xtick style={draw=none},
+      extra x ticks={-1},
+      extra x tick style={xticklabel style={above}},
+      ymin=-1.5,ymax=4.5,
+      ytick={f3(2),4},
+      ytick style={draw=none},
+      extra y ticks={f2(-1),2},
+      extra y tick style={yticklabel style={right}},
+      axis line style={-latex},
+      declare function={
+        f1(\x) = -1.25*\x - 3;
+        f2(\x) = 0.5*(\x+1)^2-1;
+        f3(\x) = 3.5;
+        f4(\x) = exp(-(\x-5)) - 3.9;
+        f5(\x) = 0.5816890703381;
+      }
+    ]%
+      \addplot[mark=none,domain=-4:-2,color=orange,thick,samples=1000]{f1(x)};
+      \addplot[mark=none,domain=-2:2,color=orange,thick,samples=1000]{f2(x)};
+      \addplot[mark=none,domain=2:3,color=orange,thick,samples=1000]{f3(x)};
+      \addplot[mark=none,domain=3:3.5,color=orange,thick,samples=1000]{f4(x)};
+      \addplot[mark=none,domain=3.5:5,color=orange,thick,samples=1000]{f5(x)};
+
+      \draw[fill=black] (-4,{f1(-4)}) circle (1pt);
+      % \draw[fill=black] (-2,{f2(-2)}) circle (1pt);
+      \draw[fill=black] (-1,{f2(-1)}) circle (1pt);
+      \draw[fill=black] (2,{f3(2)}) circle (1pt);
+      \draw[fill=black] (3,{f3(3)}) circle (1pt);
+      \draw[fill=black] (3.5,{f4(3.5)}) circle (1pt);
+      \draw[fill=black] (5,{f5(5)}) circle (1pt);
+
+      \draw[dotted] (-4,{f1(-4)}) -- (-4,0);
+      % \draw[dotted] (-2,{f2(-2)}) -- (-2,0);
+      \draw[dotted] (-1,{f2(-1)}) -- (-1,0);
+      \draw[dotted] (2,{f3(2)}) -- (2,0);
+      \draw[dotted] (3,{f3(3)}) -- (3,0);
+      \draw[dotted] (3.5,{f4(3.5)}) -- (3.5,0);
+      \draw[dotted] (5,{f5(5)}) -- (5,0);
+
+      \draw[dotted] (0,{f1(-4)}) -- (-4,{f1(-4)});
+      \draw[dotted] (0,{f2(-1)}) -- (-1,{f2(-1)});
+      % \draw[dotted] (0,{f2(-2)}) -- (-2,{f2(-2)});
+      \draw[dotted] (0,{f3(2)}) -- (2,{f3(2)});
+      \draw[dotted] (0,{f4(3.5)}) -- (3.5,{f4(3.5)});
+
+      % \draw[dotted] (\x,{f(\x)}) -- (\x,0);
+      % \draw[dotted] (\x/b,{g(\x/b)}) -- (\x/b,0);
+      % \draw[dotted] (0,{g(\x/b)}) -- (\x/b,{g(\x/b)});
+
+      % \draw[dotted] (-\x,{f(-\x)}) -- (-\x,0);
+      % \draw[dotted] (-\x/b,{g(-\x/b)}) -- (-\x/b,0);
+      % \draw[dotted] (0,{g(-\x/b)}) -- (-\x/b,{g(-\x/b)});
+
+      % \draw[densely dotted,-stealth] (3*pi/2,{g(3*pi/2)}) -- +(0.95em,0.5em);
+      % \node[color=red,xshift=2.2em,yshift=0.6em] at (3*pi/2,{g(3*pi/2)})  {$\mbox{sen}\,{\frac{1}{2}x}$};
+
+      % \draw[densely dotted,-stealth] (-3*pi/2,{f(-3*pi/2)}) -- +(-0.95em,0.4em);
+      % \node[color=orange,xshift=-1.9em,yshift=0.5em] at (-3*pi/2,{f(-3*pi/2)})  {$\mbox{sen}\,{x}$};
+
+      % \addplot[mark=none,domain=-2*pi:2*pi,color=orange,thick,samples=1000]{f(x)};
+      % \addplot[mark=none,dashed,domain=-2*pi-1:2*pi+1,color=orange,thick,samples=1000]{f(x)};
+      % \addplot[mark=none,domain=-2*pi:2*pi,color=red,thick,samples=1000]{g(x)};
+      % \addplot[mark=none,dashed,domain=-2*pi-1:2*pi+1,color=red,thick,samples=1000]{g(x)};
+
+      % \draw[fill=black] (\x,{f(\x)}) circle (1pt);
+      % \draw[fill=black] (\x/b,{g(\x/b)}) circle (1pt);
+
+      % \draw[fill=black] (-\x,{f(-\x)}) circle (1pt);
+      % \draw[fill=black] (-\x/b,{g(-\x/b)}) circle (1pt);
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

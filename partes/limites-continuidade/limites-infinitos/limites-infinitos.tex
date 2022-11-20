@@ -1,0 +1,135 @@
+\section{Limites Infinitos}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.6\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Limites Infinitos]
+        Seja $f$ uma função definida em um intervalo aberto contendo $x_{0}$, exceto, possivelmente, $x=x_{0}$. Dizemos que $\displaystyle\lim_{x\to x_{0}}f(x)=+\infty$, se para qualquer $A>0$, existir um $\delta>0$ tal que $f(x)>A$ sempre que $0 < |x-x_{0}| < \delta$.
+      \end{definition}
+      \begin{itemize}
+        \item Tem como \emph{resultado} $+\infty$
+        \item Dizemos que \emph{não converge}, ou mesmo que \emph{não existe}
+        \item Os valores de $y$ crescem sem \emph{cota superior}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure[width=0.95\textwidth]{exemplo1.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.6\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Limites Infinitos]
+        Seja $f$ uma função definida em um intervalo aberto contendo $x_{0}$, exceto, possivelmente, $x=x_{0}$. Dizemos que $\displaystyle\lim_{x\to x_{0}}f(x)=-\infty$, se para qualquer $B<0$, existir um $\delta>0$ tal que $f(x)<B$ sempre que $0 < |x-x_{0}| < \delta$.
+      \end{definition}
+      \begin{itemize}
+        \item Tem como \emph{resultado} $-\infty$
+        \item Dizemos que \emph{não converge}, ou mesmo que \emph{não existe}
+        \item Os valores de $y$ decrescem sem \emph{cota inferior}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure[width=0.95\textwidth]{exemplo2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}\vspace*{-0.5cm}
+      \begin{theorem}[\phantom{ç}]
+        Se $n$ é um número inteiro positivo qualquer, então
+      \begin{enumerate}
+        \item $\displaystyle\lim_{x\rightarrow 0^{+}}\dfrac{1}{x^{n}} = +\infty$
+        \item $\displaystyle\lim_{x\rightarrow 0^{-}}\dfrac{1}{x^{n}} = \begin{cases}
+          +\infty, \mbox{ se $n$ é par} \\
+          -\infty, \mbox{ se $n$ é ímpar}
+        \end{cases}$
+      \end{enumerate}
+      \end{theorem}
+      \begin{highlight}
+        \textbf{Veja que}
+        \begin{itemize}
+          \item $\dfrac{k}{0^{+}} = +\infty$, se $k > 0$
+          \item $\dfrac{k}{0^{-}} = -\infty$, se $k > 0$
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \includefigure<1>[width=0.9\textwidth]{exemplo3.pdf}
+        \includefigure<2>[width=0.9\textwidth]{exemplo4.pdf}
+        \includefigure<3>[width=0.9\textwidth]{exemplo5.pdf}
+        \includefigure<4>[width=0.9\textwidth]{exemplo6.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Determine os limites a seguir.
+  \end{example}
+  \begin{enumerate}
+    \item $\displaystyle\lim_{x\rightarrow 1}\dfrac{3x+2}{(x-1)^{2}}$
+    \item $\displaystyle\lim_{x\rightarrow 2}\dfrac{1-x}{(x-2)^{2}}$
+    \item $\displaystyle\lim_{x\rightarrow 3}\dfrac{x^{2}-2}{x-3}$
+    \item $\displaystyle\lim_{x\rightarrow 2}\dfrac{x^{2} + 3x + 1}{x^{2} + x - 6}$
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.55\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Assíntota Vertical]
+        Se $\displaystyle\lim_{x\rightarrow x_{0}^{+}}f(x)=\pm\infty$ ou se $\displaystyle\lim_{x\rightarrow x_{0}^{-}}f(x)=\pm\infty$, então a reta $x=x_{0}$ é chamada de \textbf{assíntota vertical} do gráfico da função $y=f(x)$.
+      \end{definition}
+      \begin{highlight}
+        \textbf{Observação:}
+        \begin{itemize}
+          \item Em outras palavas, sempre que algum dos limites laterais tender à algum dos infinitos ao passo que $x$ tende para $x_{0}$, teremos uma assíntota vertical;
+          \item Podemos ter múltiplas assíntotas verticais.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.45\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure[width=0.9\textwidth]{exemplo7.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Esboce os gráficos e determine as assíntotas verticais para as seguintes funções.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.3\textwidth}
+      \begin{enumerate}
+        \item<only@1-2> $f(x) = \tan{x}$
+        \item<only@3-4> $f(x) = \dfrac{1}{x-2} - 1$
+        \item<only@5-6> $f(x) = \dfrac{3}{(x+1)^{2}}$
+        \item<only@7-8> $f(x) = \ln{(x+2)}$
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.7\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo8-vazio.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo8.pdf}
+        \includefigure<3>[width=\textwidth]{exemplo9-vazio.pdf}
+        \includefigure<4>[width=\textwidth]{exemplo9.pdf}
+        \includefigure<5>[width=\textwidth]{exemplo10-vazio.pdf}
+        \includefigure<6>[width=\textwidth]{exemplo10.pdf}
+        \includefigure<7>[width=\textwidth]{exemplo11-vazio.pdf}
+        \includefigure<8>[width=\textwidth]{exemplo11.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}

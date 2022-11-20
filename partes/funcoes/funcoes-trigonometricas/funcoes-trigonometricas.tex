@@ -1,0 +1,902 @@
+\section{Funções Trigonométricas}
+
+\subsection{Circunferência Trigonométrica}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.52\textwidth}
+      \begin{definition}[Circunferência Trigonométrica]
+        Consideremos uma circunferência de raio unitário, associada a um sistema de eixos cartesianos ortogonais, para a qual valem as seguintes convenções:
+        \begin{itemize}
+          \item A origem do sistema coincide com o centro da circunferência;
+          \item O ponto $A(1,0)$ é a origem de todos os arcos a serem medidos na circunferência;
+          \item O sentido positivo de percurso é o anti-horário e o negativo é o horário;
+          \item É tipicamente dividida em \textbf{quatro quadrantes}.
+        \end{itemize}
+      \end{definition}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{figure}
+        \includefigure[width=\textwidth]{circunferencia-trigonometrica.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Arcos Côngruos}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.5cm}
+      \begin{highlight}
+        \begin{itemize}
+          \item Ao lado, temos um arco de $45^{\circ}$ na circunferência trigonométrica:
+          \begin{itemize}
+            \item origem em $A(1,0)$ -- origem dos arcos;
+            \item extremidade no ponto $B$.
+          \end{itemize}
+          \item É evidente que, partindo de $A$, é possível chegar em $B$ através de um número arbitrário de \emph{voltas}, tanto no sentido positivo, quanto no sentido negativo;
+          \item De fato, \textbf{infinitos arcos correspondem a uma mesma extremidade}:
+          \begin{itemize}
+            \item Tais arcos são chamados de \textbf{arcos côngruos}.
+          \end{itemize}
+          \item Trabalharemos com o conceito da \textbf{menor determinação positiva} de cada arco.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{arcos-congruos-1.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.55cm}
+      \begin{definition}[Menor Determinação]
+        Dado um arco de medida $\Theta$, positiva, chamamos de a \textbf{menor determinação positiva de $\Theta$}  o arco $\theta$ que é resto da divisão inteira de $\Theta$ por $360^{\circ}$, se medido em graus (ou $2\pi$ rad, se medido em radianos).
+      \end{definition}
+      \only<1>{
+        \begin{highlight}
+          \textbf{Em graus:}
+          \begin{itemize}
+            \item Vale a expressão
+            \begin{equation*}
+              \Theta = \theta + 360^{\circ}\cdot k,\quad k\in\mathbb{Z}
+            \end{equation*}
+            \item $\theta\in[0,360^{\circ})$ -- resto da divisão inteira de $\Theta$ por $360^{\circ}$;
+            \item $k$ é o dividendo da divisão inteira de $\Theta$ por $360^{\circ}$ -- representa o número de voltas dadas.
+          \end{itemize}
+        \end{highlight}
+      }
+      \only<2>{
+        \begin{highlight}
+          \textbf{Em radianos:}
+          \begin{itemize}
+            \item Vale a expressão
+            \begin{equation*}
+              \Theta = \theta + 2\pi\cdot k,\quad k\in\mathbb{Z}
+            \end{equation*}
+            \item $\theta\in[0,2\pi)$ -- resto da divisão inteira de $\Theta$ por $2\pi$;
+            \item $k$ é o dividendo da divisão inteira de $\Theta$ por $2\pi$ -- representa o número de voltas dadas.
+          \end{itemize}
+        \end{highlight}
+      }
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{arcos-congruos-2.pdf}
+        \includefigure<2>[width=\textwidth]{arcos-congruos-3.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{E se $\Theta$ for um arco de medida negativa?}
+        \vspace*{0.3cm}
+        \begin{enumerate}
+          \item Calcular a primeira determinação positiva de $|\Theta|$; chamaremos ela de $\theta^{\star}$;
+          \item A primeira determinação \textbf{negativa} de $\Theta$ será $-\theta^{\star}$;
+          \item Utilizar o complemento para obter a primeira determinação positiva:
+          \begin{itemize}
+            \item Em graus:
+            \begin{equation*}
+              \theta = 360^{\circ} - \theta^{\star}
+            \end{equation*}
+            \item Em radianos:
+            \begin{equation*}
+              \theta = 2\pi - \theta^{\star}
+            \end{equation*}
+          \end{itemize}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{arcos-congruos-4.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Seno e Cosseno de um Arco}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Seno e Cosseno de um Arco]
+        Seja $M(x_{M},\,y_{M})$ a extremidade de um arco de medida $\alpha$ rad, $\alpha\in[0,\pi/2]$, sobre a circunferência trigonométrica. Definimos:
+        \begin{enumerate}
+          \item $\displaystyle\sen{\alpha} = y_{M}$ (a ordenada de $M$)
+          \item $\displaystyle\cos{\alpha} = x_{M}$ (a abscissa de $M$)
+        \end{enumerate}
+      \end{definition}
+      \begin{highlight}
+        \textbf{Observações:}
+        \begin{itemize}
+          \item O \textbf{seno} é a projeção da extremidade do arco sobre o eixo $y$;
+          \item O \textbf{cosseno} é a projeção da extremidade do arco sobre o eixo $x$;
+          \item Utilizaremos relações de simetria e a primeira determinação positiva para ampliar para $\alpha\in\R$
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{seno-cosseno-circunferencia.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Reduções ao 1º Quadrante}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \only<1>{
+        \begin{theorem}[Redução do 2ºQ ao 1ºQ]
+          Seja $M(x_{M},\,y_{M})$ a extremidade de um arco de medida $\alpha$ do 2º quadrante da circunferência trigonométrica. À ela corresponderá a extremidade $M^{\star}(-x_{M},\,y_{M})$ de um arco de medida $180^{\circ}-\alpha$ do 1º quadrante. Com isso, podemos concluir as relações:
+          \begin{enumerate}
+            \item $\displaystyle\sen{\alpha} = \sen{(180^{\circ}-\alpha)}$
+            \item $\displaystyle\cos{\alpha} = -\cos{(180^{\circ}-\alpha)}$
+          \end{enumerate}
+        \end{theorem}
+      }
+      \only<2>{
+        \begin{theorem}[Redução do 2ºQ ao 1ºQ]
+          Seja $M(x_{M},\,y_{M})$ a extremidade de um arco de medida $\alpha$ do 2º quadrante da circunferência trigonométrica. À ela corresponderá a extremidade $M^{\star}(-x_{M},\,y_{M})$ de um arco de medida $\pi-\alpha$ do 1º quadrante. Com isso, podemos concluir as relações:
+          \begin{enumerate}
+            \item $\displaystyle\sen{\alpha} = \sen{(\pi-\alpha)}$
+            \item $\displaystyle\cos{\alpha} = -\cos{(\pi-\alpha)}$
+          \end{enumerate}
+        \end{theorem}
+      }
+      \begin{highlight}
+        \textbf{Observações:}
+        \begin{itemize}
+          \item $M^{\star}$ é o simétrico de $M$ com respeito ao eixo das ordenadas;
+          \item Não decorar, é sempre mais fácil desenhar a simetria.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{reducao-1.pdf}
+        \includefigure<2>[width=\textwidth]{reducao-2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \only<1>{
+        \begin{theorem}[Redução do 3ºQ ao 1ºQ]
+          Seja $M(x_{M},\,y_{M})$ a extremidade de um arco de medida $\alpha$ do 3º quadrante da circunferência trigonométrica. À ela corresponderá a extremidade $M^{\star}(-x_{M},\,-y_{M})$ de um arco de medida $\alpha-180^{\circ}$ do 1º quadrante. Com isso, podemos concluir as relações:
+          \begin{enumerate}
+            \item $\displaystyle\sen{\alpha} = -\sen{(\alpha-180^{\circ})}$
+            \item $\displaystyle\cos{\alpha} = -\cos{(\alpha-180^{\circ})}$
+          \end{enumerate}
+        \end{theorem}
+      }
+      \only<2>{
+        \begin{theorem}[Redução do 3ºQ ao 1ºQ]
+          Seja $M(x_{M},\,y_{M})$ a extremidade de um arco de medida $\alpha$ do 3º quadrante da circunferência trigonométrica. À ela corresponderá a extremidade $M^{\star}(-x_{M},\,-y_{M})$ de um arco de medida $\alpha-\pi$ do 1º quadrante. Com isso, podemos concluir as relações:
+          \begin{enumerate}
+            \item $\displaystyle\sen{\alpha} = -\sen{(\alpha-\pi)}$
+            \item $\displaystyle\cos{\alpha} = -\cos{(\alpha-\pi)}$
+          \end{enumerate}
+        \end{theorem}
+      }
+      \begin{highlight}
+        \textbf{Observações:}
+        \begin{itemize}
+          \item $M^{\star}$ é o simétrico de $M$ com respeito à origem;
+          \item Não decorar, é sempre mais fácil desenhar a simetria.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{reducao-3.pdf}
+        \includefigure<2>[width=\textwidth]{reducao-4.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \only<1>{
+        \begin{theorem}[Redução do 4ºQ ao 1ºQ]
+          Seja $M(x_{M},\,y_{M})$ a extremidade de um arco de medida $\alpha$ do 4º quadrante da circunferência trigonométrica. À ela corresponderá a extremidade $M^{\star}(-x_{M},\,-y_{M})$ de um arco de medida $360^{\circ}-\alpha$ do 1º quadrante. Com isso, podemos concluir as relações:
+          \begin{enumerate}
+            \item $\displaystyle\sen{\alpha} = -\sen{(360^{\circ}-\alpha)}$
+            \item $\displaystyle\cos{\alpha} = \cos{(360^{\circ}-\alpha)}$
+          \end{enumerate}
+        \end{theorem}
+      }
+      \only<2>{
+        \begin{theorem}[Redução do 4ºQ ao 1ºQ]
+          Seja $M(x_{M},\,y_{M})$ a extremidade de um arco de medida $\alpha$ do 4º quadrante da circunferência trigonométrica. À ela corresponderá a extremidade $M^{\star}(-x_{M},\,-y_{M})$ de um arco de medida $2\pi-\alpha$ do 1º quadrante. Com isso, podemos concluir as relações:
+          \begin{enumerate}
+            \item $\displaystyle\sen{\alpha} = -\sen{(2\pi-\alpha)}$
+            \item $\displaystyle\cos{\alpha} = \cos{(2\pi-\alpha)}$
+          \end{enumerate}
+        \end{theorem}
+      }
+      \begin{highlight}
+        \textbf{Observações:}
+        \begin{itemize}
+          \item $M^{\star}$ é o simétrico de $M$ com respeito à origem;
+          \item Não decorar, é sempre mais fácil desenhar a simetria.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{reducao-5.pdf}
+        \includefigure<2>[width=\textwidth]{reducao-6.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Seno}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Função Seno]
+        A função seno é definida como $f:\R\rightarrow\R$, que a cada $x\in\R$ associa o número real $f(x)=\sen{x}$.
+      \end{definition}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{highlight}
+        \textbf{Temos que a função seno possui:}
+        \begin{itemize}
+          \item Domínio: $\Domain{f} = \R$
+          \item Imagem: $\Image{f} = [-1,\,1]$
+          \item Período: $T = 2\pi$ rad
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+  \begin{figure}
+    \includefigure[width=\textwidth]{funcao-seno-1.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[c]
+  \begin{figure}
+    \includefigure[width=\textwidth]{funcao-seno-2.pdf}
+  \end{figure}
+\end{frame}
+
+\subsection{Função Cosseno}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Função Cosseno]
+        A função cosseno é definida como $f:\R\rightarrow\R$, que a cada $x\in\R$ associa o número real $f(x)=\cos{x}$.
+      \end{definition}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{highlight}
+        \textbf{Temos que a função cosseno possui:}
+        \begin{itemize}
+          \item Domínio: $\Domain{f} = \R$
+          \item Imagem: $\Image{f} = [-1,\,1]$
+          \item Período: $T = 2\pi$ rad
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+  \begin{figure}
+    \includefigure[width=\textwidth]{funcao-cosseno-1.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[c]
+  \begin{figure}
+    \includefigure[width=\textwidth]{funcao-cosseno-2.pdf}
+  \end{figure}
+\end{frame}
+
+\subsection{Função Seno vs Função Cosseno}
+\begin{frame}[c]
+  \begin{figure}
+    \includefigure[width=\textwidth]{funcao-seno-vs-cosseno.pdf}
+  \end{figure}
+\end{frame}
+
+\subsection{Tangente de um Arco}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Tangente no 1ºQ]
+        Seja $M(x_{M},\,y_{M})$ a extremidade de um arco de medida $\alpha$, $\alpha\in[0,\pi/2)$, e considere um eixo de mesma direção e mesmo sentido ao do eixo $y$, passando pelo ponto $A$. Chamamos de tangente de $\alpha$ a medida do segmento $AT$, onde $T$ é a interseção entre o novo eixo e o segmento de reta que contém a origem e $M$.
+      \end{definition}
+      \begin{highlight}
+        \begin{itemize}
+          \item As relações de simetria e a primeira determinação positiva serão necessárias para ampliar o conceito de tangente para qualquer $\alpha\in\R$, exceto arcos côngruos à $\pi/2$ rad e à $3\pi/2$ rad.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{tangente-circunferencia-1.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{theorem}[Tangente no 1ºQ]
+        Seja $M$ a extremidade de um arco de medida $\alpha$ do 1º quadrante da circunferência trigonométrica. Então, vale a relação:
+        \begin{equation*}
+          \tan{\alpha} = \frac{\sen{\alpha}}{\cos{\alpha}}
+        \end{equation*}
+      \end{theorem}
+      \only<2>{
+        \begin{highlight}
+          \textbf{Demonstração}
+          
+          Por semelhança de triângulos, temos que $OAT\sim OA^{\star}M$, de onde decorre que:
+          \begin{equation*}
+            \frac{\tan{\alpha}}{y_{M}} = \frac{1}{x_{M}} \Rightarrow \tan{\alpha} = \frac{y_{M}}{x_{M}} = \frac{\sen{\alpha}}{\cos{\alpha}}
+          \end{equation*}
+        \end{highlight}
+      }
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{tangente-circunferencia-1.pdf}
+        \includefigure<2>[width=\textwidth]{tangente-circunferencia-2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Tangente de um Arco]
+    Seja $M$ a extremidade de um arco de medida $\alpha$ na circunferência trigonométrica. Então, vale a relação:
+    \begin{equation*}
+      \tan{\alpha} = \frac{\sen{\alpha}}{\cos{\alpha}},
+    \end{equation*}
+    para $\alpha\not=\frac{\pi}{2}+k\cdot\pi$, em radianos, ou $\alpha\not=90^{\circ}+k\cdot 180^{\circ}$, em graus.
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Ainda, são válidas, em radianos:}
+        \begin{enumerate}
+          \item Se $\alpha\in(\pi/2,\pi]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \tan{\alpha}=-\tan{(\pi-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in[\pi,3\pi/2)$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \tan{\alpha}=\tan{(\alpha-\pi)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in(3\pi/2,2\pi]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \tan{\alpha}=-\tan{(2\pi-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Ainda, são válidas, em graus:}
+        \begin{enumerate}
+          \item Se $\alpha\in(90^{\circ},180^{\circ}]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \tan{\alpha}=-\tan{(180^{\circ}-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in[180^{\circ},270^{\circ})$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \tan{\alpha}=\tan{(\alpha-180^{\circ})}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in(270^{\circ},360^{\circ}]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \tan{\alpha}=-\tan{(360^{\circ}-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Tangente}
+\begin{frame}
+  \begin{definition}[Função Tangente]
+    Seja $A$ o conjunto definido por
+    \begin{equation*}
+      A=\left\{x\in\R : x\not= \frac{\pi}{2} + k\cdot\pi, k\in\mathbb{Z}\right\}.
+    \end{equation*}
+    A função tangente associa à cada $x\in A$ o número real
+    \begin{equation*}
+      f(x)=\tan{x}.
+    \end{equation*}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Temos que a função tangente possui:}
+        \begin{itemize}
+          \item Domínio: $\Domain{f} = A$
+          \item Imagem: $\Image{f} = \R$
+          \item Período: $T = \pi$ rad
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Lembre que:}
+        \begin{equation*}
+          \tan{x} = \frac{\sen{x}}{\cos{x}}
+        \end{equation*}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[c]
+  \begin{figure}
+    \includefigure[width=\textwidth]{funcao-tangente-1.pdf}
+  \end{figure}
+\end{frame}
+
+\subsection{Cotangente de um Arco}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Cotangente no 1ºQ]
+        Seja $M(x_{M},\,y_{M})$ a extremidade de um arco de medida $\alpha$, $\alpha\in[0,\pi/2)$, e considere um eixo de mesma direção e mesmo sentido ao do eixo $x$, passando pelo ponto $B$. Chamamos de cotangente de $\alpha$ a medida do segmento $BC$, onde $C$ é a interseção entre o novo eixo e o segmento de reta que contém a origem e $M$.
+      \end{definition}
+      \begin{highlight}
+        \begin{itemize}
+          \item As relações de simetria e a primeira determinação positiva serão necessárias para ampliar o conceito de cotangente para qualquer $\alpha\in\R$, exceto arcos côngruos à $0$ rad e à $\pi$ rad.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{cotangente-circunferencia-1.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{theorem}[Cotangente no 1ºQ]
+        Seja $M$ a extremidade de um arco de medida $\alpha$ do 1º quadrante da circunferência trigonométrica. Então, vale a relação:
+        \begin{equation*}
+          \cot{\alpha} = \frac{\cos{\alpha}}{\sen{\alpha}}
+        \end{equation*}
+      \end{theorem}
+      \only<2>{
+        \begin{highlight}
+          \textbf{Demonstração}
+          
+          Por semelhança de triângulos, temos que $OBC\sim OB^{\star}M$, de onde decorre que:
+          \begin{equation*}
+            \frac{\cot{\alpha}}{x_{M}} = \frac{1}{y_{M}} \Rightarrow \cot{\alpha} = \frac{x_{M}}{y_{M}} = \frac{\cos{\alpha}}{\sen{\alpha}}
+          \end{equation*}
+        \end{highlight}
+      }
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{cotangente-circunferencia-1.pdf}
+        \includefigure<2>[width=\textwidth]{cotangente-circunferencia-2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Cotangente de um Arco]
+    Seja $M$ a extremidade de um arco de medida $\alpha$ na circunferência trigonométrica. Então, vale a relação:
+    \begin{equation*}
+      \cot{\alpha} = \frac{\cos{\alpha}}{\sen{\alpha}},
+    \end{equation*}
+    para $\alpha\not=k\cdot\pi$, em radianos, ou $\alpha\not=k\cdot 180^{\circ}$, em graus.
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Ainda, são válidas, em radianos:}
+        \begin{enumerate}
+          \item Se $\alpha\in(\pi/2,\pi]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \cot{\alpha}=-\cot{(\pi-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in[\pi,3\pi/2)$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \cot{\alpha}=\cot{(\alpha-\pi)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in(3\pi/2,2\pi]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \cot{\alpha}=-\cot{(2\pi-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Ainda, são válidas, em graus:}
+        \begin{enumerate}
+          \item Se $\alpha\in(90^{\circ},180^{\circ}]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \cot{\alpha}=-\cot{(180^{\circ}-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in[180^{\circ},270^{\circ})$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \cot{\alpha}=\cot{(\alpha-180^{\circ})}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in(270^{\circ},360^{\circ}]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \cot{\alpha}=-\cot{(360^{\circ}-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Cotangente}
+\begin{frame}
+  \begin{definition}[Função Cotangente]
+    Seja $A$ o conjunto definido por
+    \begin{equation*}
+      A=\left\{x\in\R : x\not= \pi + k\cdot\pi, k\in\mathbb{Z}\right\}.
+    \end{equation*}
+    A função cotangente associa à cada $x\in A$ o número real
+    \begin{equation*}
+      f(x)=\cot{x}.
+    \end{equation*}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Temos que a função cotangente possui:}
+        \begin{itemize}
+          \item Domínio: $\Domain{f} = A$
+          \item Imagem: $\Image{f} = \R$
+          \item Período: $T = \pi$ rad
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Lembre que:}
+        \begin{equation*}
+          \cot{x} = \frac{\cos{x}}{\sen{x}}
+        \end{equation*}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[c]
+  \begin{figure}
+    \includefigure[width=\textwidth]{funcao-cotangente-1.pdf}
+  \end{figure}
+\end{frame}
+
+\subsection{Secante de um Arco}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Secante no 1ºQ]
+        Seja $M(x_{M},\,y_{M})$ a extremidade de um arco de medida $\alpha$, $\alpha\in[0,\pi/2)$, e considere uma reta tangente à circunferência no ponto $M$. Chamamos de secante de $\alpha$ a medida do segmento $OS$, onde $O$ é a origem do sistema de coordenadas e $S$ é a interseção entre a reta e o eixo $x$.
+      \end{definition}
+      \begin{highlight}
+        \begin{itemize}
+          \item As relações de simetria e a primeira determinação positiva serão necessárias para ampliar o conceito de secante para qualquer $\alpha\in\R$, exceto arcos côngruos à $\pi/2$ rad e à $3\pi/2$ rad.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{secante-circunferencia-1.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{theorem}[Secante no 1ºQ]
+        Seja $M$ a extremidade de um arco de medida $\alpha$ do 1º quadrante da circunferência trigonométrica. Então, vale a relação:
+        \begin{equation*}
+          \sec{\alpha} = \frac{1}{\cos{\alpha}}
+        \end{equation*}
+      \end{theorem}
+      \only<2>{
+        \begin{highlight}
+          \textbf{Demonstração}
+          
+          Por semelhança de triângulos, temos que $OSM\sim OMA^{\star}$, de onde decorre que:
+          \begin{equation*}
+            \frac{\sec{\alpha}}{1} = \frac{1}{x_{M}} \Rightarrow \sec{\alpha} = \frac{1}{x_{M}} = \frac{1}{\cos{\alpha}}
+          \end{equation*}
+        \end{highlight}
+      }
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{secante-circunferencia-1.pdf}
+        \includefigure<2>[width=\textwidth]{secante-circunferencia-2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Secante de um Arco]
+    Seja $M$ a extremidade de um arco de medida $\alpha$ na circunferência trigonométrica. Então, vale a relação:
+    \begin{equation*}
+      \sec{\alpha} = \frac{1}{\cos{\alpha}},
+    \end{equation*}
+    para $\alpha\not=\pi/2+k\cdot\pi$, em radianos, ou $\alpha\not=90^{\circ}+k\cdot 180^{\circ}$, em graus.
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Ainda, são válidas, em radianos:}
+        \begin{enumerate}
+          \item Se $\alpha\in(\pi/2,\pi]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=-\sec{(\pi-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in[\pi,3\pi/2)$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=-\sec{(\alpha-\pi)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in(3\pi/2,2\pi]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=\sec{(2\pi-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Ainda, são válidas, em graus:}
+        \begin{enumerate}
+          \item Se $\alpha\in(90^{\circ},180^{\circ}]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=-\sec{(180^{\circ}-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in[180^{\circ},270^{\circ})$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=-\sec{(\alpha-180^{\circ})}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in(270^{\circ},360^{\circ}]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=\sec{(360^{\circ}-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Secante}
+\begin{frame}[t]
+  \begin{definition}[Função Secante]
+    Seja $A$ o conjunto definido por
+    \begin{equation*}
+      A=\left\{x\in\R : x\not= \frac{\pi}{2} + k\cdot\pi, k\in\mathbb{Z}\right\}.
+    \end{equation*}
+    A função secante associa à cada $x\in A$ o número real
+    \begin{equation*}
+      f(x)=\sec{x}.
+    \end{equation*}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Temos que a função secante possui:}
+        \begin{itemize}
+          \item Domínio: $\Domain{f} = A$
+          \item Imagem: $\Image{f} = \R$
+          \item Período: $T = 2\pi$ rad
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Lembre que:}
+        \begin{equation*}
+          \sec{x} = \frac{1}{\cos{x}}
+        \end{equation*}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[c]
+  \begin{figure}
+    \includefigure[width=\textwidth]{funcao-secante-1.pdf}
+  \end{figure}
+\end{frame}
+
+\subsection{Cossecante de um Arco}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Cossecante no 1ºQ]
+        Seja $M(x_{M},\,y_{M})$ a extremidade de um arco de medida $\alpha$, $\alpha\in[0,\pi/2)$, e considere uma reta tangente à circunferência no ponto $M$. Chamamos de cossecante de $\alpha$ a medida do segmento $OC$, onde $O$ é a origem do sistema de coordenadas e $C$ é a interseção entre a reta e o eixo $y$.
+      \end{definition}
+      \begin{highlight}
+        \begin{itemize}
+          \item As relações de simetria e a primeira determinação positiva serão necessárias para ampliar o conceito de cossecante para qualquer $\alpha\in\R$, exceto arcos côngruos à $0$ rad e à $\pi$ rad.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure[width=\textwidth]{cossecante-circunferencia-1.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{theorem}[Cossecante no 1ºQ]
+        Seja $M$ a extremidade de um arco de medida $\alpha$ do 1º quadrante da circunferência trigonométrica. Então, vale a relação:
+        \begin{equation*}
+          \csc{\alpha} = \frac{1}{\sen{\alpha}}
+        \end{equation*}
+      \end{theorem}
+      \only<2>{
+        \begin{highlight}
+          \textbf{Demonstração}
+          
+          Por semelhança de triângulos, temos que $COM\sim OMA^{\star}$, de onde decorre que:
+          \begin{equation*}
+            \frac{\csc{\alpha}}{1} = \frac{1}{y_{M}} \Rightarrow \csc{\alpha} = \frac{1}{y_{M}} = \frac{1}{\sen{\alpha}}
+          \end{equation*}
+        \end{highlight}
+      }
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{cossecante-circunferencia-1.pdf}
+        \includefigure<2>[width=\textwidth]{cossecante-circunferencia-2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Cossecante de um Arco]
+    Seja $M$ a extremidade de um arco de medida $\alpha$ na circunferência trigonométrica. Então, vale a relação:
+    \begin{equation*}
+      \csc{\alpha} = \frac{1}{\sen{\alpha}},
+    \end{equation*}
+    para $\alpha\not=k\cdot\pi$, em radianos, ou $\alpha\not=k\cdot 180^{\circ}$, em graus.
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Ainda, são válidas, em radianos:}
+        \begin{enumerate}
+          \item Se $\alpha\in(\pi/2,\pi]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=-\sec{(\pi-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in[\pi,3\pi/2)$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=-\sec{(\alpha-\pi)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in(3\pi/2,2\pi]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=\sec{(2\pi-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Ainda, são válidas, em graus:}
+        \begin{enumerate}
+          \item Se $\alpha\in(90^{\circ},180^{\circ}]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=-\sec{(180^{\circ}-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in[180^{\circ},270^{\circ})$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=-\sec{(\alpha-180^{\circ})}\vspace*{-0.2cm}
+          \end{equation*}
+          \item Se $\alpha\in(270^{\circ},360^{\circ}]$, então:\vspace*{-0.2cm}
+          \begin{equation*}
+            \sec{\alpha}=\sec{(360^{\circ}-\alpha)}\vspace*{-0.2cm}
+          \end{equation*}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Função Secante}
+\begin{frame}[t]
+  \begin{definition}[Função Cossecante]
+    Seja $A$ o conjunto definido por
+    \begin{equation*}
+      A=\left\{x\in\R : x\not= \pi + k\cdot\pi, k\in\mathbb{Z}\right\}.
+    \end{equation*}
+    A função cossecante associa à cada $x\in A$ o número real
+    \begin{equation*}
+      f(x)=\csc{x}.
+    \end{equation*}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Temos que a função cossecante possui:}
+        \begin{itemize}
+          \item Domínio: $\Domain{f} = A$
+          \item Imagem: $\Image{f} = \R$
+          \item Período: $T = 2\pi$ rad
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \textbf{Lembre que:}
+        \begin{equation*}
+          \csc{x} = \frac{1}{\sen{x}}
+        \end{equation*}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[c]
+  \begin{figure}
+    \includefigure[width=\textwidth]{funcao-cossecante-1.pdf}
+  \end{figure}
+\end{frame}

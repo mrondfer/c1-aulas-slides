@@ -1,0 +1,40 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.geometric,positioning}
+\begin{document}
+  \begin{tikzpicture}[font=\scriptsize]
+    \begin{axis}[%
+      trig format plots=rad,
+      axis x line=center,axis y line=center,
+      unit vector ratio={2 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below},ylabel style={left},
+      xmin=-1,xmax=3*pi+1,
+      xtick={pi/2,3*pi/2,5*pi/2},
+      xticklabels={$\frac{\pi}{2}$,$\frac{3\pi}{2}$,$\frac{5\pi}{2}$},
+      extra x ticks={pi,2*pi,3*pi},
+      extra x tick labels={$\pi$,$2\pi$,$3\pi$},
+      extra x tick style={xticklabel style={xshift=0.5em}},
+      ymin=-5,ymax=5,
+      restrict y to domain=-5:5,
+      ytick=\empty,
+      axis line style={-latex},
+    ]%
+
+      \draw[densely dotted] (pi,-10) -- (pi,10);
+      \draw[densely dotted] (2*pi,-10) -- (2*pi,10);
+      \draw[densely dotted] (3*pi,-10) -- (3*pi,10);
+
+      \node at (axis cs:0.15,-1.5) {$0$};
+
+      \addplot[mark=none,domain=0:3*pi,color=orange,thick,samples=2000] {cot(x)};
+      \addplot[mark=none,dashed,domain=-1:3*pi+1,color=orange,thick,samples=2000] {cot(x)};
+    \end{axis}
+    \node at (7.2em+2.6em,-0.2em) {(período)};
+    \draw[-stealth] (8.9em+2.6em,-0.2em) -- (9.7em+2.6em,-0.2em);
+    \draw[-stealth] (5.5em+2.6em,-0.2em) -- (4.7em+2.6em,-0.2em);
+  \end{tikzpicture}%
+\end{document}

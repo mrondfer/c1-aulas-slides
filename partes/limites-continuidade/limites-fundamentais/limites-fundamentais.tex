@@ -1,0 +1,97 @@
+\section{Limites Fundamentais}
+
+\begin{frame}
+  \begin{theorem}[Limite Fundamental Trigonométrico -- Seno]
+    É válido o limite:
+    \begin{equation*}
+      \lim_{x\to 0} \dfrac{\sen{(x)}}{x} = 1
+    \end{equation*}
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.7cm}
+      \begin{figure}
+        \includefigure[width=0.99\textwidth]{limite-fundamental-seno.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{itemize}
+        \item Para $x$ no primeiro quadrante, temos as áreas:
+        \begin{equation*}
+          \frac{\tan{x}\cdot 1}{2} \geq \frac{\pi\cdot 1^{2}\cdot x}{2\pi} \geq \frac{\sen{x}\cdot 1}{2}
+        \end{equation*}
+        
+        \item Ao dividir por $\frac{2}{\sen{x}}$ e simplificar:
+        \begin{equation*}
+          \cos{x} \leq \frac{\sen{x}}{x} \leq 1
+        \end{equation*}
+
+        \item Basta aplicar o teorema do confronto quando $x\to 0$.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Calcule os limites trigonométricos a seguir.
+  \end{example}
+  \begin{enumerate}
+    \item $\displaystyle\lim_{x\to 0}\dfrac{\sen{(2x)}}{x}$
+    \item $\displaystyle\lim_{x\to 4}\dfrac{\sen{(8-2x)}}{4x-16}$
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Limite Fundamental Trigonométrico -- Cosseno]
+    É válido o limite:
+    \begin{equation*}
+      \lim_{x\to 0} \dfrac{1-\cos{(x)}}{x} = 0
+    \end{equation*}
+  \end{theorem}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Limite Fundamental Exponencial]
+    É válido o limite:
+    \begin{equation*}
+      \lim_{x\to \pm \infty} {\left(1+\dfrac{1}{x}\right)}^x=e
+    \end{equation*}
+  \end{theorem}
+  \begin{figure}\vspace*{-0.5cm}
+    \includefigure[width=0.98\textwidth]{limite-fundamental-exponencial.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Calcule o limite:
+    \begin{equation*}
+      \displaystyle\lim_{x\to +\infty} {\left(1+\dfrac{3}{x}\right)}^{2x}
+    \end{equation*}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[\phantom{ç}]
+    Para todo $k\neq 0$, são válidos os seguintes limites:
+    \begin{enumerate}
+      \item $\displaystyle\lim_{x\to 0}\dfrac{\sen{(kx)}}{kx}=1$
+      \item $\displaystyle\lim_{x\to 0}\dfrac{1-\cos{(kx)}}{kx}=0$
+      \item $\displaystyle\lim_{x\to \pm \infty} {\left(1+\dfrac{k}{x}\right)}^{x}=e^k$
+      \item $\displaystyle\lim_{x\to 0} {(1+kx)}^{\frac{1}{x}}=e^{k}$
+      \item $\displaystyle\lim_{x\to 0} \dfrac{a^{kx}-1}{kx}=\ln{a}$
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Calcule os limites a seguir.
+  \end{example}
+  \begin{enumerate}
+    \item $\displaystyle\lim_{x\to 0}\dfrac{1-\cos{x}}{x^2}$
+    \item $\displaystyle\lim_{x\to +\infty}{\left(\dfrac{x-2}{x-3}\right)}^x$
+    \item $\displaystyle\lim_{x\to 0}\dfrac{e^{2x}-1}{x}$
+    \item $\displaystyle\lim_{x\to 0}\dfrac{e^{x}-1}{\sen{x}}$
+  \end{enumerate}
+\end{frame}

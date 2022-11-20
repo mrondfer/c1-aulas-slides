@@ -1,0 +1,33 @@
+\section{Limites de Funções Definidas por Partes}
+
+\begin{frame}
+  \begin{example}
+    Considere a função
+    \begin{equation*}
+      f(x) = \begin{cases}
+        \dfrac{1}{x+2}, &\mbox{se } x < -2\\
+        x^{2} - 5, &\mbox{se } -2 < x \leq 3\\
+        \sqrt{x + 13}, &\mbox{se } x>3
+      \end{cases}
+    \end{equation*}
+    para avaliar os limites solicitados.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.3\textwidth}
+      \begin{enumerate}
+        \item $\displaystyle\lim_{x\to -2}f(x)$
+        \item $\displaystyle\lim_{x\to 0}f(x)$
+        \item $\displaystyle\lim_{x\to 3}f(x)$
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.7\textwidth}
+      \begin{highlight}
+        \textbf{Observação:}
+        \begin{itemize}
+          \item Devemos ter cuidado ao utilizarmos as propriedades algébricas, visto que o comportamento da função pode mudar drasticamente nos pontos onde a lei é alterada;
+          \item Nesse sentido, nos pontos onde trocamos de uma sentença para a outra, devemos sempre avaliar os limites laterais para determinar o limite.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}

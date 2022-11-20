@@ -1,0 +1,183 @@
+\documentclass[crop,tikz]{standalone}
+\begin{document}
+  \usetikzlibrary{shapes.geometric,positioning}
+  \begin{tikzpicture}
+    \node[%
+      ellipse,
+      draw,
+      fill=white,
+      thick,
+      minimum height=2cm,
+      minimum width=1.25cm,
+      outer sep=8pt,
+      fill=green!40
+      ] (A) at (0,0) {};
+    \node at (A.115) {\scriptsize A};
+
+    \node[%
+      ellipse,
+      draw,
+      fill=white,
+      thick,
+      minimum height=2cm,
+      minimum width=1.25cm,
+      outer sep=8pt,
+      right=1cm of A,
+      fill=green!40
+    ] (B) at (A) {};
+    \node at (B.115) {\scriptsize B};
+
+    \node[%
+      circle,
+      draw,
+      inner sep=0pt,
+      minimum size=2pt,
+      fill=black,
+      yshift=0.6cm
+    ] (A1) at (A) {};
+    
+    \node[%
+      xshift=-0.4em
+    ] at (A1) {\tiny $1$};
+
+    \node[%
+      circle,
+      draw,
+      inner sep=0pt,
+      minimum size=2pt,
+      fill=black,
+      yshift=0.2cm,
+      xshift=0.15cm
+    ] (A2) at (A) {};
+    
+    \node[%
+      xshift=-0.4em
+    ] at (A2) {\tiny $2$};
+
+    \node[%
+      circle,
+      draw,
+      inner sep=0pt,
+      minimum size=2pt,
+      fill=black,
+      yshift=-0.2cm,
+      xshift=0.15cm
+    ] (A3) at (A) {};
+    
+    \node[%
+      xshift=-0.4em
+    ] at (A3) {\tiny $3$};
+
+    \node[%
+      circle,
+      draw,
+      inner sep=0pt,
+      minimum size=2pt,
+      fill=black,
+      yshift=-0.6cm
+    ] (A4) at (A) {};
+    
+    \node[%
+      xshift=-0.4em
+    ] at (A4) {\tiny $4$};
+
+    \node[%
+      circle,
+      draw,
+      inner sep=0pt,
+      minimum size=2pt,
+      fill=black,
+      yshift=0.6cm
+    ] (B1) at (B) {};
+    
+    \node[%
+      xshift=0.4em
+    ] at (B1) {\tiny $1$};
+
+    \node[%
+      circle,
+      draw,
+      inner sep=0pt,
+      minimum size=2pt,
+      fill=black,
+      yshift=0.2cm,
+      xshift=-0.15cm
+    ] (B2) at (B) {};
+    
+    \node[%
+      xshift=0.4em
+    ] at (B2) {\tiny $4$};
+
+    % \node[%
+    %   circle,
+    %   draw,
+    %   inner sep=0pt,
+    %   minimum size=2pt,
+    %   fill=black,
+    %   xshift=0.15cm
+    % ] (B3) at (B) {};
+    
+    % \node[%
+    %   xshift=0.4em
+    % ] at (B3) {\tiny $7$};
+
+    \node[%
+      circle,
+      draw,
+      inner sep=0pt,
+      minimum size=2pt,
+      fill=black,
+      yshift=-0.2cm,
+      xshift=-0.15cm
+    ] (B4) at (B) {};
+    
+    \node[%
+      xshift=0.4em
+    ] at (B4) {\tiny $9$};
+
+    \node[%
+      circle,
+      draw,
+      inner sep=0pt,
+      minimum size=2pt,
+      fill=black,
+      yshift=-0.6cm
+    ] (B5) at (B) {};
+    
+    \node[%
+      xshift=0.5em
+    ] at (B5) {\tiny $16$};
+
+    \draw[%
+      out=10,
+      in=170,
+      shorten >= 0.1em,
+      shorten <= 0.1em,
+      -stealth
+    ] (A1) to (B1);
+
+    \draw[%
+      out=10,
+      in=170,
+      shorten >= 0.1em,
+      shorten <= 0.1em,
+      -stealth
+    ] (A2) to (B2);
+
+    \draw[%
+      out=-10,
+      in=-170,
+      shorten >= 0.1em,
+      shorten <= 0.1em,
+      -stealth
+    ] (A3) to (B4);
+
+    \draw[%
+      out=-10,
+      in=-170,
+      shorten >= 0.1em,
+      shorten <= 0.1em,
+      -stealth
+    ] (A4) to (B5);
+  \end{tikzpicture}%
+\end{document}

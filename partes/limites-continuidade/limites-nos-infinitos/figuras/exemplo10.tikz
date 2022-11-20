@@ -1,0 +1,31 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below,font=\scriptsize},
+      ylabel style={left,font=\scriptsize},
+      xmin=-5.5,xmax=5.5,
+      xtick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+      xticklabel style={font=\tiny},
+      ymin=-2.5,ymax=5.5,
+      ytick={-5,-4,-3,-2,-1,0,1,2,3,4,5},
+      yticklabel style={font=\tiny,xshift=0.3em},
+      axis line style={-latex},
+      grid=major,
+      major grid style={gray!15},
+      declare function={
+        f(\x) = exp(\x) - 1;
+      }
+    ]%
+      \addplot[mark=none,color=orange,thick,samples=1000,domain=-6:6] {f(x)};
+      \draw[dashed,red] (-10,-1) -- (10,-1);
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

@@ -1,0 +1,428 @@
+\section{Continuidade}
+
+\subsection{Definição de Continuidade}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Continuidade]
+        Dizemos que uma função $f$ é \textbf{contínua} em $x=x_{0}$ se as seguintes condições estiverem satisfeitas:
+        \begin{enumerate}
+          \item Existe $f(x_{0})$;
+          \item Existe $\displaystyle\lim_{x\to x_{0}}{f(x)}$;
+          \item $\displaystyle\lim_{x\to x_{0}}{f(x)}=f(x_{0})$.
+        \end{enumerate}
+      \end{definition}
+      \begin{highlight}
+        \textbf{Dizemos que:}
+        \begin{itemize}\small
+          \item $f$ é \textbf{contínua} em $(a,\,b)$ se, e somente se, $f$ for contínua para todo $x\in\,(a,\,b)$;
+          \item $f$ é \textbf{contínua} se for contínua para todo elemento $x_{0}$ de seu domínio;
+          \item $f$ \textbf{descontínua} em $x_{0}$ se não for contínua em $x_{0}$. \vspace*{-3pt}
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example-highlight}
+        Avalie a continuidade da função em \\$x=-2$, $x=-1$, $x=1$, $x=2$ e $x=3$.
+      \end{example-highlight}
+      \begin{figure}\vspace*{-0.5cm}
+        \includefigure[width=0.95\textwidth]{exemplo1.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.7\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Verifique a continuidade da função $f(x)=x^2-x-2$ no ponto $x=2$. Seria a função $f$ contínua em qualquer $x$ real?
+      \end{example}
+    \end{column}
+    \begin{column}{0.3\textwidth}\vspace{-0.5cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Continuidade das Funções Polinomiais]
+    Seja $f$ uma função polinomial. Então $f$ é uma função contínua.
+  \end{theorem}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.4\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Verifique a continuidade das funções a seguir nos pontos indicados.
+      \end{example}
+      \begin{enumerate}
+        \item<only@1-2> $f(x) = \begin{cases}
+          \frac{1}{(x+3)^{2}},&\mbox{ se }x\not=-3 \\ 1,&\mbox{ se }x=-3
+        \end{cases}$ \\no ponto $x=-3$.
+        \item<only@3-4> $f(x) = \begin{cases}
+          x+2,&\mbox{ se }x\leq -1 \\ 2-2x,&\mbox{ se }x > -1
+        \end{cases}$\\ no ponto $x=-1$.
+        \item<only@5-6> $f(x) = \begin{cases}
+          x^{2}-4,&\mbox{ se }x < 1 \\ -3,&\mbox{ se }1 \leq x \leq 3 \\ 2x-9,&\mbox{ se }x > 3
+        \end{cases}$\\ nos pontos $x=1$ e $x=3$.
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.59\textwidth}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo2-vazio.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo2.pdf}
+        \includefigure<3>[width=\textwidth]{exemplo3-vazio.pdf}
+        \includefigure<4>[width=\textwidth]{exemplo3.pdf}
+        \includefigure<5>[width=\textwidth]{exemplo4-vazio.pdf}
+        \includefigure<6>[width=\textwidth]{exemplo4.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.4\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Mostre que a função $f(x) = |x|$ é contínua para todo $x$ real.
+      \end{example}
+    \end{column}
+    \begin{column}{0.59\textwidth}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo5-vazio.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo5.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Definição de Continuidade Lateral}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Continuidade à Direita]
+        Uma função $f$ é \textbf{contínua à direita} em $x_{0}$ se:
+        \begin{enumerate}
+          \item Existe $f(x_{0})$;
+          \item Existe $\displaystyle\lim_{x\to x_{0}^{+}}{f(x)}$;
+          \item $\displaystyle\lim_{x\to x_{0}^{+}}{f(x)}=f(x_{0})$.\vspace{-0.1cm}
+        \end{enumerate}
+      \end{definition}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Continuidade à Esquerda]
+        Uma função $f$ é \textbf{contínua à esquerda} em $x_{0}$ se:
+        \begin{enumerate}
+          \item Existe $f(x_{0})$;
+          \item Existe $\displaystyle\lim_{x\to x_{0}^{-}}{f(x)}$;
+          \item $\displaystyle\lim_{x\to x_{0}^{-}}{f(x)}=f(x_{0})$.\vspace{-0.1cm}
+        \end{enumerate}
+      \end{definition}
+    \end{column}
+  \end{columns}
+  \begin{highlight}
+    \textbf{Como consequência:}
+    \begin{itemize}
+      \item Uma função $f$ é contínua em $x_{0}$ se, e so mente se, for contínua à direita e à esquerda em $x_{0}$;
+      \item Uma função $f$ é contínua em $[a,\,b]$ se, e somente se, $f$ for contínua para todo $x_{0}\in\,(a,\,b)$, contínua à direita em $x=a$ e contínua à esquerda em $x=b$.
+    \end{itemize}
+  \end{highlight}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Discuta a continuidade da função $f(x) = \sqrt{4-x^{2}}$ no intervalo $[-2,\,2]$.
+  \end{example}
+  \begin{figure}
+    \includefigure<1>[width=\textwidth]{exemplo6-vazio.pdf}
+    \includefigure<2>[width=\textwidth]{exemplo6.pdf}
+  \end{figure}
+\end{frame}
+
+\subsection{Propriedades Algébricas das Funções Contínuas}
+\begin{frame}
+  \begin{theorem}[Propriedades Algébricas das Funções Contínuas]
+    Se as funções $f$ e $g$ forem contínuas em $x=x_{0}$, então
+    \begin{enumerate}
+      \item $f+g$ é contínua em $x_{0}$;
+      \item $f-g$ é contínua em $x_{0}$;
+      \item $f\cdot g$ é contínua em $x_{0}$;
+      \item $\dfrac{f}{g}$ é contínua em $x_{0}$ se $g(x_{0})\not=0$ e descontínua em $x_{0}$ se $g(x_{0}) = 0$.
+    \end{enumerate}
+  \end{theorem}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.7\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Verifique que a função $f(x) = \dfrac{x^{3}-4x}{x^{2}+9}$ é contínua em todo o seu domínio.
+      \end{example}
+    \end{column}
+    \begin{column}{0.3\textwidth}\vspace{-0.5cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Continuidade de Funções Racionais}
+\begin{frame}
+  \begin{theorem}[Continuidade de Funções Racionais]
+    Seja $f$ uma função racional. Então $f$ é contínua em todos os pontos que não anulam o seu denominador e possui descontinuidades nos pontos que o anulam.
+  \end{theorem}
+\end{frame}
+
+\subsection{Limite da Composição de Funções Contínuas}
+\begin{frame}
+  \begin{theorem}[Limite da Composição de Funções Contínuas]
+    Se $\displaystyle\lim_{x\to x_{0}}{g(x)}=L$ e se $f$ for contínua em $L$, então vale a propriedade
+    \begin{equation*}
+      \lim_{x\to x_{0}}{f\left(g(x)\right)}=f\left(\lim_{x\to x_{0}}{g(x)}\right).
+    \end{equation*}
+  \end{theorem}
+  \begin{itemize}
+    \item Essa propriedade permanece valida se o limite quando $x\to x_{0}$ for substituído pelos limites laterais $x\to x_{0}^{+}$ ou $x\to x_{0}^{-}$, ou mesmo se forem considerados os limites no infinito, $x\to +\infty$ ou $x\to -\infty$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Avalie o $\displaystyle\lim_{x\to 3}{|5-x^{2}|}$.
+      \end{example}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Continuidade da Composição de Funções Contínuas}
+\begin{frame}
+  \begin{theorem}[Continuidade da Composição de Funções Contínuas]
+    Se uma função $g$ for contínua no ponto $x_{0}$ e outra função $f$ for contínua no ponto $g(x_{0})$, então a composição $f\circ g$ é contínua em $x_{0}$.
+  \end{theorem}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Verifique que a função $f(x) = |5-x^{2}| + \dfrac{1}{x}$ é contínua para todo $x$ em seu domínio.
+      \end{example}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Teorema do Valor Intermediário}
+\begin{frame}
+  \begin{theorem}[Teorema do Valor Intermediário]
+    Se $f$ for uma função contínua em um intervalo fechado $[a,\,b]$ e $k$ um número entre $f(a)$ e $f(b)$, inclusive, então existe no mínimo um número $x$ no intervalo $[a,\,b]$, tal que $f(x)=k$.
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{highlight}
+        \begin{itemize}
+          \item Uma consequência do teorema do valor intermediário é o fato do gráfico de uma função $f$ contínua em um intervalo $[a,\,b]$ não possuir quebras ou buracos;
+          \item Reciprocamente, se o gráfico de uma função não possui quebras ou buracos no intervalo $[a,\,b]$, então $f$ será uma função contínua em $[a,\,b]$.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \includefigure[width=\textwidth]{teorema-valor-intermediario.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Continuidade das Funções Trigonométricas}
+\begin{frame}
+  \begin{theorem}[Continuidade das Funções Trigonométricas]
+    Seja $x_{0}$ um número do domínio das funções trigonométricas a seguir. Então são válidos os limites
+    \begin{columns}[onlytextwidth]
+      \begin{column}{0.5\textwidth}
+        \begin{enumerate}
+          \item $\displaystyle\lim_{x\to x_{0}}{\sen{x}} = \sen{x_{0}}$;
+          \item $\displaystyle\lim_{x\to x_{0}}{\cos{x}} = \cos{x_{0}}$;
+          \item $\displaystyle\lim_{x\to x_{0}}{\tan{x}} = \tan{x_{0}}$;
+        \end{enumerate}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{enumerate}\setcounter{enumi}{3}
+          \item $\displaystyle\lim_{x\to x_{0}}{\cot{x}} = \cot{x_{0}}$;
+          \item $\displaystyle\lim_{x\to x_{0}}{\sec{x}} = \sec{x_{0}}$;
+          \item $\displaystyle\lim_{x\to x_{0}}{\csc{x}} = \csc{x_{0}}$.
+        \end{enumerate}
+      \end{column}
+    \end{columns}
+  \end{theorem}
+  \begin{itemize}
+    \item Como consequência, todas as funções trigonométricas citadas no teorema são contínuas para qualquer $x_{0}$ dos seus respectivos domínios.
+  \end{itemize}
+\end{frame}
+
+\subsection{Continuidade da Função Inversa}
+\begin{frame}
+  \begin{theorem}[Continuidade da Função Inversa]
+    Seja $f$ uma função que admite inversa $f^{-1}$. Então $f^{-1}$ será contínua em cada ponto de seu domínio; ou seja, $f^{-1}$ será contínua em cada ponto da imagem de $f$.
+  \end{theorem}
+\end{frame}
+
+\subsection{Continuidade das Funções Trigonométricas Inversas}
+\begin{frame}
+  \begin{theorem}[Continuidade das Funções Trigonométricas Inversas]
+    Seja $x_{0}$ um número do domínio das funções trigonométricas inversas a seguir. Então são válidos os limites
+    \begin{enumerate}
+      \item $\displaystyle\lim_{x\to x_{0}}{\arcsen{x}} = \arcsen{x_{0}}$;
+      \item $\displaystyle\lim_{x\to x_{0}}{\arccos{x}} = \arccos{x_{0}}$;
+      \item $\displaystyle\lim_{x\to x_{0}}{\arctan{x}} = \arctan{x_{0}}$;
+    \end{enumerate}
+  \end{theorem}
+  \begin{itemize}
+    \item Como consequência, todas as funções trigonométricas inversas citadas no teorema são contínuas para qualquer $x_{0}$ dos seus respectivos domínios.
+  \end{itemize}
+\end{frame}
+
+\subsection{Continuidade das Funções Exponenciais e Logarítmicas}
+\begin{frame}
+  \begin{theorem}[Continuidade das Funções Exponenciais e Logarítmicas]
+    Seja $b$ um número real positivo, com $b\not=1$. Então são válidos os limites
+    \begin{enumerate}
+      \item $\lim_{x\to x_{0}}{b^x}=b^x_{0}$ para qualquer $c$ real;
+      \item $\displaystyle\lim_{x\to x_{0}}{\log_{b}{x}}=\log_{b}{x_{0}}$ para qualquer $x_{0} > 0$.
+    \end{enumerate}
+  \end{theorem}
+  \begin{itemize}
+    \item Como consequência, todas as funções exponenciais e logarítmicas são contínuas para qualquer $x_{0}$ dos seus respectivos domínios.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.7\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Em quais pontos a função $\displaystyle f(x) = \frac{\arctan{x} + \ln{x}}{x^{2}-4}$ é contínua?
+      \end{example}
+    \end{column}
+    \begin{column}{0.3\textwidth}\vspace{-0.5cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.7\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Verifique que a função $\displaystyle f(x) = e^{x^{2}-1}$ é contínua para todo $x$ real.
+      \end{example}
+    \end{column}
+    \begin{column}{0.3\textwidth}\vspace{-0.5cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Descontinuidade Removível}
+\begin{frame}
+  \begin{definition}[Descontinuidade Removível]
+    Uma função $f$ possui uma descontinuidade \textbf{removível} em $x_{0}$ se:
+    \begin{enumerate}
+      \item Existe $\displaystyle\lim_{x\to x_{0}}{f(x)}$;
+      \item Ou $f$ não está definida em $x_{0}$ ou $f$ está definida em $x_{0}$, mas\vspace{-0.2cm}
+      \begin{equation*}
+        f(x_{0})\not=\lim_{x\to x_{0}}{f(x)}\vspace{-0.5cm}
+      \end{equation*}
+    \end{enumerate}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{itemize}
+        \item Recebem o nome pois com uma ``pequena'' modificação seria possível a obtenção de uma função contínua.
+      \end{itemize}
+      \begin{example-highlight}
+        A função $\displaystyle f(x) = \frac{x^{2}-x-2}{x-2}$ possui uma descontinuidade removível em $x=2$.
+      \end{example-highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure<1>[width=\textwidth]{exemplo7-vazio.pdf}
+        \includefigure<2>[width=\textwidth]{exemplo7.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Descontinuidade Infinita}
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{definition}[Descontinuidade Infinita]
+        Uma função $f$ possui uma descontinuidade \textbf{infinita} no ponto $x_{0}$ se ocorrer \textbf{ao menos uma} das seguintes situações:
+        \begin{enumerate}
+          \item $\displaystyle\lim_{x\to x_{0}^{+}}{f(x)} = +\infty$;
+          \item $\displaystyle\lim_{x\to x_{0}^{+}}{f(x)} = -\infty$;
+          \item $\displaystyle\lim_{x\to x_{0}^{-}}{f(x)} = +\infty$;
+          \item $\displaystyle\lim_{x\to x_{0}^{-}}{f(x)} = -\infty$;
+        \end{enumerate}
+      \end{definition}
+      \begin{itemize}
+        \item Note que a definição de descontinuidade infinita não exige que a função $f$ esteja definida no ponto $x_{0}$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{example-highlight}
+        $\displaystyle f(x) = \begin{cases}
+          \frac{1}{(x+3)^{2}},&\mbox{ se }x\not=-3 \\ 1,&\mbox{ se }x=-3
+        \end{cases}$ possui descontinuidade infinita em $x=-3$.
+      \end{example-highlight}
+      \begin{figure}
+        \includefigure[width=\textwidth]{exemplo2.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Descontinuidade de Salto}
+\begin{frame}
+  \begin{definition}[Descontinuidade de Salto]
+    Uma função $f$ possui uma descontinuidade de \textbf{salto} no ponto $x_{0}$ se:
+    \begin{enumerate}
+      \item Existem $\displaystyle\lim_{x\to x_{0}^{+}}{f(x)}$ e  $\displaystyle\lim_{x\to x_{0}^{-}}{f(x)}$;
+      \item $\displaystyle\lim_{x\to x_{0}^{+}}{f(x)} \not= \lim_{x\to x_{0}^{-}}{f(x)}$;
+    \end{enumerate}
+  \end{definition}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \begin{itemize}
+        \item Assim como no caso da descontinuidade infinita, na descontinuidade de salto não é exigido que a função $f$ esteja definida em $x_{0}$.
+      \end{itemize}
+      \vspace*{0.1cm}
+      \begin{example-highlight}
+        $\displaystyle f(x) = \begin{cases}
+          x+2,&\mbox{ se }x\leq -1 \\ 2-2x,&\mbox{ se }x > -1
+        \end{cases}$ possui descontinuidade de salto em $x=-1$.
+      \end{example-highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}\vspace{-0.5cm}
+      \begin{figure}
+        \includefigure[width=0.85\textwidth]{exemplo3.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.7\textwidth}\vspace{-0.5cm}
+      \begin{example}
+        Dada a função $\displaystyle f(x) = \begin{cases}
+          x-1,&\mbox{ se }x\leq -1 \\ x^{2}+a,&\mbox{ se }x > -1
+        \end{cases}$, determine um valor de $a$ para que a função seja contínua em $x=-1$.
+      \end{example}
+    \end{column}
+    \begin{column}{0.3\textwidth}\vspace{-0.5cm}
+    \end{column}
+  \end{columns}
+\end{frame}

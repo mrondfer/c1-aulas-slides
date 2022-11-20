@@ -1,0 +1,117 @@
+\section{Simetrias, Funções Pares e Ímpares}
+\begin{frame}
+  \begin{definition}[Simetria em Relação ao Eixo $x$]
+    Uma curva plana é simétrica em relação ao eixo $x$ se, para cada ponto $(x,\,y)$ do seu gráfico, o ponto $(x,\,-y)$ também está no gráfico.
+  \end{definition}
+  \begin{figure}
+    \includefigure[width=0.9\textwidth]{simetria-x.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{definition}[Simetria em Relação ao Eixo $y$]
+    Uma curva plana é simétrica em relação ao eixo $y$ se, para cada ponto $(x,\,y)$ do seu gráfico, o ponto $(-x,\,y)$ também está no gráfico.
+  \end{definition}
+  \begin{figure}
+    \includefigure[width=0.95\textwidth]{simetria-y.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{definition}[Simetria em Relação à Origem]
+    Uma curva plana é simétrica em relação à origem se, para cada ponto $(x,\,y)$ do seu gráfico, o ponto $(-x,\,-y)$ também está no gráfico.
+  \end{definition}
+  \begin{figure}
+    \includefigure[width=0.95\textwidth]{simetria-origem.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{theorem}[Testes de Simetria]
+    Uma curva é simétrica em relação à origem se, para cada ponto $(x,\,y)$ do seu gráfico, o ponto $(-x,\,-y)$ também está no gráfico.
+    \begin{enumerate}
+      \item Uma curva plana é simétrica em relação ao eixo $y$ se, e somente se, substituindo-se $x$ por $-x$ em sua equação, obtém-se uma equação equivalente;
+      \item Uma curva plana é simétrica em relação ao eixo $x$ se, e somente se, substituindo-se $y$ por $-y$ em sua equação, obtém-se uma equação equivalente;
+      \item Uma curva plana é simétrica em relação à origem $y$ se, e somente se, substituindo-se $x$ por $-x$ e substituindo-se $y$ por $-y$ em sua equação, obtém-se uma equação equivalente.
+    \end{enumerate}
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.15cm}
+      \begin{example-highlight}
+        Classifique as curvas definidas pelas funções a seguir com respeito à sua simetria.
+        \begin{columns}[onlytextwidth]
+          \begin{column}{0.49\textwidth}\vspace*{-0.35cm}
+            \begin{enumerate}
+              \item $f(x)=\dfrac{1}{x^{3}}$
+            \end{enumerate}
+          \end{column}
+          \begin{column}{0.49\textwidth}\vspace*{-0.35cm}
+            \begin{enumerate}\setcounter{enumi}{1}
+              \item $g(x)=x^{4}$
+            \end{enumerate}
+          \end{column}
+        \end{columns}
+      \end{example-highlight}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \vspace*{-0.09cm}
+      \begin{highlight}
+        \textbf{Observação.}
+        \begin{itemize}
+          \item Não existe função cujo gráfico seja simétrico com respeito ao eixo $x$.
+        \end{itemize}
+      \end{highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Função Par]
+        Uma função $f$ é dita \textbf{função par} se
+        \begin{equation*}
+          f(-x) = f(x),
+        \end{equation*}
+        para todo $x\in\Domain{f}$.
+      \end{definition}
+      \begin{highlight}
+        \textbf{Observação.}
+        \begin{itemize}
+          \item O gráfico de uma função par é simétrico com respeito ao eixo $x$.
+        \end{itemize}
+      \end{highlight}
+      \vspace*{0.2cm}
+      \begin{example-highlight}
+        \begin{enumerate}
+          \item $y=x^{2}$, $y=x^{4}$, $y=x^{6}$, $y=x^{8}$, $\dots$
+          \item $y=\dfrac{1}{x^{2}}$, $y=\dfrac{1}{x^{4}}$, $y=\dfrac{1}{x^{6}}$, $y=\dfrac{1}{x^{8}}$, $\dots$
+        \end{enumerate}
+      \end{example-highlight}
+    \end{column}
+    \begin{column}<2>{0.49\textwidth}\vspace*{-0.5cm}
+      \begin{definition}[Função Ímpar]
+        Uma função $f$ é dita \textbf{função ímpar} se
+        \begin{equation*}
+          f(-x) = -f(x),
+        \end{equation*}
+        para todo $x\in\Domain{f}$.
+      \end{definition}
+      \begin{highlight}
+        \textbf{Observação.}
+        \begin{itemize}
+          \item O gráfico de uma função ímpar é simétrico com respeito à origem.
+        \end{itemize}
+      \end{highlight}
+      \vspace*{0.2cm}
+      \begin{example-highlight}
+        \begin{enumerate}
+          \item $y=x$, $y=x^{3}$, $y=x^{5}$, $y=x^{7}$, $\dots$
+          \item $y=\dfrac{1}{x}$, $y=\dfrac{1}{x^{3}}$, $y=\dfrac{1}{x^{5}}$, $y=\dfrac{1}{x^{7}}$, $\dots$
+        \end{enumerate}
+      \end{example-highlight}
+    \end{column}
+  \end{columns}
+\end{frame}
+

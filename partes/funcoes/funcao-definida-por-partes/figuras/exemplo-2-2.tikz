@@ -1,0 +1,33 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[font=\tiny,
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1},
+      xlabel={\scriptsize$x$},ylabel={\scriptsize$y$},
+      xlabel style={below},ylabel style={left},
+      xmin=-4.2,xmax=5.5,
+      xtick={-4,-3,-2,-1,0,1,2,3,4},
+      ymin=-1.5,ymax=6.5,
+      ytick={-1,0,1,2,3,4,5,6},
+      axis line style={-latex},
+      major grid style={gray!10},
+      grid=major,
+      declare function={
+        f(\x) = (\x<2)*(\x^2-1) + and(\x>=2,\x<4)*(\x+1) + (\x>=4)*5;
+      }
+    ]%
+      \addplot[%
+        mark=none,
+        domain=-5:15,
+        color=orange,
+        thick,
+        samples=1000
+      ] {f(x)};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}

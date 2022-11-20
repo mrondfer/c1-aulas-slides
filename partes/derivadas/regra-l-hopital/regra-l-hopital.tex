@@ -1,0 +1,52 @@
+\section{Regra de L'Hôpital}
+
+\begin{frame}
+  \begin{theorem}[Regra de L'Hôpital]
+    Se tivermos que $\displaystyle\lim_{x\to x_{0}}\frac{f(x)}{g(x)}$ for uma forma indeterminada do tipo $\dfrac{0}{0}$ ou $\dfrac{\infty}{\infty}$, então
+    \begin{equation*}
+      \lim_{x\to x_{0}}\frac{f(x)}{g(x)} = \lim_{x\to x_{0}}\frac{f^{\prime}(x)}{g^{\prime}(x)},
+    \end{equation*}
+    caso o limite exista (sendo finito ou infinito).
+  \end{theorem}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \begin{highlight}
+        \textbf{Observação:}
+        \begin{enumerate}
+          \item O mesmo também é válido quando $x\to x_{0}^{+}$, $x\to x_{0}^{-}$, $x\to +\infty$ ou $x\to -\infty$;
+          \item A existência de $\displaystyle \lim_{x\to x_{0}}\frac{f(x)}{g(x)}$ \textbf{não garante} a existência de $\displaystyle \lim_{x\to x_{0}}\frac{f^{\prime}(x)}{g^{\prime}(x)}$\vspace*{-0.2cm}
+        \end{enumerate}
+      \end{highlight}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Calcule os limites a seguir.
+  \end{example}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \begin{enumerate}
+        \item $\displaystyle\lim_{x\to 0}\frac{\sen{x}}{x}$
+        \item $\displaystyle\lim_{x\to -2}\frac{x^{3}-3x+2}{x^{2}-4}$
+        \item $\displaystyle\lim_{x\to 9}\frac{x^{2}-81}{\sqrt{x}-3}$
+        \item $\displaystyle\lim_{x\to +\infty}\frac{\ln{2x}}{x^{2}}$
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      %
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{example}
+    Para $f(x) = x^{2}\cdot\sen{\dfrac{1}{x}}$ e $g(x) = x$, avalie o limite
+    \begin{equation*}
+      \lim_{x\to 0}\frac{f(x)}{g(x)}.
+    \end{equation*}
+  \end{example}
+\end{frame}

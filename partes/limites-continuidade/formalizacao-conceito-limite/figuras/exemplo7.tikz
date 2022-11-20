@@ -1,0 +1,32 @@
+\documentclass[crop]{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[%
+      axis x line=center,axis y line=center,
+      unit vector ratio={1 1.5},
+      xlabel={$x$},ylabel={$y$},
+      xlabel style={below,font=\scriptsize},
+      ylabel style={left,font=\scriptsize},
+      xmin=-3.5,xmax=3.5,
+      xtick={-pi,-pi/2,0,pi/2,pi},
+      xticklabels={$-\pi$,$-\frac{\pi}{2}$,$0$,$\frac{\pi}{2}$,$\pi$},
+      xticklabel style={font=\tiny},
+      ymin=-1.5,ymax=1.5,
+      ytick={-1,0,1},
+      yticklabel style={font=\tiny,xshift=0.3em},
+      axis line style={-latex},
+      grid=major,
+      restrict y to domain=-1:1,
+      major grid style={gray!15},
+      declare function={
+        f(\x) = sin(deg(pi/\x));
+      }
+    ]%
+      \addplot[mark=none,color=orange,thick,samples=10000,domain=-5:2] {f(x)};
+    \end{axis}
+  \end{tikzpicture}%
+\end{document}
